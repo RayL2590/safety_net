@@ -1,0 +1,147 @@
+2025-03-06T13:54:24.728+01:00  INFO 16208 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Starting DataLoaderTest using Java 22.0.1 with PID 16208 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T13:54:24.729+01:00 DEBUG 16208 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T13:54:24.730+01:00  INFO 16208 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T13:54:25.455+01:00  INFO 16208 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Started DataLoaderTest in 1.003 seconds (process running for 1.639)
+2025-03-06T13:59:54.150+01:00  INFO 29984 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Starting DataLoaderTest using Java 17.0.6 with PID 29984 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T13:59:54.152+01:00 DEBUG 29984 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T13:59:54.153+01:00  INFO 29984 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T13:59:54.837+01:00  INFO 29984 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Started DataLoaderTest in 0.89 seconds (process running for 1.49)
+2025-03-06T14:46:57.576+01:00  INFO 22840 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 22840 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T14:46:57.578+01:00 DEBUG 22840 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T14:46:57.578+01:00  INFO 22840 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T14:46:58.323+01:00  INFO 22840 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T14:46:58.323+01:00  INFO 22840 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T14:46:58.324+01:00  INFO 22840 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-03-06T14:46:58.337+01:00  INFO 22840 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 0.966 seconds (process running for 1.58)
+2025-03-06T14:50:07.408+01:00  INFO 40868 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 40868 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T14:50:07.409+01:00 DEBUG 40868 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T14:50:07.410+01:00  INFO 40868 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T14:50:08.099+01:00  INFO 40868 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T14:50:08.100+01:00  INFO 40868 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T14:50:08.100+01:00  INFO 40868 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T14:50:08.117+01:00  INFO 40868 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 0.91 seconds (process running for 1.563)
+2025-03-06T14:50:20.650+01:00  INFO 40508 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 40508 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T14:50:20.651+01:00 DEBUG 40508 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T14:50:20.652+01:00  INFO 40508 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T14:50:21.348+01:00  INFO 40508 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T14:50:21.349+01:00  INFO 40508 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T14:50:21.349+01:00  INFO 40508 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T14:50:21.365+01:00  INFO 40508 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 0.906 seconds (process running for 1.594)
+2025-03-06T14:50:49.750+01:00  INFO 43776 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 43776 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T14:50:49.751+01:00 DEBUG 43776 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T14:50:49.751+01:00  INFO 43776 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T14:50:50.518+01:00  INFO 43776 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T14:50:50.518+01:00  INFO 43776 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T14:50:50.518+01:00  INFO 43776 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T14:50:50.535+01:00  INFO 43776 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 1.011 seconds (process running for 1.655)
+2025-03-06T16:47:40.672+01:00  INFO 13572 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 13572 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T16:47:40.673+01:00 DEBUG 13572 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T16:47:40.674+01:00  INFO 13572 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T16:47:41.397+01:00  INFO 13572 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T16:47:41.397+01:00  INFO 13572 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T16:47:41.398+01:00  INFO 13572 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-03-06T16:47:41.413+01:00  INFO 13572 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 0.927 seconds (process running for 1.535)
+2025-03-06T17:24:32.999+01:00  INFO 21068 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 21068 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T17:24:33.002+01:00 DEBUG 21068 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T17:24:33.002+01:00  INFO 21068 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:24:33.748+01:00  INFO 21068 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:24:33.748+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:24:33.748+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:24:33.767+01:00  INFO 21068 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.975 seconds (process running for 1.576)
+2025-03-06T17:24:34.259+01:00  INFO 21068 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:24:34.259+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:24:34.259+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:24:34.455+01:00  INFO 21068 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:24:34.455+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:24:34.455+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:24:34.474+01:00  INFO 21068 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:24:34.474+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:24:34.474+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:28:01.118+01:00  INFO 20264 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 20264 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T17:28:01.119+01:00 DEBUG 20264 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T17:28:01.120+01:00  INFO 20264 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:28:01.754+01:00  INFO 20264 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:28:01.754+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:28:01.754+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:28:01.772+01:00  INFO 20264 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.872 seconds (process running for 1.533)
+2025-03-06T17:28:02.271+01:00  INFO 20264 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:28:02.271+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:28:02.272+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:28:02.469+01:00  INFO 20264 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:28:02.469+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:28:02.469+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:28:02.486+01:00  INFO 20264 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:28:02.487+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:28:02.487+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:31:48.233+01:00  INFO 24704 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 24704 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T17:31:48.235+01:00 DEBUG 24704 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T17:31:48.236+01:00  INFO 24704 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:31:48.867+01:00  INFO 24704 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:31:48.868+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:31:48.868+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:31:48.883+01:00  INFO 24704 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.854 seconds (process running for 1.436)
+2025-03-06T17:31:49.406+01:00  INFO 24704 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:31:49.406+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:31:49.407+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-03-06T17:31:49.613+01:00  INFO 24704 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:31:49.613+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:31:49.613+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:31:49.631+01:00  INFO 24704 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:31:49.631+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:31:49.631+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:34:23.674+01:00  INFO 37344 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 37344 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T17:34:23.676+01:00 DEBUG 37344 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T17:34:23.676+01:00  INFO 37344 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:34:24.344+01:00  INFO 37344 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:34:24.344+01:00  INFO 37344 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:34:24.345+01:00  INFO 37344 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-03-06T17:34:24.363+01:00  INFO 37344 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.881 seconds (process running for 1.479)
+2025-03-06T17:34:24.842+01:00  INFO 37344 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:34:24.842+01:00  INFO 37344 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:34:24.843+01:00  INFO 37344 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:34:45.975+01:00  INFO 32284 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 32284 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T17:34:45.975+01:00 DEBUG 32284 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T17:34:45.976+01:00  INFO 32284 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:34:46.771+01:00  INFO 32284 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:34:46.771+01:00  INFO 32284 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:34:46.772+01:00  INFO 32284 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:34:46.803+01:00  INFO 32284 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 1.034 seconds (process running for 1.832)
+2025-03-06T17:34:47.307+01:00  INFO 32284 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:34:47.308+01:00  INFO 32284 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:34:47.308+01:00  INFO 32284 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:38:25.411+01:00  INFO 40828 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 40828 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T17:38:25.412+01:00 DEBUG 40828 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T17:38:25.413+01:00  INFO 40828 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:38:26.187+01:00  INFO 40828 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:38:26.187+01:00  INFO 40828 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:38:26.188+01:00  INFO 40828 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-03-06T17:38:26.215+01:00  INFO 40828 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 1.021 seconds (process running for 1.643)
+2025-03-06T17:38:26.694+01:00  INFO 40828 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:38:26.695+01:00  INFO 40828 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:38:26.695+01:00  INFO 40828 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:52:10.664+01:00  INFO 13112 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 13112 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T17:52:10.665+01:00 DEBUG 13112 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T17:52:10.666+01:00  INFO 13112 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:52:11.431+01:00  INFO 13112 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:52:11.431+01:00  INFO 13112 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:52:11.432+01:00  INFO 13112 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:52:11.466+01:00  INFO 13112 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 1.019 seconds (process running for 1.698)
+2025-03-06T17:52:11.994+01:00  INFO 13112 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:52:11.994+01:00  INFO 13112 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:52:11.994+01:00  INFO 13112 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:57:55.594+01:00  INFO 5632 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 5632 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-06T17:57:55.595+01:00 DEBUG 5632 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06T17:57:55.596+01:00  INFO 5632 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:57:56.295+01:00  INFO 5632 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:57:56.295+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:57:56.295+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:57:56.312+01:00  INFO 5632 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.933 seconds (process running for 1.579)
+2025-03-06T17:57:56.794+01:00  INFO 5632 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:57:56.795+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:57:56.795+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:57:57.008+01:00  INFO 5632 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:57:57.008+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:57:57.008+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-06T17:57:57.025+01:00  INFO 5632 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2025-03-06T17:57:57.025+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-06T17:57:57.025+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
