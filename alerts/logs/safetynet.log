@@ -1,147 +1,546 @@
-2025-03-06T13:54:24.728+01:00  INFO 16208 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Starting DataLoaderTest using Java 22.0.1 with PID 16208 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T13:54:24.729+01:00 DEBUG 16208 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T13:54:24.730+01:00  INFO 16208 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T13:54:25.455+01:00  INFO 16208 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Started DataLoaderTest in 1.003 seconds (process running for 1.639)
-2025-03-06T13:59:54.150+01:00  INFO 29984 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Starting DataLoaderTest using Java 17.0.6 with PID 29984 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T13:59:54.152+01:00 DEBUG 29984 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T13:59:54.153+01:00  INFO 29984 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T13:59:54.837+01:00  INFO 29984 --- [alerts] [main] c.ryan.safetynet.alerts.DataLoaderTest   : Started DataLoaderTest in 0.89 seconds (process running for 1.49)
-2025-03-06T14:46:57.576+01:00  INFO 22840 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 22840 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T14:46:57.578+01:00 DEBUG 22840 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T14:46:57.578+01:00  INFO 22840 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T14:46:58.323+01:00  INFO 22840 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T14:46:58.323+01:00  INFO 22840 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T14:46:58.324+01:00  INFO 22840 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-03-06T14:46:58.337+01:00  INFO 22840 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 0.966 seconds (process running for 1.58)
-2025-03-06T14:50:07.408+01:00  INFO 40868 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 40868 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T14:50:07.409+01:00 DEBUG 40868 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T14:50:07.410+01:00  INFO 40868 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T14:50:08.099+01:00  INFO 40868 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T14:50:08.100+01:00  INFO 40868 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T14:50:08.100+01:00  INFO 40868 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T14:50:08.117+01:00  INFO 40868 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 0.91 seconds (process running for 1.563)
-2025-03-06T14:50:20.650+01:00  INFO 40508 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 40508 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T14:50:20.651+01:00 DEBUG 40508 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T14:50:20.652+01:00  INFO 40508 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T14:50:21.348+01:00  INFO 40508 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T14:50:21.349+01:00  INFO 40508 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T14:50:21.349+01:00  INFO 40508 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T14:50:21.365+01:00  INFO 40508 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 0.906 seconds (process running for 1.594)
-2025-03-06T14:50:49.750+01:00  INFO 43776 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 43776 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T14:50:49.751+01:00 DEBUG 43776 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T14:50:49.751+01:00  INFO 43776 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T14:50:50.518+01:00  INFO 43776 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T14:50:50.518+01:00  INFO 43776 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T14:50:50.518+01:00  INFO 43776 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T14:50:50.535+01:00  INFO 43776 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 1.011 seconds (process running for 1.655)
-2025-03-06T16:47:40.672+01:00  INFO 13572 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Starting PersonControllerTest using Java 17.0.6 with PID 13572 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T16:47:40.673+01:00 DEBUG 13572 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T16:47:40.674+01:00  INFO 13572 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T16:47:41.397+01:00  INFO 13572 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T16:47:41.397+01:00  INFO 13572 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T16:47:41.398+01:00  INFO 13572 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-03-06T16:47:41.413+01:00  INFO 13572 --- [alerts] [main] c.r.s.alerts.PersonControllerTest        : Started PersonControllerTest in 0.927 seconds (process running for 1.535)
-2025-03-06T17:24:32.999+01:00  INFO 21068 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 21068 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T17:24:33.002+01:00 DEBUG 21068 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T17:24:33.002+01:00  INFO 21068 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T17:24:33.748+01:00  INFO 21068 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:24:33.748+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:24:33.748+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:24:33.767+01:00  INFO 21068 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.975 seconds (process running for 1.576)
-2025-03-06T17:24:34.259+01:00  INFO 21068 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:24:34.259+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:24:34.259+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:24:34.455+01:00  INFO 21068 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:24:34.455+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:24:34.455+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:24:34.474+01:00  INFO 21068 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:24:34.474+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:24:34.474+01:00  INFO 21068 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:28:01.118+01:00  INFO 20264 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 20264 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T17:28:01.119+01:00 DEBUG 20264 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T17:28:01.120+01:00  INFO 20264 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T17:28:01.754+01:00  INFO 20264 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:28:01.754+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:28:01.754+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:28:01.772+01:00  INFO 20264 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.872 seconds (process running for 1.533)
-2025-03-06T17:28:02.271+01:00  INFO 20264 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:28:02.271+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:28:02.272+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:28:02.469+01:00  INFO 20264 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:28:02.469+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:28:02.469+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:28:02.486+01:00  INFO 20264 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:28:02.487+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:28:02.487+01:00  INFO 20264 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:31:48.233+01:00  INFO 24704 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 24704 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T17:31:48.235+01:00 DEBUG 24704 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T17:31:48.236+01:00  INFO 24704 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T17:31:48.867+01:00  INFO 24704 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:31:48.868+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:31:48.868+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:31:48.883+01:00  INFO 24704 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.854 seconds (process running for 1.436)
-2025-03-06T17:31:49.406+01:00  INFO 24704 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:31:49.406+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:31:49.407+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-03-06T17:31:49.613+01:00  INFO 24704 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:31:49.613+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:31:49.613+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:31:49.631+01:00  INFO 24704 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:31:49.631+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:31:49.631+01:00  INFO 24704 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:34:23.674+01:00  INFO 37344 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 37344 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T17:34:23.676+01:00 DEBUG 37344 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T17:34:23.676+01:00  INFO 37344 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T17:34:24.344+01:00  INFO 37344 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:34:24.344+01:00  INFO 37344 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:34:24.345+01:00  INFO 37344 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-03-06T17:34:24.363+01:00  INFO 37344 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.881 seconds (process running for 1.479)
-2025-03-06T17:34:24.842+01:00  INFO 37344 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:34:24.842+01:00  INFO 37344 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:34:24.843+01:00  INFO 37344 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:34:45.975+01:00  INFO 32284 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 32284 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T17:34:45.975+01:00 DEBUG 32284 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T17:34:45.976+01:00  INFO 32284 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T17:34:46.771+01:00  INFO 32284 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:34:46.771+01:00  INFO 32284 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:34:46.772+01:00  INFO 32284 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:34:46.803+01:00  INFO 32284 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 1.034 seconds (process running for 1.832)
-2025-03-06T17:34:47.307+01:00  INFO 32284 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:34:47.308+01:00  INFO 32284 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:34:47.308+01:00  INFO 32284 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:38:25.411+01:00  INFO 40828 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 40828 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T17:38:25.412+01:00 DEBUG 40828 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T17:38:25.413+01:00  INFO 40828 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T17:38:26.187+01:00  INFO 40828 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:38:26.187+01:00  INFO 40828 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:38:26.188+01:00  INFO 40828 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-03-06T17:38:26.215+01:00  INFO 40828 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 1.021 seconds (process running for 1.643)
-2025-03-06T17:38:26.694+01:00  INFO 40828 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:38:26.695+01:00  INFO 40828 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:38:26.695+01:00  INFO 40828 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:52:10.664+01:00  INFO 13112 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 13112 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T17:52:10.665+01:00 DEBUG 13112 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T17:52:10.666+01:00  INFO 13112 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T17:52:11.431+01:00  INFO 13112 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:52:11.431+01:00  INFO 13112 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:52:11.432+01:00  INFO 13112 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:52:11.466+01:00  INFO 13112 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 1.019 seconds (process running for 1.698)
-2025-03-06T17:52:11.994+01:00  INFO 13112 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:52:11.994+01:00  INFO 13112 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:52:11.994+01:00  INFO 13112 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:57:55.594+01:00  INFO 5632 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Starting FireStationControllerTest using Java 17.0.6 with PID 5632 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
-2025-03-06T17:57:55.595+01:00 DEBUG 5632 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-06T17:57:55.596+01:00  INFO 5632 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2025-03-06T17:57:56.295+01:00  INFO 5632 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:57:56.295+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:57:56.295+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:57:56.312+01:00  INFO 5632 --- [alerts] [main] c.r.s.alerts.FireStationControllerTest   : Started FireStationControllerTest in 0.933 seconds (process running for 1.579)
-2025-03-06T17:57:56.794+01:00  INFO 5632 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:57:56.795+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:57:56.795+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:57:57.008+01:00  INFO 5632 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:57:57.008+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:57:57.008+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-03-06T17:57:57.025+01:00  INFO 5632 --- [alerts] [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2025-03-06T17:57:57.025+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-06T17:57:57.025+01:00  INFO 5632 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-16T07:06:38.495+01:00  INFO 27912 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Starting AlertsApplicationTests using Java 17.0.6 with PID 27912 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-16T07:06:38.501+01:00 DEBUG 27912 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-16T07:06:38.501+01:00  INFO 27912 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-03-16T07:06:38.965+01:00  WARN 27912 --- [alerts] [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataRepository' defined in file [G:\xamp\htdocs\safety_net\alerts\target\classes\com\ryan\safetynet\alerts\repository\DataRepository.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.slf4j.Logger' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-03-16T07:06:38.978+01:00  INFO 27912 --- [alerts] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-03-16T07:06:38.997+01:00 ERROR 27912 --- [alerts] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.ryan.safetynet.alerts.repository.DataRepository required a bean of type 'org.slf4j.Logger' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.slf4j.Logger' in your configuration.
+
+2025-03-16T07:06:39.000+01:00  WARN 27912 --- [alerts] [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.ryan.safetynet.alerts.AlertsApplicationTests@b9a77c8]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@445bb139 testClass = com.ryan.safetynet.alerts.AlertsApplicationTests, locations = [], classes = [com.ryan.safetynet.alerts.AlertsApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1e4f4a5c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@23941fb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6d5620ce, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@461ad730, org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@7068e664, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@238d68ff, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@ce740854], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:160) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$12(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$7(ClassBasedTestDescriptor.java:290) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$6(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$1(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:104) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:68) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:128) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:128) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataRepository' defined in file [G:\xamp\htdocs\safety_net\alerts\target\classes\com\ryan\safetynet\alerts\repository\DataRepository.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.slf4j.Logger' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137) ~[spring-boot-test-3.4.3.jar:3.4.3]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1461) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553) ~[spring-boot-test-3.4.3.jar:3.4.3]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137) ~[spring-boot-test-3.4.3.jar:3.4.3]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108) ~[spring-boot-test-3.4.3.jar:3.4.3]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.2.3.jar:6.2.3]
+	... 75 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.slf4j.Logger' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:2177) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1627) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.3.jar:6.2.3]
+	... 101 common frames omitted
+
+2025-03-16T07:11:42.616+01:00  INFO 38764 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Starting AlertsApplicationTests using Java 17.0.6 with PID 38764 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-16T07:11:42.617+01:00 DEBUG 38764 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-16T07:11:42.618+01:00  INFO 38764 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-03-16T07:11:43.082+01:00  WARN 38764 --- [alerts] [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataRepository' defined in file [G:\xamp\htdocs\safety_net\alerts\target\classes\com\ryan\safetynet\alerts\repository\DataRepository.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.slf4j.Logger' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-03-16T07:11:43.093+01:00  INFO 38764 --- [alerts] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-03-16T07:11:43.110+01:00 ERROR 38764 --- [alerts] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.ryan.safetynet.alerts.repository.DataRepository required a bean of type 'org.slf4j.Logger' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.slf4j.Logger' in your configuration.
+
+2025-03-16T07:11:43.112+01:00  WARN 38764 --- [alerts] [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.ryan.safetynet.alerts.AlertsApplicationTests@445bb139]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@2cc75074 testClass = com.ryan.safetynet.alerts.AlertsApplicationTests, locations = [], classes = [com.ryan.safetynet.alerts.AlertsApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1e4f4a5c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@23941fb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6d5620ce, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@461ad730, org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@7068e664, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@238d68ff, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@ce740854], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:160) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$12(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$7(ClassBasedTestDescriptor.java:290) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$6(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$1(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:104) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:68) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:128) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:128) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataRepository' defined in file [G:\xamp\htdocs\safety_net\alerts\target\classes\com\ryan\safetynet\alerts\repository\DataRepository.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.slf4j.Logger' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137) ~[spring-boot-test-3.4.3.jar:3.4.3]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1461) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553) ~[spring-boot-test-3.4.3.jar:3.4.3]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137) ~[spring-boot-test-3.4.3.jar:3.4.3]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108) ~[spring-boot-test-3.4.3.jar:3.4.3]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.2.3.jar:6.2.3]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.2.3.jar:6.2.3]
+	... 75 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.slf4j.Logger' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:2177) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1627) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.3.jar:6.2.3]
+	... 101 common frames omitted
+
+2025-03-16T07:14:44.858+01:00  INFO 43220 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Starting AlertsApplicationTests using Java 17.0.6 with PID 43220 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-16T07:14:44.859+01:00 DEBUG 43220 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-16T07:14:44.860+01:00  INFO 43220 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-03-16T07:14:45.310+01:00  WARN 43220 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Fichier de données non trouvé à classpath:data.json. Initialisation avec des données vides.
+2025-03-16T07:14:45.603+01:00  INFO 43220 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Started AlertsApplicationTests in 0.952 seconds (process running for 1.518)
+2025-03-16T07:14:46.335+01:00 ERROR 43220 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Échec du chargement des données depuis le fichier test-data.json. Initialisation avec des données vides.
+
+java.io.IOException: File read error
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3724) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.ryan.safetynet.alerts.repository.DataRepository.loadData(DataRepository.java:69) ~[classes/:na]
+	at com.ryan.safetynet.alerts.repository.DataRepositoryTest.lambda$testLoadData_IOException$0(DataRepositoryTest.java:54) ~[test-classes/:na]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53) ~[junit-jupiter-api-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35) ~[junit-jupiter-api-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128) ~[junit-jupiter-api-5.11.4.jar:5.11.4]
+	at com.ryan.safetynet.alerts.repository.DataRepositoryTest.testLoadData_IOException(DataRepositoryTest.java:54) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767) ~[junit-platform-commons-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+
+2025-03-16T07:14:46.365+01:00  WARN 43220 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Écrasement du fichier de données existant : test-data.json
+2025-03-16T07:14:46.368+01:00  WARN 43220 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Fichier de données non trouvé à non-existent-file.json. Initialisation avec des données vides.
+2025-03-16T07:14:46.381+01:00  INFO 43220 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis test-data.json
+2025-03-16T07:16:22.511+01:00  INFO 41052 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Starting AlertsApplicationTests using Java 17.0.6 with PID 41052 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-16T07:16:22.512+01:00 DEBUG 41052 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-16T07:16:22.513+01:00  INFO 41052 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-03-16T07:16:23.011+01:00  WARN 41052 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Fichier de données non trouvé à classpath:data.json. Initialisation avec des données vides.
+2025-03-16T07:16:23.367+01:00  INFO 41052 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Started AlertsApplicationTests in 1.041 seconds (process running for 1.623)
+2025-03-16T07:16:24.123+01:00 ERROR 41052 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Échec du chargement des données depuis le fichier test-data.json. Initialisation avec des données vides.
+
+java.io.IOException: File read error
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3724) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.ryan.safetynet.alerts.repository.DataRepository.loadData(DataRepository.java:69) ~[classes/:na]
+	at com.ryan.safetynet.alerts.repository.DataRepositoryTest.lambda$0(DataRepositoryTest.java:51) ~[test-classes/:na]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53) ~[junit-jupiter-api-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35) ~[junit-jupiter-api-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128) ~[junit-jupiter-api-5.11.4.jar:5.11.4]
+	at com.ryan.safetynet.alerts.repository.DataRepositoryTest.testLoadData_IOException(DataRepositoryTest.java:51) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767) ~[junit-platform-commons-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+
+2025-03-16T07:16:24.153+01:00  WARN 41052 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Écrasement du fichier de données existant : test-data.json
+2025-03-16T07:16:24.156+01:00  WARN 41052 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Fichier de données non trouvé à non-existent-file.json. Initialisation avec des données vides.
+2025-03-16T07:16:24.169+01:00  INFO 41052 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis test-data.json
+2025-03-16T07:18:20.443+01:00  INFO 50644 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Starting AlertsApplicationTests using Java 17.0.6 with PID 50644 (started by Mayar in G:\xamp\htdocs\safety_net\alerts)
+2025-03-16T07:18:20.445+01:00 DEBUG 50644 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-16T07:18:20.446+01:00  INFO 50644 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-03-16T07:18:21.079+01:00  WARN 50644 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Fichier de données non trouvé à classpath:data.json. Initialisation avec des données vides.
+2025-03-16T07:18:21.425+01:00  INFO 50644 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Started AlertsApplicationTests in 1.22 seconds (process running for 2.728)
+2025-03-16T07:18:22.413+01:00 ERROR 50644 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Échec du chargement des données depuis le fichier test-data.json. Initialisation avec des données vides.
+
+java.io.IOException: File read error
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3724) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.ryan.safetynet.alerts.repository.DataRepository.loadData(DataRepository.java:69) ~[classes/:na]
+	at com.ryan.safetynet.alerts.repository.DataRepositoryTest.lambda$0(DataRepositoryTest.java:51) ~[test-classes/:na]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53) ~[junit-jupiter-api-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35) ~[junit-jupiter-api-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128) ~[junit-jupiter-api-5.11.4.jar:5.11.4]
+	at com.ryan.safetynet.alerts.repository.DataRepositoryTest.testLoadData_IOException(DataRepositoryTest.java:51) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767) ~[junit-platform-commons-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139) ~[surefire-junit-platform-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+
+2025-03-16T07:18:22.453+01:00  WARN 50644 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Écrasement du fichier de données existant : test-data.json
+2025-03-16T07:18:22.458+01:00  WARN 50644 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Fichier de données non trouvé à non-existent-file.json. Initialisation avec des données vides.
+2025-03-16T07:18:22.475+01:00  INFO 50644 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis test-data.json

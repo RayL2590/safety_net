@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+*.txt
+*.py
+*.pdf
+*.docx
+*.doc
+*.xls
+*.xlsx
+*.ppt
+*.pptx
