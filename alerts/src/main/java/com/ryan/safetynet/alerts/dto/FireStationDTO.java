@@ -1,7 +1,9 @@
 package com.ryan.safetynet.alerts.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import java.util.List;
 
 /**
@@ -11,9 +13,15 @@ import java.util.List;
  */
 @Getter
 @Setter
+@ToString
 public class FireStationDTO {
+    @JsonProperty("persons")
     private List<PersonDTO> persons;
+    
+    @JsonProperty("adultCount")
     private long adultCount;        
+    
+    @JsonProperty("childCount")
     private long childCount;       
 }
 

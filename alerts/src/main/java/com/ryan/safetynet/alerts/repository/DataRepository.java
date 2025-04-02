@@ -12,12 +12,17 @@ import com.ryan.safetynet.alerts.model.Data;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 @Component
 public class DataRepository {
@@ -62,22 +67,35 @@ public class DataRepository {
      */
     @PostConstruct
     public void loadData() {
-        File file = new File(dataFilePath);
         try {
-            if (file.exists()) {
-                // Désérialise le fichier JSON en objet Data
-                this.data = objectMapper.readValue(file, Data.class);
-                logger.info("Données chargées avec succès depuis {}", dataFilePath);
+            // Vérifier si le chemin est un classpath
+            if (dataFilePath.startsWith("classpath:")) {
+                String resourcePath = dataFilePath.substring("classpath:".length());
+                logger.info("Tentative de chargement depuis le classpath: {}", resourcePath);
+                
+                // Charger depuis le classpath
+                this.data = objectMapper.readValue(
+                    getClass().getClassLoader().getResourceAsStream(resourcePath),
+                    Data.class
+                );
+                logger.info("Données chargées avec succès depuis le classpath: {}", resourcePath);
             } else {
-                // Initialise avec des données vides si le fichier n'existe pas
-                this.data = new Data();
-                logger.warn("Fichier de données non trouvé à {}. Initialisation avec des données vides.", dataFilePath);
+                // Charger depuis un fichier
+                File file = new File(dataFilePath);
+                if (file.exists()) {
+                    this.data = objectMapper.readValue(file, Data.class);
+                    logger.info("Données chargées avec succès depuis le fichier: {}", dataFilePath);
+                } else {
+                    this.data = new Data();
+                    logger.warn("Fichier de données non trouvé à {}. Initialisation avec des données vides.", dataFilePath);
+                }
             }
         } catch (IOException e) {
             // Gère les erreurs pendant la lecture du fichier ou l'analyse JSON
             this.data = new Data();
-            logger.error("Échec du chargement des données depuis le fichier {}. Initialisation avec des données vides.", dataFilePath, e);
-            throw new DataLoadException("Échec du chargement des données depuis le fichier : " + dataFilePath, e);
+            logger.error("Échec du chargement des données depuis {}. Initialisation avec des données vides. Message d'erreur: {}", 
+                    dataFilePath, e.getMessage(), e);
+            throw new DataLoadException("Échec du chargement des données depuis : " + dataFilePath, e);
         }
     }
 
@@ -88,13 +106,26 @@ public class DataRepository {
      * @throws IOException si une erreur survient lors de l'écriture dans le fichier
      */
     public void saveData() throws IOException {
-        File file = new File(dataFilePath);
-        if (file.exists()) {
-            logger.warn("Écrasement du fichier de données existant : {}", dataFilePath);
+        String filePath;
+
+        // Traitement spécial pour classpath
+        if (dataFilePath.startsWith("classpath:")) {
+            String resourcePath = dataFilePath.substring("classpath:".length());
+            Resource resource = new ClassPathResource(resourcePath);
+            filePath = resource.getFile().getAbsolutePath(); // Chemin physique du fichier
+        } else {
+            filePath = dataFilePath;
         }
-        // Sérialise l'objet Data en fichier JSON
+
+        File file = new File(filePath);
+
+        // Backup et sauvegarde
+        if (file.exists()) {
+            Files.copy(file.toPath(), Path.of(filePath + ".backup"), StandardCopyOption.REPLACE_EXISTING);
+        }
+
         objectMapper.writeValue(file, data);
-        logger.info("Données sauvegardées avec succès dans {}", dataFilePath);
+        logger.info("Données sauvegardées dans {}", filePath);
     }
 
     /**
