@@ -3,9 +3,11 @@ package com.ryan.safetynet.alerts.service;
 import com.ryan.safetynet.alerts.dto.AddressInfoDTO;
 import com.ryan.safetynet.alerts.dto.FloodStationDTO;
 import com.ryan.safetynet.alerts.dto.PersonWithMedicalInfoDTO;
-import com.ryan.safetynet.alerts.model.*;
+import com.ryan.safetynet.alerts.model.Data;
+import com.ryan.safetynet.alerts.model.FireStation;
+import com.ryan.safetynet.alerts.model.Person;
 import com.ryan.safetynet.alerts.repository.DataRepository;
-import com.ryan.safetynet.alerts.utils.AgeCalculator;
+import com.ryan.safetynet.alerts.utils.MedicalRecordUtils;
 import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,30 +67,7 @@ public class FloodAlertService {
             List<Person> residents = entry.getValue();
 
             List<PersonWithMedicalInfoDTO> residentInfos = residents.stream()
-                    .map(person -> {
-                        Optional<MedicalRecord> medicalRecordOpt = data.getMedicalRecords().stream()
-                                .filter(mr -> mr.getFirstName().equals(person.getFirstName()) &&
-                                        mr.getLastName().equals(person.getLastName()))
-                                .findFirst();
-
-                        if (medicalRecordOpt.isEmpty()) {
-                            throw new IllegalStateException("Medical record not found for " +
-                                    person.getFirstName() + " " + person.getLastName());
-                        }
-
-                        MedicalRecord medicalRecord = medicalRecordOpt.get();
-                        int age = AgeCalculator.calculateAge(medicalRecord.getBirthdate());
-
-                        PersonWithMedicalInfoDTO dto = new PersonWithMedicalInfoDTO();
-                        dto.setFirstName(person.getFirstName());
-                        dto.setLastName(person.getLastName());
-                        dto.setPhone(person.getPhone());
-                        dto.setAge(age);
-                        dto.setMedications(medicalRecord.getMedications());
-                        dto.setAllergies(medicalRecord.getAllergies());
-
-                        return dto;
-                    })
+                    .map(person -> MedicalRecordUtils.extractMedicalInfo(person, data.getMedicalRecords()))
                     .collect(Collectors.toList());
 
             AddressInfoDTO addressInfo = new AddressInfoDTO();

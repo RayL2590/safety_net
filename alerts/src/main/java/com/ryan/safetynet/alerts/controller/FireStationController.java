@@ -3,7 +3,6 @@ package com.ryan.safetynet.alerts.controller;
 import com.ryan.safetynet.alerts.dto.FireStationDTO;
 import com.ryan.safetynet.alerts.dto.PersonDTO;
 import com.ryan.safetynet.alerts.model.FireStation;
-import com.ryan.safetynet.alerts.repository.DataRepository;
 import com.ryan.safetynet.alerts.service.FireStationCoverageService;
 import com.ryan.safetynet.alerts.service.FireStationService;
 import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
@@ -28,8 +27,7 @@ public class FireStationController {
 
     @Autowired
     public FireStationController(FireStationCoverageService fireStationCoverageService,
-                                 FireStationService fireStationService,
-                                 DataRepository dataRepository) {
+                                 FireStationService fireStationService) {
         this.fireStationCoverageService = fireStationCoverageService;
         this.fireStationService = fireStationService;
     }
@@ -57,15 +55,6 @@ public class FireStationController {
                     person.getLastName(),
                     person.getAge());
             }
-            
-            // Log pour afficher la structure JSON complète de la réponse
-            // try {
-            //     com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
-            //     String responseJson = mapper.writeValueAsString(response);
-            //     logger.info("Structure JSON complète de la réponse: {}", responseJson);
-            // } catch (Exception e) {
-            //     logger.error("Erreur lors de la sérialisation JSON", e);
-            // }
         }
 
         // Retourne la réponse avec un statut HTTP 200 (OK)
@@ -110,11 +99,10 @@ public class FireStationController {
      *
      * @param fireStationDTO DTO contenant les informations de mise à jour (adresse et nouveau numéro de station)
      * @return ResponseEntity contenant la caserne mise à jour
-     * @throws IOException en cas d'erreur lors de la persistance des données
      * @throws ResourceNotFoundException si aucune caserne n'est trouvée pour l'adresse spécifiée
      */
     @PutMapping
-    public ResponseEntity<FireStation> updateFireStation(@Valid @RequestBody FireStationInputDTO fireStationDTO) throws IOException {
+    public ResponseEntity<FireStation> updateFireStation(@Valid @RequestBody FireStationInputDTO fireStationDTO) {
         logger.info("Mise à jour du numéro de caserne pour l'adresse : {}", fireStationDTO.getAddress());
         
         FireStation fireStation = new FireStation();
@@ -142,7 +130,6 @@ public class FireStationController {
      * @param address adresse de la caserne à supprimer (optionnel)
      * @param station numéro de station des casernes à supprimer (optionnel)
      * @return ResponseEntity sans contenu en cas de succès
-     * @throws IOException en cas d'erreur lors de la persistance des données
      * @throws ResourceNotFoundException si aucune caserne n'est trouvée pour les critères spécifiés
      * @throws IllegalArgumentException si aucun paramètre n'est fourni
      */
@@ -150,7 +137,7 @@ public class FireStationController {
     public ResponseEntity<Void> deleteFireStation(
             @RequestParam(required = false) String address,
             @RequestParam(required = false) String station
-    ) throws IOException {
+    ) {
         if (address != null) {
             logger.info("Suppression du mapping pour l'adresse : {}", address);
             boolean deleted = fireStationService.deleteFireStationByAddress(address);

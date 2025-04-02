@@ -50,7 +50,7 @@ public class PhoneAlertService {
         List<String> addresses = fireStations.stream()
                 .filter(fs -> fs.getStation().equals(String.valueOf(stationNumber)))
                 .map(FireStation::getAddress)
-                .collect(Collectors.toList());
+                .toList();
 
         // Filtrage des personnes par adresse et extraction des numéros de téléphone uniques
         return persons.stream()

@@ -1,7 +1,12 @@
 package com.ryan.safetynet.alerts.utils;
 
+import com.ryan.safetynet.alerts.dto.PersonWithMedicalInfoDTO;
+import com.ryan.safetynet.alerts.model.MedicalRecord;
+import com.ryan.safetynet.alerts.model.Person;
+
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Classe utilitaire pour la manipulation des dossiers médicaux.
@@ -35,5 +40,38 @@ public class MedicalRecordUtils {
                 .map(com.ryan.safetynet.alerts.model.MedicalRecord::getBirthdate)
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException("Dossier médical non trouvé pour " + firstName + " " + lastName));
+    }
+
+    /**
+     * Extrait les informations médicales d'une personne et crée un DTO avec ces informations.
+     *
+     * @param person la personne dont on veut extraire les informations
+     * @param medicalRecords la liste des dossiers médicaux
+     * @return un DTO contenant les informations de la personne avec ses données médicales
+     * @throws IllegalStateException si le dossier médical n'est pas trouvé
+     */
+    public static PersonWithMedicalInfoDTO extractMedicalInfo(Person person, List<MedicalRecord> medicalRecords) {
+        Optional<MedicalRecord> medicalRecordOpt = medicalRecords.stream()
+                .filter(mr -> mr.getFirstName().equals(person.getFirstName()) &&
+                        mr.getLastName().equals(person.getLastName()))
+                .findFirst();
+
+        if (medicalRecordOpt.isEmpty()) {
+            throw new IllegalStateException("Dossier médical non trouvé pour " +
+                    person.getFirstName() + " " + person.getLastName());
+        }
+
+        MedicalRecord medicalRecord = medicalRecordOpt.get();
+        int age = AgeCalculator.calculateAge(medicalRecord.getBirthdate());
+
+        PersonWithMedicalInfoDTO dto = new PersonWithMedicalInfoDTO();
+        dto.setFirstName(person.getFirstName());
+        dto.setLastName(person.getLastName());
+        dto.setPhone(person.getPhone());
+        dto.setAge(age);
+        dto.setMedications(medicalRecord.getMedications());
+        dto.setAllergies(medicalRecord.getAllergies());
+
+        return dto;
     }
 }

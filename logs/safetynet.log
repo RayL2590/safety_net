@@ -23,3 +23,117 @@
 2025-04-02T12:38:55.862+02:00  INFO 37968 --- [alerts] [http-nio-8080-exec-5] c.r.s.a.controller.PhoneAlertController  : Nombre de numéros de téléphone trouvés : 4
 2025-04-02T12:39:02.735+02:00  INFO 37968 --- [alerts] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
 2025-04-02T12:39:02.740+02:00  INFO 37968 --- [alerts] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-02T16:15:53.666+02:00  INFO 15908 --- [alerts] [main] c.r.safetynet.alerts.AlertsApplication   : Starting AlertsApplication using Java 22.0.1 with PID 15908 (G:\xamp\htdocs\safety_net\alerts\target\classes started by Mayar in G:\xamp\htdocs\safety_net)
+2025-04-02T16:15:53.667+02:00 DEBUG 15908 --- [alerts] [main] c.r.safetynet.alerts.AlertsApplication   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-04-02T16:15:53.668+02:00  INFO 15908 --- [alerts] [main] c.r.safetynet.alerts.AlertsApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-02T16:15:54.167+02:00  INFO 15908 --- [alerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-02T16:15:54.173+02:00  INFO 15908 --- [alerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-02T16:15:54.174+02:00  INFO 15908 --- [alerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-02T16:15:54.197+02:00  INFO 15908 --- [alerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-02T16:15:54.197+02:00  INFO 15908 --- [alerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 504 ms
+2025-04-02T16:15:54.228+02:00  INFO 15908 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Tentative de chargement depuis le classpath: data.json
+2025-04-02T16:15:54.263+02:00  INFO 15908 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis le classpath: data.json
+2025-04-02T16:15:54.426+02:00  INFO 15908 --- [alerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-02T16:15:54.429+02:00  INFO 15908 --- [alerts] [main] c.r.safetynet.alerts.AlertsApplication   : Started AlertsApplication in 1.006 seconds (process running for 1.298)
+2025-04-02T16:16:13.529+02:00  INFO 15908 --- [alerts] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-02T16:16:13.529+02:00  INFO 15908 --- [alerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-02T16:16:13.529+02:00  INFO 15908 --- [alerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-02T16:16:13.549+02:00  INFO 15908 --- [alerts] [http-nio-8080-exec-2] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 1
+2025-04-02T16:16:13.550+02:00  INFO 15908 --- [alerts] [http-nio-8080-exec-2] c.r.s.a.controller.PhoneAlertController  : Nombre de numéros de téléphone trouvés : 4
+2025-04-02T16:16:20.068+02:00  INFO 15908 --- [alerts] [http-nio-8080-exec-3] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : Warren Zemicks
+2025-04-02T16:16:20.069+02:00  INFO 15908 --- [alerts] [http-nio-8080-exec-3] c.r.s.a.controller.PersonInfoController  : Personne trouvée : Warren Zemicks
+2025-04-02T16:17:19.984+02:00  INFO 15908 --- [alerts] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-02T16:17:19.988+02:00  INFO 15908 --- [alerts] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-02T17:08:37.047+02:00  INFO 6608 --- [alerts] [main] c.r.safetynet.alerts.AlertsApplication   : Starting AlertsApplication using Java 22.0.1 with PID 6608 (G:\xamp\htdocs\safety_net\alerts\target\classes started by Mayar in G:\xamp\htdocs\safety_net)
+2025-04-02T17:08:37.048+02:00 DEBUG 6608 --- [alerts] [main] c.r.safetynet.alerts.AlertsApplication   : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-04-02T17:08:37.049+02:00  INFO 6608 --- [alerts] [main] c.r.safetynet.alerts.AlertsApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-02T17:08:37.469+02:00  INFO 6608 --- [alerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-02T17:08:37.475+02:00  INFO 6608 --- [alerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-02T17:08:37.476+02:00  INFO 6608 --- [alerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-02T17:08:37.496+02:00  INFO 6608 --- [alerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-02T17:08:37.496+02:00  INFO 6608 --- [alerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 423 ms
+2025-04-02T17:08:37.525+02:00  INFO 6608 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Tentative de chargement depuis le classpath: data.json
+2025-04-02T17:08:37.559+02:00  INFO 6608 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis le classpath: data.json
+2025-04-02T17:08:37.711+02:00  INFO 6608 --- [alerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-02T17:08:37.715+02:00  INFO 6608 --- [alerts] [main] c.r.safetynet.alerts.AlertsApplication   : Started AlertsApplication in 0.878 seconds (process running for 1.152)
+2025-04-02T17:08:42.531+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-02T17:08:42.532+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-02T17:08:42.532+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-02T17:08:42.548+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-1] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : Warren Zemicks
+2025-04-02T17:08:42.548+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-1] c.r.s.a.controller.PersonInfoController  : Personne trouvée : Warren Zemicks
+2025-04-02T17:08:47.153+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-3] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : Warren Zemick
+2025-04-02T17:08:47.153+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-3] c.r.s.a.controller.PersonInfoController  : Aucune personne trouvée : Warren Zemick
+2025-04-02T17:08:52.921+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-4] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : Warren Zemicks
+2025-04-02T17:08:52.922+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-4] c.r.s.a.controller.PersonInfoController  : Personne trouvée : Warren Zemicks
+2025-04-02T17:08:56.521+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-5] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 1
+2025-04-02T17:08:56.521+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-5] c.r.s.a.controller.PhoneAlertController  : Nombre de numéros de téléphone trouvés : 4
+2025-04-02T17:09:00.898+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-6] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 10
+2025-04-02T17:09:00.899+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-6] c.r.s.a.controller.PhoneAlertController  : Aucun numéro de téléphone trouvé pour la station : 10
+2025-04-02T17:09:20.104+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.controller.PersonController      : Ajout d'une nouvelle personne : Jean DeLaMairie
+2025-04-02T17:09:20.114+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.alerts.repository.DataRepository   : Données sauvegardées dans G:\xamp\htdocs\safety_net\alerts\target\classes\data.json
+2025-04-02T17:09:40.960+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-9] c.r.s.a.controller.PersonController      : Mise à jour de la personne : Jean Delamairie
+2025-04-02T17:09:40.962+02:00  WARN 6608 --- [alerts] [http-nio-8080-exec-9] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: Personne non trouvée pour mise à jour : Jean Delamairie
+2025-04-02T17:10:03.666+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-10] c.r.s.a.controller.PersonController      : Mise à jour de la personne : Jean DeLaMairie
+2025-04-02T17:10:03.667+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-10] c.r.s.alerts.repository.DataRepository   : Données sauvegardées dans G:\xamp\htdocs\safety_net\alerts\target\classes\data.json
+2025-04-02T17:10:12.630+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-7] c.r.s.a.controller.PersonController      : Suppression de la personne : Jean DeLaMairie
+2025-04-02T17:10:12.632+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-7] c.r.s.alerts.repository.DataRepository   : Données sauvegardées dans G:\xamp\htdocs\safety_net\alerts\target\classes\data.json
+2025-04-02T17:10:16.358+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-2] c.r.s.a.controller.PersonController      : Suppression de la personne : Jean DeLaMairie
+2025-04-02T17:10:16.359+02:00  WARN 6608 --- [alerts] [http-nio-8080-exec-2] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: Personne non trouvée : Jean DeLaMairie
+2025-04-02T17:10:32.535+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-1] c.r.s.a.c.FireStationController          : Tentative d'ajout du mapping caserne/adresse : Station=2, Adresse=144 2532514564 Road
+2025-04-02T17:10:32.538+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-1] c.r.s.alerts.repository.DataRepository   : Données sauvegardées dans G:\xamp\htdocs\safety_net\alerts\target\classes\data.json
+2025-04-02T17:10:32.538+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-1] c.r.s.a.c.FireStationController          : Mapping caserne/adresse créé avec succès
+2025-04-02T17:11:08.031+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-3] c.r.s.a.c.FireStationController          : Mise à jour du numéro de caserne pour l'adresse : 144 2532514564 Road
+2025-04-02T17:11:08.032+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-3] c.r.s.alerts.repository.DataRepository   : Données sauvegardées dans G:\xamp\htdocs\safety_net\alerts\target\classes\data.json
+2025-04-02T17:11:17.706+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-4] c.r.s.a.c.FireStationController          : Suppression du mapping pour l'adresse : 144 2532514564 Road
+2025-04-02T17:11:20.874+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-5] c.r.s.a.c.FireStationController          : Suppression du mapping pour l'adresse : 144 2532514564 Road
+2025-04-02T17:11:20.875+02:00  WARN 6608 --- [alerts] [http-nio-8080-exec-5] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: Aucune caserne trouvée pour l'adresse : 144 2532514564 Road
+2025-04-02T17:11:33.541+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-6] c.r.s.a.c.MedicalRecordController        : Recherche du dossier médical pour : Sophia Zemicks
+2025-04-02T17:11:38.412+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Recherche des personnes couvertes par la station n° 3
+2025-04-02T17:11:38.412+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Nombre total de personnes: 23
+2025-04-02T17:11:38.412+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Nombre total de fireStations: 13
+2025-04-02T17:11:38.412+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Nombre total de dossiers médicaux: 23
+2025-04-02T17:11:38.412+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Adresses couvertes par la station 3: [1509 Culver St, 834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl, 748 Townings Dr]
+2025-04-02T17:11:38.412+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: John Boyd à 1509 Culver St
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour John Boyd: 41
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Jacob Boyd à 1509 Culver St
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Jacob Boyd: 36
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Tenley Boyd à 1509 Culver St
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Tenley Boyd: 13
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Roger Boyd à 1509 Culver St
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Roger Boyd: 7
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Felicia Boyd à 1509 Culver St
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Felicia Boyd: 39
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Tessa Carman à 834 Binoc Ave
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Tessa Carman: 13
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Foster Shepard à 748 Townings Dr
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Foster Shepard: 45
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Tony Cooper à 112 Steppes Pl
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Tony Cooper: 31
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Ron Peters à 112 Steppes Pl
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Ron Peters: 59
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Allison Boyd à 112 Steppes Pl
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Allison Boyd: 60
+2025-04-02T17:11:38.413+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Clive Ferguson à 748 Townings Dr
+2025-04-02T17:11:38.414+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Clive Ferguson: 31
+2025-04-02T17:11:38.414+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Nombre de personnes couvertes trouvées: 11
+2025-04-02T17:11:38.414+02:00 DEBUG 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.s.FireStationCoverageService     : Nombre d'adultes: 8, Nombre d'enfants: 3
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Nombre de personnes dans la réponse: 11
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: John Boyd, Âge: 41
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Jacob Boyd, Âge: 36
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Tenley Boyd, Âge: 13
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Roger Boyd, Âge: 7
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Felicia Boyd, Âge: 39
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Tessa Carman, Âge: 13
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Foster Shepard, Âge: 45
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Tony Cooper, Âge: 31
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Ron Peters, Âge: 59
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Allison Boyd, Âge: 60
+2025-04-02T17:11:38.414+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-8] c.r.s.a.c.FireStationController          : Personne: Clive Ferguson, Âge: 31
+2025-04-02T17:11:41.568+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-9] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : Culver
+2025-04-02T17:11:41.569+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-9] c.r.s.a.c.CommunityEmailController       : Nombre d'emails trouvés : 15
+2025-04-02T17:11:44.028+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-10] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : Warren Zemicks
+2025-04-02T17:11:44.028+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-10] c.r.s.a.controller.PersonInfoController  : Personne trouvée : Warren Zemicks
+2025-04-02T17:11:46.742+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-7] c.r.s.a.controller.FloodAlertController  : Requête reçue pour les stations : [1, 2]
+2025-04-02T17:11:46.745+02:00  INFO 6608 --- [alerts] [http-nio-8080-exec-7] c.r.s.a.controller.FloodAlertController  : Nombre d'adresses trouvées : 6
+2025-04-02T17:11:54.323+02:00  INFO 6608 --- [alerts] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-02T17:11:54.328+02:00  INFO 6608 --- [alerts] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

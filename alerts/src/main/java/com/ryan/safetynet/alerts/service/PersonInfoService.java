@@ -1,11 +1,11 @@
 package com.ryan.safetynet.alerts.service;
 
 import com.ryan.safetynet.alerts.dto.PersonInfoDTO;
+import com.ryan.safetynet.alerts.dto.PersonWithMedicalInfoDTO;
 import com.ryan.safetynet.alerts.model.Data;
-import com.ryan.safetynet.alerts.model.MedicalRecord;
 import com.ryan.safetynet.alerts.model.Person;
 import com.ryan.safetynet.alerts.repository.DataRepository;
-import com.ryan.safetynet.alerts.utils.AgeCalculator;
+import com.ryan.safetynet.alerts.utils.MedicalRecordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,27 +41,16 @@ public class PersonInfoService {
         }
 
         Person person = personOpt.get();
-        Optional<MedicalRecord> medicalRecordOpt = data.getMedicalRecords().stream()
-                .filter(mr -> mr.getFirstName().equalsIgnoreCase(firstName) &&
-                        mr.getLastName().equalsIgnoreCase(lastName))
-                .findFirst();
-
-        if (medicalRecordOpt.isEmpty()) {
-            throw new IllegalStateException("Dossier médical non trouvé pour " +
-                    firstName + " " + lastName);
-        }
-
-        MedicalRecord medicalRecord = medicalRecordOpt.get();
-        int age = AgeCalculator.calculateAge(medicalRecord.getBirthdate());
+        PersonWithMedicalInfoDTO medicalInfo = MedicalRecordUtils.extractMedicalInfo(person, data.getMedicalRecords());
 
         PersonInfoDTO dto = new PersonInfoDTO();
         dto.setFirstName(person.getFirstName());
         dto.setLastName(person.getLastName());
         dto.setAddress(person.getAddress());
         dto.setEmail(person.getEmail());
-        dto.setAge(age);
-        dto.setMedications(medicalRecord.getMedications());
-        dto.setAllergies(medicalRecord.getAllergies());
+        dto.setAge(medicalInfo.getAge());
+        dto.setMedications(medicalInfo.getMedications());
+        dto.setAllergies(medicalInfo.getAllergies());
 
         return dto;
     }

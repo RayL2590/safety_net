@@ -23,13 +23,6 @@ public class MedicalRecordService {
     }
 
     /**
-     * @return la liste des dossiers médicaux
-     */
-    public List<MedicalRecord> getAllMedicalRecords() {
-        return dataRepository.getData().getMedicalRecords();
-    }
-
-    /**
      * @param firstName Prénom
      * @param lastName Nom
      * @return Un optional contenant le dossier médical trouvé ou vide si le dossier n'existe pas
@@ -73,6 +66,7 @@ public class MedicalRecordService {
             m.setBirthdate(medicalRecord.getBirthdate());
             m.setMedications(medicalRecord.getMedications());
             m.setAllergies(medicalRecord.getAllergies());
+            dataRepository.saveData();
             return m;
         }
         return null;

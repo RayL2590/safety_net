@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class FireStationService {
@@ -25,12 +23,6 @@ public class FireStationService {
         this.validator = validator;
     }
 
-    /**
-     * @return la liste de toutes les casernes de pompiers
-     */
-    public List<FireStation> getAllFireStations() {
-        return dataRepository.getData().getFireStations();
-    }
 
     /**
      * @param address L'adresse de la caserne
@@ -40,16 +32,6 @@ public class FireStationService {
         return dataRepository.getData().getFireStations().stream()
                 .filter(f -> f.getAddress().equals(address))
                 .findFirst();
-    }
-
-    /**
-     * @param station Le numéro de la caserne
-     * @return La liste des casernes correspondant au numéro de station
-     */
-    public List<FireStation> findFireStationsByStation(String station) {
-        return dataRepository.getData().getFireStations().stream()
-                .filter(f -> f.getStation().equals(station))
-                .collect(Collectors.toList());
     }
 
     /**
@@ -133,14 +115,4 @@ public class FireStationService {
                 .anyMatch(fs -> fs.getStation().equals(stationNumber));
     }
 
-    /**
-     * Récupère l'ensemble des numéros de stations existants.
-     *
-     * @return Set des numéros de stations existants
-     */
-    public Set<String> getAllStationNumbers() {
-        return dataRepository.getData().getFireStations().stream()
-                .map(FireStation::getStation)
-                .collect(Collectors.toSet());
-    }
 }

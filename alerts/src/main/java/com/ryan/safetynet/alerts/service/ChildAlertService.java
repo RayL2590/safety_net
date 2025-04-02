@@ -3,19 +3,19 @@ package com.ryan.safetynet.alerts.service;
 import com.ryan.safetynet.alerts.dto.ChildAlertDTO;
 import com.ryan.safetynet.alerts.dto.ChildDTO;
 import com.ryan.safetynet.alerts.dto.HouseholdMemberDTO;
+import com.ryan.safetynet.alerts.dto.PersonWithMedicalInfoDTO;
 import com.ryan.safetynet.alerts.model.Data;
 import com.ryan.safetynet.alerts.model.MedicalRecord;
 import com.ryan.safetynet.alerts.model.Person;
 import com.ryan.safetynet.alerts.repository.DataRepository;
+import com.ryan.safetynet.alerts.utils.MedicalRecordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.ryan.safetynet.alerts.utils.AgeCalculator;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Service gérant les alertes concernant les enfants.
@@ -62,17 +62,10 @@ public class ChildAlertService {
             logger.debug("Nombre total de personnes: {}", persons.size());
             logger.debug("Nombre total de dossiers médicaux: {}", medicalRecords.size());
 
-            // Créer une map des dossiers médicaux pour un accès rapide
-            Map<String, MedicalRecord> medicalRecordsMap = medicalRecords.stream()
-                    .collect(Collectors.toMap(
-                            record -> record.getFirstName() + record.getLastName(),
-                            record -> record
-                    ));
-
             // Trouver toutes les personnes à cette adresse
             List<Person> personsAtAddress = persons.stream()
                     .filter(p -> p.getAddress().equals(address))
-                    .collect(Collectors.toList());
+                    .toList();
 
             if (personsAtAddress.isEmpty()) {
                 logger.info("Aucune personne trouvée à l'adresse: {}", address);
@@ -89,14 +82,8 @@ public class ChildAlertService {
             for (Person person : personsAtAddress) {
                 try {
                     // Récupération du dossier médical pour calculer l'âge
-                    MedicalRecord record = medicalRecordsMap.get(person.getFirstName() + person.getLastName());
-                    if (record == null) {
-                        logger.warn("Dossier médical non trouvé pour: {} {}", person.getFirstName(), person.getLastName());
-                        continue;
-                    }
-
-                    // Calcul de l'âge de la personne
-                    int age = AgeCalculator.calculateAge(record.getBirthdate());
+                    PersonWithMedicalInfoDTO medicalInfo = MedicalRecordUtils.extractMedicalInfo(person, medicalRecords);
+                    int age = medicalInfo.getAge();
                     logger.debug("Âge calculé pour {} {}: {}", person.getFirstName(), person.getLastName(), age);
 
                     // Classification de la personne selon son âge

@@ -45,6 +45,22 @@ public class MedicalRecordController {
     }
 
     /**
+     * Crée un objet MedicalRecord à partir d'un DTO.
+     *
+     * @param medicalRecordDTO le DTO contenant les informations du dossier médical
+     * @return un objet MedicalRecord initialisé avec les données du DTO
+     */
+    private MedicalRecord createMedicalRecordFromDTO(MedicalRecordInputDTO medicalRecordDTO) {
+        MedicalRecord medicalRecord = new MedicalRecord();
+        medicalRecord.setFirstName(medicalRecordDTO.getFirstName());
+        medicalRecord.setLastName(medicalRecordDTO.getLastName());
+        medicalRecord.setBirthdate(LocalDate.parse(medicalRecordDTO.getBirthdate(), dateFormatter));
+        medicalRecord.setMedications(medicalRecordDTO.getMedications());
+        medicalRecord.setAllergies(medicalRecordDTO.getAllergies());
+        return medicalRecord;
+    }
+
+    /**
      * Ajoute un nouveau dossier médical dans le système.
      * Cette méthode crée un nouveau dossier médical à partir des informations fournies
      * dans le DTO et le persiste dans le système.
@@ -58,13 +74,7 @@ public class MedicalRecordController {
         logger.info("Ajout d'un nouveau dossier médical : {} {}",
                 medicalRecordDTO.getFirstName(), medicalRecordDTO.getLastName());
 
-        MedicalRecord medicalRecord = new MedicalRecord();
-        medicalRecord.setFirstName(medicalRecordDTO.getFirstName());
-        medicalRecord.setLastName(medicalRecordDTO.getLastName());
-        medicalRecord.setBirthdate(LocalDate.parse(medicalRecordDTO.getBirthdate(), dateFormatter));
-        medicalRecord.setMedications(medicalRecordDTO.getMedications());
-        medicalRecord.setAllergies(medicalRecordDTO.getAllergies());
-
+        MedicalRecord medicalRecord = createMedicalRecordFromDTO(medicalRecordDTO);
         MedicalRecord createdRecord = medicalRecordService.addMedicalRecord(medicalRecord);
         return new ResponseEntity<>(createdRecord, HttpStatus.CREATED);
     }
@@ -84,13 +94,7 @@ public class MedicalRecordController {
         logger.info("Mise à jour du dossier médical pour : {} {}",
                 medicalRecordDTO.getFirstName(), medicalRecordDTO.getLastName());
 
-        MedicalRecord medicalRecord = new MedicalRecord();
-        medicalRecord.setFirstName(medicalRecordDTO.getFirstName());
-        medicalRecord.setLastName(medicalRecordDTO.getLastName());
-        medicalRecord.setBirthdate(LocalDate.parse(medicalRecordDTO.getBirthdate(), dateFormatter));
-        medicalRecord.setMedications(medicalRecordDTO.getMedications());
-        medicalRecord.setAllergies(medicalRecordDTO.getAllergies());
-
+        MedicalRecord medicalRecord = createMedicalRecordFromDTO(medicalRecordDTO);
         MedicalRecord updatedRecord = medicalRecordService.updateMedicalRecord(
                 medicalRecordDTO.getFirstName(),
                 medicalRecordDTO.getLastName(),
@@ -114,11 +118,10 @@ public class MedicalRecordController {
      * @param firstName prénom de la personne dont le dossier médical doit être supprimé
      * @param lastName nom de la personne dont le dossier médical doit être supprimé
      * @return ResponseEntity sans contenu avec le statut HTTP 204 (No Content) en cas de succès
-     * @throws IOException en cas d'erreur lors de la persistance des données
      * @throws ResourceNotFoundException si le dossier médical n'est pas trouvé
      */
     @DeleteMapping
-    public ResponseEntity<Void> deleteMedicalRecord(@RequestParam String firstName, @RequestParam String lastName) throws IOException {
+    public ResponseEntity<Void> deleteMedicalRecord(@RequestParam String firstName, @RequestParam String lastName)  {
         logger.info("Suppression du dossier médical pour : {} {}", firstName, lastName);
 
         boolean deleted = medicalRecordService.deleteMedicalRecord(firstName, lastName);

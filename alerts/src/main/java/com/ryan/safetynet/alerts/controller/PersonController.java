@@ -41,6 +41,24 @@ public class PersonController {
     }
 
     /**
+     * Crée un objet Person à partir d'un DTO.
+     *
+     * @param personDTO le DTO contenant les informations de la personne
+     * @return un objet Person initialisé avec les données du DTO
+     */
+    private Person createPersonFromDTO(PersonInputDTO personDTO) {
+        Person person = new Person();
+        person.setFirstName(personDTO.getFirstName());
+        person.setLastName(personDTO.getLastName());
+        person.setAddress(personDTO.getAddress());
+        person.setCity(personDTO.getCity());
+        person.setZip(personDTO.getZip());
+        person.setPhone(personDTO.getPhone());
+        person.setEmail(personDTO.getEmail());
+        return person;
+    }
+
+    /**
      * Ajoute une nouvelle personne dans le système.
      * Cette méthode crée un nouveau profil de personne à partir des informations
      * fournies dans le DTO et le persiste dans le système.
@@ -51,16 +69,10 @@ public class PersonController {
      */
     @PostMapping
     public ResponseEntity<Person> addPerson(@Valid @RequestBody PersonInputDTO personDTO) throws IOException {
-        logger.info("Ajout d'une nouvelle personne : {} {}", personDTO.getFirstName(), personDTO.getLastName());
-        Person person = new Person();
-        person.setFirstName(personDTO.getFirstName());
-        person.setLastName(personDTO.getLastName());
-        person.setAddress(personDTO.getAddress());
-        person.setCity(personDTO.getCity());
-        person.setZip(personDTO.getZip());
-        person.setPhone(personDTO.getPhone());
-        person.setEmail(personDTO.getEmail());
-        
+        logger.info("Ajout d'une nouvelle personne : {} {}", 
+                personDTO.getFirstName(), personDTO.getLastName());
+
+        Person person = createPersonFromDTO(personDTO);
         Person createdPerson = personService.addPerson(person);
         return new ResponseEntity<>(createdPerson, HttpStatus.CREATED);
     }
@@ -77,16 +89,10 @@ public class PersonController {
      */
     @PutMapping
     public ResponseEntity<Person> updatePerson(@Valid @RequestBody PersonInputDTO personDTO) throws IOException {
-        logger.info("Mise à jour de la personne : {} {}", personDTO.getFirstName(), personDTO.getLastName());
-        Person person = new Person();
-        person.setFirstName(personDTO.getFirstName());
-        person.setLastName(personDTO.getLastName());
-        person.setAddress(personDTO.getAddress());
-        person.setCity(personDTO.getCity());
-        person.setZip(personDTO.getZip());
-        person.setPhone(personDTO.getPhone());
-        person.setEmail(personDTO.getEmail());
-        
+        logger.info("Mise à jour de la personne : {} {}", 
+                personDTO.getFirstName(), personDTO.getLastName());
+
+        Person person = createPersonFromDTO(personDTO);
         Person updatedPerson = personService.updatePerson(
                 personDTO.getFirstName(),
                 personDTO.getLastName(),
@@ -95,7 +101,8 @@ public class PersonController {
 
         if (updatedPerson == null) {
             throw new ResourceNotFoundException(
-                String.format("Personne non trouvée : %s %s", personDTO.getFirstName(), personDTO.getLastName())
+                String.format("Personne non trouvée pour mise à jour : %s %s",
+                    personDTO.getFirstName(), personDTO.getLastName())
             );
         }
 

@@ -4,9 +4,7 @@ import com.ryan.safetynet.alerts.dto.FireAlertDTO;
 import com.ryan.safetynet.alerts.dto.PersonWithMedicalInfoDTO;
 import com.ryan.safetynet.alerts.model.*;
 import com.ryan.safetynet.alerts.repository.DataRepository;
-import com.ryan.safetynet.alerts.utils.AgeCalculator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.ryan.safetynet.alerts.utils.MedicalRecordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +21,6 @@ import java.util.stream.Collectors;
 @Service
 public class FireAlertService {
 
-    private final Logger logger = LoggerFactory.getLogger(FireAlertService.class);
     private final DataRepository dataRepository;
 
     /**
@@ -59,33 +56,7 @@ public class FireAlertService {
         // Filtrage et transformation des résidents avec leurs informations médicales
         List<PersonWithMedicalInfoDTO> residents = persons.stream()
                 .filter(p -> p.getAddress().equals(address))
-                .map(p -> {
-                    // Recherche du dossier médical correspondant
-                    Optional<MedicalRecord> medicalRecordOpt = medicalRecords.stream()
-                            .filter(mr -> mr.getFirstName().equals(p.getFirstName()) &&
-                                    mr.getLastName().equals(p.getLastName()))
-                            .findFirst();
-
-                    if (medicalRecordOpt.isEmpty()) {
-                        logger.warn("Aucun dossier médical trouvé pour {} {}", p.getFirstName(), p.getLastName());
-                        throw new IllegalStateException("Medical record non trouvé pour " +
-                                p.getFirstName() + " " + p.getLastName());
-                    }
-
-                    // Création du DTO avec les informations du résident
-                    MedicalRecord medicalRecord = medicalRecordOpt.get();
-                    int age = AgeCalculator.calculateAge(medicalRecord.getBirthdate());
-
-                    PersonWithMedicalInfoDTO dto = new PersonWithMedicalInfoDTO();
-                    dto.setFirstName(p.getFirstName());
-                    dto.setLastName(p.getLastName());
-                    dto.setPhone(p.getPhone());
-                    dto.setAge(age);
-                    dto.setMedications(medicalRecord.getMedications());
-                    dto.setAllergies(medicalRecord.getAllergies());
-
-                    return dto;
-                })
+                .map(p -> MedicalRecordUtils.extractMedicalInfo(p, medicalRecords))
                 .collect(Collectors.toList());
 
         // Recherche de la caserne de pompiers responsable de l'adresse
