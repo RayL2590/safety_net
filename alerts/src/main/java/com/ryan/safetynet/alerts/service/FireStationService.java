@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class FireStationService {
@@ -23,6 +25,34 @@ public class FireStationService {
         this.validator = validator;
     }
 
+    /**
+     * Récupère les adresses couvertes par une liste de stations de pompiers.
+     * Cette méthode centralise la logique d'extraction d'adresses pour éviter
+     * la duplication de code dans les différents services.
+     *
+     * @param stationNumbers Liste des numéros de stations
+     * @return Liste des adresses couvertes par ces stations
+     */
+    public List<String> getAddressesCoveredByStations(List<Integer> stationNumbers) {
+        return dataRepository.getData().getFireStations().stream()
+                .filter(fs -> stationNumbers.contains(Integer.valueOf(fs.getStation())))
+                .map(FireStation::getAddress)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Récupère les adresses couvertes par une station de pompiers.
+     * Surcharge pour faciliter l'utilisation avec un seul numéro de station.
+     *
+     * @param stationNumber Numéro de la station
+     * @return Liste des adresses couvertes par cette station
+     */
+    public List<String> getAddressesCoveredByStation(Integer stationNumber) {
+        return dataRepository.getData().getFireStations().stream()
+                .filter(fs -> fs.getStation().equals(String.valueOf(stationNumber)))
+                .map(FireStation::getAddress)
+                .collect(Collectors.toList());
+    }
 
     /**
      * @param address L'adresse de la caserne

@@ -22,10 +22,12 @@ public class FireStationCoverageService {
 
     private final Logger logger = LoggerFactory.getLogger(FireStationCoverageService.class);
     private final DataRepository dataRepository;
+    private final FireStationService fireStationService;
 
     @Autowired
-    public FireStationCoverageService(DataRepository dataRepository) {
+    public FireStationCoverageService(DataRepository dataRepository, FireStationService fireStationService) {
         this.dataRepository = dataRepository;
+        this.fireStationService = fireStationService;
     }
 
     /**
@@ -38,19 +40,14 @@ public class FireStationCoverageService {
         // Récupérer les données une seule fois
         Data data = dataRepository.getData();
         List<Person> persons = data.getPersons();
-        List<FireStation> fireStations = data.getFireStations();
         List<MedicalRecord> medicalRecords = data.getMedicalRecords();
 
         logger.debug("Recherche des personnes couvertes par la station n° {}", stationNumber);
         logger.debug("Nombre total de personnes: {}", persons.size());
-        logger.debug("Nombre total de fireStations: {}", fireStations.size());
         logger.debug("Nombre total de dossiers médicaux: {}", medicalRecords.size());
 
-        // Trouver les adresses couvertes par la station
-        List<String> addresses = fireStations.stream()
-                .filter(fs -> fs.getStation().equals(String.valueOf(stationNumber)))
-                .map(FireStation::getAddress)
-                .collect(Collectors.toList());
+        // Trouver les adresses couvertes par la station en utilisant le service centralisé
+        List<String> addresses = fireStationService.getAddressesCoveredByStation(stationNumber);
 
         logger.debug("Adresses couvertes par la station {}: {}", stationNumber, addresses);
 

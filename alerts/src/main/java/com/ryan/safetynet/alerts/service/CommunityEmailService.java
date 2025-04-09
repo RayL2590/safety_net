@@ -49,7 +49,7 @@ public class CommunityEmailService {
         List<String> emails = data.getPersons().stream()
                 .filter(p -> p.getCity().equalsIgnoreCase(city))
                 .map(Person::getEmail)
-                .distinct() // Élimination des doublons
+                .distinct()
                 .collect(Collectors.toList());
 
         // Construction de la réponse

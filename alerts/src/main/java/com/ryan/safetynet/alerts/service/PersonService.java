@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PersonService {
@@ -29,6 +31,33 @@ public class PersonService {
      */
     public List<Person> getAllPersons() {
         return dataRepository.getData().getPersons();
+    }
+
+    /**
+     * Récupère toutes les personnes groupées par adresse.
+     * Cette méthode filtre les personnes par une liste d'adresses
+     * et retourne une Map avec l'adresse comme clé et la liste
+     * des personnes qui y habitent comme valeur.
+     *
+     * @param addresses Liste des adresses à filtrer
+     * @return Map des personnes regroupées par adresse
+     */
+    public Map<String, List<Person>> getPersonsByAddresses(List<String> addresses) {
+        return dataRepository.getData().getPersons().stream()
+                .filter(p -> addresses.contains(p.getAddress()))
+                .collect(Collectors.groupingBy(Person::getAddress));
+    }
+
+    /**
+     * Récupère toutes les personnes habitant à une adresse spécifique.
+     *
+     * @param address L'adresse à filtrer
+     * @return Liste des personnes habitant à cette adresse
+     */
+    public List<Person> getPersonsByAddress(String address) {
+        return dataRepository.getData().getPersons().stream()
+                .filter(p -> p.getAddress().equals(address))
+                .collect(Collectors.toList());
     }
 
     /**

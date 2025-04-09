@@ -29,15 +29,18 @@ public class ChildAlertService {
 
     private final Logger logger = LoggerFactory.getLogger(ChildAlertService.class);
     private final DataRepository dataRepository;
+    private final PersonService personService;
 
     /**
      * Constructeur du service avec injection de dépendance du repository.
      *
      * @param dataRepository le repository contenant les données de l'application
+     * @param personService le service gérant les personnes
      */
     @Autowired
-    public ChildAlertService(DataRepository dataRepository) {
+    public ChildAlertService(DataRepository dataRepository, PersonService personService) {
         this.dataRepository = dataRepository;
+        this.personService = personService;
     }
 
     /**
@@ -56,16 +59,11 @@ public class ChildAlertService {
         try {
             // Récupérer les données une seule fois
             Data data = dataRepository.getData();
-            List<Person> persons = data.getPersons();
             List<MedicalRecord> medicalRecords = data.getMedicalRecords();
-
-            logger.debug("Nombre total de personnes: {}", persons.size());
             logger.debug("Nombre total de dossiers médicaux: {}", medicalRecords.size());
 
-            // Trouver toutes les personnes à cette adresse
-            List<Person> personsAtAddress = persons.stream()
-                    .filter(p -> p.getAddress().equals(address))
-                    .toList();
+            // Trouver toutes les personnes à cette adresse en utilisant PersonService
+            List<Person> personsAtAddress = personService.getPersonsByAddress(address);
 
             if (personsAtAddress.isEmpty()) {
                 logger.info("Aucune personne trouvée à l'adresse: {}", address);
