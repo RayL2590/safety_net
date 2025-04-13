@@ -26,12 +26,6 @@ public class PersonService {
         this.validator = validator;
     }
 
-    /**
-     * @return la liste des personnes
-     */
-    public List<Person> getAllPersons() {
-        return dataRepository.getData().getPersons();
-    }
 
     /**
      * Récupère toutes les personnes groupées par adresse.

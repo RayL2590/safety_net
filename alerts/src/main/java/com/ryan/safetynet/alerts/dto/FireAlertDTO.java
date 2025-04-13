@@ -1,5 +1,7 @@
 package com.ryan.safetynet.alerts.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.List;
@@ -12,6 +14,9 @@ import java.util.List;
 @Getter
 @Setter
 public class FireAlertDTO {
+    @NotNull(message = "La liste des résidents ne peut pas être null")
     private List<PersonWithMedicalInfoDTO> residents;
+
+    @NotBlank(message = "Le numéro de la caserne est obligatoire")
     private String fireStationNumber;
 }

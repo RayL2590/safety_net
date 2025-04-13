@@ -1,5 +1,7 @@
 package com.ryan.safetynet.alerts.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.List;
@@ -13,5 +15,6 @@ import java.util.List;
 @Getter
 @Setter
 public class CommunityEmailDTO {
-    private List<String> emails;
+    @NotNull(message = "La liste des emails ne peut pas être null")
+    private List<@Email(message = "Format d'email invalide") String> emails;
 }

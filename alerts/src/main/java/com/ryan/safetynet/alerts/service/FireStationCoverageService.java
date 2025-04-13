@@ -3,7 +3,6 @@ package com.ryan.safetynet.alerts.service;
 import com.ryan.safetynet.alerts.dto.FireStationDTO;
 import com.ryan.safetynet.alerts.dto.PersonDTO;
 import com.ryan.safetynet.alerts.model.Data;
-import com.ryan.safetynet.alerts.model.FireStation;
 import com.ryan.safetynet.alerts.model.MedicalRecord;
 import com.ryan.safetynet.alerts.model.Person;
 import com.ryan.safetynet.alerts.repository.DataRepository;

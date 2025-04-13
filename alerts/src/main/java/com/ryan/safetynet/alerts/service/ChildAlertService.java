@@ -65,16 +65,19 @@ public class ChildAlertService {
             // Trouver toutes les personnes à cette adresse en utilisant PersonService
             List<Person> personsAtAddress = personService.getPersonsByAddress(address);
 
-            if (personsAtAddress.isEmpty()) {
-                logger.info("Aucune personne trouvée à l'adresse: {}", address);
-                return new ChildAlertDTO(); // Retourne un DTO vide
-            }
-
-            logger.info("Nombre de personnes trouvées à l'adresse {}: {}", address, personsAtAddress.size());
-
             // Initialisation des listes pour stocker les résultats
             List<ChildDTO> children = new ArrayList<>();
             List<HouseholdMemberDTO> householdMembers = new ArrayList<>();
+
+            if (personsAtAddress.isEmpty()) {
+                logger.info("Aucune personne trouvée à l'adresse: {}", address);
+                ChildAlertDTO response = new ChildAlertDTO();
+                response.setChildren(children);
+                response.setHouseholdMembers(householdMembers);
+                return response;
+            }
+
+            logger.info("Nombre de personnes trouvées à l'adresse {}: {}", address, personsAtAddress.size());
 
             // Traitement de chaque personne trouvée à l'adresse
             for (Person person : personsAtAddress) {

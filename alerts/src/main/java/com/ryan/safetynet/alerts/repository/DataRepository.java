@@ -49,16 +49,6 @@ public class DataRepository {
     }
 
     /**
-     * Définit le chemin vers le fichier de données.
-     * Cette méthode doit être appelée avant loadData() pour spécifier d'où les données doivent être chargées.
-     *
-     * @param dataFilePath Chemin vers le fichier de données JSON
-     */
-    public void setDataFilePath(String dataFilePath) {
-        this.dataFilePath = dataFilePath;
-    }
-
-    /**
      * Charge les données depuis le fichier JSON spécifié en mémoire.
      * Cette méthode est automatiquement appelée après l'initialisation du bean grâce à l'annotation @PostConstruct.
      * Si le fichier existe, les données sont chargées à partir de celui-ci. Sinon, un objet Data vide est créé.

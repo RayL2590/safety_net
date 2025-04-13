@@ -1,8 +1,6 @@
 package com.ryan.safetynet.alerts.service;
 
-import com.ryan.safetynet.alerts.model.Data;
 import com.ryan.safetynet.alerts.model.Person;
-import com.ryan.safetynet.alerts.repository.DataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,22 +16,19 @@ import java.util.stream.Collectors;
 @Service
 public class PhoneAlertService {
 
-    private final DataRepository dataRepository;
     private final FireStationService fireStationService;
     private final PersonService personService;
 
     /**
      * Constructeur du service avec injection de dépendance du repository.
      *
-     * @param dataRepository le repository contenant les données de l'application
      * @param fireStationService le service gérant les casernes de pompiers
      * @param personService le service gérant les personnes
      */
     @Autowired
-    public PhoneAlertService(DataRepository dataRepository, 
+    public PhoneAlertService(
                             FireStationService fireStationService,
                             PersonService personService) {
-        this.dataRepository = dataRepository;
         this.fireStationService = fireStationService;
         this.personService = personService;
     }

@@ -2,6 +2,7 @@ package com.ryan.safetynet.alerts.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import jakarta.validation.constraints.NotBlank;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 public class AddressInfoDTO {
+    @NotBlank(message = "L'adresse est obligatoire")
     private String address;
     private List<PersonWithMedicalInfoDTO> residents;
 }

@@ -2,6 +2,7 @@ package com.ryan.safetynet.alerts.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * DTO représentant un membre du foyer (autre qu'un enfant).
@@ -9,6 +10,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@ToString
 public class HouseholdMemberDTO {
     private String firstName;
     private String lastName;

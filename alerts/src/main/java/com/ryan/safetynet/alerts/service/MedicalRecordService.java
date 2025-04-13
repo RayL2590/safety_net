@@ -77,8 +77,12 @@ public class MedicalRecordService {
      * @param lastName nom
      * @return true si le dossier médical a bien été supprimé, sinon false
      */
-    public boolean deleteMedicalRecord(String firstName, String lastName) {
+    public boolean deleteMedicalRecord(String firstName, String lastName) throws IOException {
         List<MedicalRecord> medicalRecords = dataRepository.getData().getMedicalRecords();
-        return medicalRecords.removeIf(m -> m.getFirstName().equals(firstName) && m.getLastName().equals(lastName));
+        boolean removed = medicalRecords.removeIf(m -> m.getFirstName().equals(firstName) && m.getLastName().equals(lastName));
+        if (removed) {
+            dataRepository.saveData();
+        }
+        return removed;
     }
 }

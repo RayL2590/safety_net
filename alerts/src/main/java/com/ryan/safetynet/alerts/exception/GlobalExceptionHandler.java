@@ -9,6 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -81,6 +82,22 @@ public class GlobalExceptionHandler {
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
                 .body(new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage(), null));
+    }
+
+    /**
+     * Gère les erreurs de endpoints non trouvés.
+     * Cette méthode est appelée lorsqu'un endpoint demandé n'existe pas.
+     *
+     * @param ex l'exception de endpoint non trouvé
+     * @return une réponse HTTP 404 (Not Found) avec un message d'erreur approprié
+     */
+    @ExceptionHandler(NoHandlerFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ErrorResponse> handleNoHandlerFoundException(NoHandlerFoundException ex) {
+        logger.warn("Endpoint non trouvé: {}", ex.getRequestURL());
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorResponse(HttpStatus.NOT_FOUND.value(), "Endpoint non trouvé: " + ex.getRequestURL(), null));
     }
 
     /**

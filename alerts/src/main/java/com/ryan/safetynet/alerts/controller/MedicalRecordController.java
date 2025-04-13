@@ -121,7 +121,7 @@ public class MedicalRecordController {
      * @throws ResourceNotFoundException si le dossier médical n'est pas trouvé
      */
     @DeleteMapping
-    public ResponseEntity<Void> deleteMedicalRecord(@RequestParam String firstName, @RequestParam String lastName)  {
+    public ResponseEntity<Void> deleteMedicalRecord(@RequestParam String firstName, @RequestParam String lastName) throws IOException {
         logger.info("Suppression du dossier médical pour : {} {}", firstName, lastName);
 
         boolean deleted = medicalRecordService.deleteMedicalRecord(firstName, lastName);
