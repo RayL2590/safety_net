@@ -41,3 +41,8 @@ build/
 *.xlsx
 *.ppt
 *.pptx
+../.vscode/
+../logs/safetynet.log.2025-04-29.0.gz
+../logs/safetynet.log.2025-05-01.0.gz
+../logs/safetynet.log.2025-05-02.0.gz
+../logs/safetynet.log.2025-05-05.0.gz
