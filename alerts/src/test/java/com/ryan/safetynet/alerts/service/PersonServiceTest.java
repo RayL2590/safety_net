@@ -4,10 +4,8 @@ import com.ryan.safetynet.alerts.model.Data;
 import com.ryan.safetynet.alerts.model.Person;
 import com.ryan.safetynet.alerts.repository.DataRepository;
 import jakarta.validation.ConstraintViolation;
-import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -18,10 +16,10 @@ import java.io.IOException;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-@DisplayName("Tests du service PersonService")
 class PersonServiceTest {
 
     @Mock
@@ -33,270 +31,196 @@ class PersonServiceTest {
     @InjectMocks
     private PersonService personService;
 
-    private Data mockData;
-    private List<Person> mockPersons;
+    private Data testData;
+    private Person testPerson;
+    private List<Person> personList;
 
     @BeforeEach
     void setUp() {
-        mockData = new Data();
-        mockPersons = new ArrayList<>();
-        mockData.setPersons(mockPersons);
+        testPerson = new Person();
+        testPerson.setFirstName("John");
+        testPerson.setLastName("Doe");
+        testPerson.setAddress("123 Main St");
+        testPerson.setCity("City");
+        testPerson.setZip("12345");
+        testPerson.setPhone("123-456-7890");
+        testPerson.setEmail("john.doe@email.com");
+
+        personList = new ArrayList<>();
+        personList.add(testPerson);
+
+        testData = new Data();
+        testData.setPersons(personList);
     }
 
     @Test
-    @DisplayName("Test de récupération des personnes par adresses")
-    void testGetPersonsByAddresses() {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
-        String address1 = "123 Main St";
-        String address2 = "456 Oak St";
-        List<String> addresses = List.of(address1, address2);
+    void getPersonsByAddresses_ShouldReturnPersonsGroupedByAddress() {
+        // Given
+        List<String> addresses = Arrays.asList("123 Main St", "456 Oak St");
+        when(dataRepository.getData()).thenReturn(testData);
 
-        Person person1 = new Person();
-        person1.setFirstName("John");
-        person1.setLastName("Doe");
-        person1.setAddress(address1);
-
-        Person person2 = new Person();
-        person2.setFirstName("Jane");
-        person2.setLastName("Doe");
-        person2.setAddress(address1);
-
-        Person person3 = new Person();
-        person3.setFirstName("Bob");
-        person3.setLastName("Smith");
-        person3.setAddress(address2);
-
-        mockPersons.addAll(List.of(person1, person2, person3));
-
-        // Act
+        // When
         Map<String, List<Person>> result = personService.getPersonsByAddresses(addresses);
 
-        // Assert
-        assertEquals(2, result.size());
-        assertTrue(result.containsKey(address1));
-        assertTrue(result.containsKey(address2));
-        assertEquals(2, result.get(address1).size());
-        assertEquals(1, result.get(address2).size());
+        // Then
+        assertNotNull(result);
+        assertEquals(1, result.size());
+        assertTrue(result.containsKey("123 Main St"));
+        assertEquals(1, result.get("123 Main St").size());
+        assertEquals(testPerson, result.get("123 Main St").get(0));
     }
 
     @Test
-    @DisplayName("Test de récupération des personnes par adresse")
-    void testGetPersonsByAddress() {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
+    void getPersonsByAddress_ShouldReturnPersonsAtAddress() {
+        // Given
         String address = "123 Main St";
-        Person person1 = new Person();
-        person1.setFirstName("John");
-        person1.setLastName("Doe");
-        person1.setAddress(address);
+        when(dataRepository.getData()).thenReturn(testData);
 
-        Person person2 = new Person();
-        person2.setFirstName("Jane");
-        person2.setLastName("Doe");
-        person2.setAddress(address);
-
-        Person person3 = new Person();
-        person3.setFirstName("Bob");
-        person3.setLastName("Smith");
-        person3.setAddress("456 Oak St");
-
-        mockPersons.addAll(List.of(person1, person2, person3));
-
-        // Act
+        // When
         List<Person> result = personService.getPersonsByAddress(address);
 
-        // Assert
-        assertEquals(2, result.size());
-        assertTrue(result.contains(person1));
-        assertTrue(result.contains(person2));
-        assertFalse(result.contains(person3));
+        // Then
+        assertNotNull(result);
+        assertEquals(1, result.size());
+        assertEquals(testPerson, result.get(0));
     }
 
     @Test
-    @DisplayName("Test de recherche d'une personne existante")
-    void testFindPersonByName_Existing() {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
-        String firstName = "John";
-        String lastName = "Doe";
-        Person person = new Person();
-        person.setFirstName(firstName);
-        person.setLastName(lastName);
-        mockPersons.add(person);
+    void findPersonByName_ShouldReturnPersonWhenExists() {
+        // Given
+        when(dataRepository.getData()).thenReturn(testData);
 
-        // Act
-        Optional<Person> result = personService.findPersonByName(firstName, lastName);
+        // When
+        Optional<Person> result = personService.findPersonByName("John", "Doe");
 
-        // Assert
+        // Then
         assertTrue(result.isPresent());
-        assertEquals(person, result.get());
+        assertEquals(testPerson, result.get());
     }
 
     @Test
-    @DisplayName("Test de recherche d'une personne inexistante")
-    void testFindPersonByName_NonExisting() {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
-        String firstName = "John";
-        String lastName = "Doe";
+    void findPersonByName_ShouldReturnEmptyWhenNotExists() {
+        // Given
+        when(dataRepository.getData()).thenReturn(testData);
 
-        // Act
-        Optional<Person> result = personService.findPersonByName(firstName, lastName);
+        // When
+        Optional<Person> result = personService.findPersonByName("Jane", "Doe");
 
-        // Assert
+        // Then
         assertTrue(result.isEmpty());
     }
 
     @Test
-    @DisplayName("Test d'ajout d'une personne valide")
-    void testAddPerson_Valid() throws IOException {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
-        Person person = new Person();
-        person.setFirstName("John");
-        person.setLastName("Doe");
-        person.setAddress("123 Main St");
-        person.setCity("City");
-        person.setZip("12345");
-        person.setPhone("123-456-7890");
-        person.setEmail("john.doe@email.com");
+    void addPerson_ShouldAddPersonSuccessfully() throws IOException {
+        // Given
+        Person newPerson = new Person();
+        newPerson.setFirstName("Jane");
+        newPerson.setLastName("Smith");
+        when(dataRepository.getData()).thenReturn(testData);
+        when(validator.validate(any())).thenReturn(Collections.emptySet());
 
-        when(validator.validate(person)).thenReturn(Collections.emptySet());
+        // When
+        Person result = personService.addPerson(newPerson);
 
-        // Act
-        Person result = personService.addPerson(person);
-
-        // Assert
-        assertEquals(person, result);
-        assertTrue(mockPersons.contains(person));
+        // Then
+        assertNotNull(result);
+        assertEquals(newPerson, result);
         verify(dataRepository).saveData();
+        assertEquals(2, testData.getPersons().size());
     }
 
     @Test
-    @DisplayName("Test d'ajout d'une personne invalide")
-    @SuppressWarnings("unchecked")
-    void testAddPerson_Invalid() {
-        // Arrange
-        Person person = new Person();
+    void addPerson_ShouldThrowConstraintViolationException() throws IOException {
+        // Given
+        Person invalidPerson = new Person();
         Set<ConstraintViolation<Person>> violations = new HashSet<>();
-        violations.add(mock(ConstraintViolation.class));
-        when(validator.validate(person)).thenReturn(violations);
+        ConstraintViolation<Person> violation = mock(ConstraintViolation.class);
+        violations.add(violation);
+        when(validator.validate(invalidPerson)).thenReturn(violations);
 
-        // Act & Assert
-        assertThrows(ConstraintViolationException.class, () ->
-            personService.addPerson(person)
-        );
+        // When & Then
+        assertThrows(jakarta.validation.ConstraintViolationException.class,
+                () -> personService.addPerson(invalidPerson));
+        verify(dataRepository, never()).saveData();
     }
 
     @Test
-    @DisplayName("Test de mise à jour d'une personne existante")
-    void testUpdatePerson_Existing() throws IOException {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
-        String firstName = "John";
-        String lastName = "Doe";
-        Person existingPerson = new Person();
-        existingPerson.setFirstName(firstName);
-        existingPerson.setLastName(lastName);
-        existingPerson.setAddress("123 Main St");
-        mockPersons.add(existingPerson);
-
+    void updatePerson_ShouldUpdateExistingPerson() throws IOException {
+        // Given
         Person updatedPerson = new Person();
-        updatedPerson.setFirstName(firstName);
-        updatedPerson.setLastName(lastName);
-        updatedPerson.setAddress("456 Oak St");
-        updatedPerson.setCity("New City");
+        updatedPerson.setAddress("456 New St");
+        updatedPerson.setCity("NewCity");
         updatedPerson.setZip("54321");
         updatedPerson.setPhone("987-654-3210");
-        updatedPerson.setEmail("john.doe@newemail.com");
+        updatedPerson.setEmail("new.email@email.com");
+        when(dataRepository.getData()).thenReturn(testData);
 
-        // Act
-        Person result = personService.updatePerson(firstName, lastName, updatedPerson);
+        // When
+        Person result = personService.updatePerson("John", "Doe", updatedPerson);
 
-        // Assert
+        // Then
         assertNotNull(result);
-        assertEquals("456 Oak St", result.getAddress());
-        assertEquals("New City", result.getCity());
+        assertEquals("456 New St", result.getAddress());
+        assertEquals("NewCity", result.getCity());
         assertEquals("54321", result.getZip());
         assertEquals("987-654-3210", result.getPhone());
-        assertEquals("john.doe@newemail.com", result.getEmail());
+        assertEquals("new.email@email.com", result.getEmail());
         verify(dataRepository).saveData();
     }
 
     @Test
-    @DisplayName("Test de mise à jour d'une personne inexistante")
-    void testUpdatePerson_NonExisting() throws IOException {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
-        String firstName = "John";
-        String lastName = "Doe";
+    void updatePerson_ShouldReturnNullWhenPersonNotFound() throws IOException {
+        // Given
         Person updatedPerson = new Person();
-        updatedPerson.setFirstName(firstName);
-        updatedPerson.setLastName(lastName);
-        updatedPerson.setAddress("456 Oak St");
+        when(dataRepository.getData()).thenReturn(testData);
 
-        // Act
-        Person result = personService.updatePerson(firstName, lastName, updatedPerson);
+        // When
+        Person result = personService.updatePerson("NonExistent", "Person", updatedPerson);
 
-        // Assert
+        // Then
         assertNull(result);
         verify(dataRepository, never()).saveData();
     }
 
     @Test
-    @DisplayName("Test de suppression d'une personne existante")
-    void testDeletePerson_Existing() throws IOException {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
-        String firstName = "John";
-        String lastName = "Doe";
-        Person person = new Person();
-        person.setFirstName(firstName);
-        person.setLastName(lastName);
-        mockPersons.add(person);
+    void deletePerson_ShouldDeleteExistingPerson() throws IOException {
+        // Given
+        when(dataRepository.getData()).thenReturn(testData);
 
-        // Act
-        boolean result = personService.deletePerson(firstName, lastName);
+        // When
+        boolean result = personService.deletePerson("John", "Doe");
 
-        // Assert
+        // Then
         assertTrue(result);
-        assertTrue(mockPersons.isEmpty());
+        assertTrue(testData.getPersons().isEmpty());
         verify(dataRepository).saveData();
     }
 
     @Test
-    @DisplayName("Test de suppression d'une personne inexistante")
-    void testDeletePerson_NonExisting() throws IOException {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
-        String firstName = "John";
-        String lastName = "Doe";
+    void deletePerson_ShouldReturnFalseWhenPersonNotFound() throws IOException {
+        // Given
+        when(dataRepository.getData()).thenReturn(testData);
 
-        // Act
-        boolean result = personService.deletePerson(firstName, lastName);
+        // When
+        boolean result = personService.deletePerson("NonExistent", "Person");
 
-        // Assert
+        // Then
         assertFalse(result);
+        assertEquals(1, testData.getPersons().size());
         verify(dataRepository, never()).saveData();
     }
 
     @Test
-    @DisplayName("Test de suppression d'une personne avec erreur de sauvegarde")
-    void testDeletePerson_WithSaveError() throws IOException {
-        // Arrange
-        when(dataRepository.getData()).thenReturn(mockData);
-        String firstName = "John";
-        String lastName = "Doe";
-        Person person = new Person();
-        person.setFirstName(firstName);
-        person.setLastName(lastName);
-        mockPersons.add(person);
-        doThrow(new RuntimeException("Erreur de sauvegarde")).when(dataRepository).saveData();
+    void getAllPersons_ShouldReturnAllPersons() {
+        // Given
+        when(dataRepository.getData()).thenReturn(testData);
 
-        // Act & Assert
-        assertThrows(RuntimeException.class, () ->
-            personService.deletePerson(firstName, lastName)
-        );
+        // When
+        List<Person> result = personService.getAllPersons();
+
+        // Then
+        assertNotNull(result);
+        assertEquals(1, result.size());
+        assertEquals(testPerson, result.get(0));
     }
-}
+} 

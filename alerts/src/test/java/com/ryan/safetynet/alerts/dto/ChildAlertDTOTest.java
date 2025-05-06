@@ -11,6 +11,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -91,6 +92,56 @@ class ChildAlertDTOTest {
         assertTrue(violations.isEmpty());
         assertNull(childAlertDTO.getChildren());
         assertNull(childAlertDTO.getHouseholdMembers());
+    }
+
+    @Test
+    @DisplayName("Test avec des noms contenant des accents")
+    void testWithAccentedNames() {
+        // Arrange
+        ChildDTO child = createSampleChildDTO();
+        child.setFirstName("François");
+        child.setLastName("Dupont-Évêque");
+
+        HouseholdMemberDTO member = createSampleHouseholdMemberDTO();
+        member.setFirstName("José");
+        member.setLastName("García-Muñoz");
+
+        childAlertDTO.setChildren(List.of(child));
+        childAlertDTO.setHouseholdMembers(List.of(member));
+
+        // Act
+        Set<ConstraintViolation<ChildAlertDTO>> violations = validator.validate(childAlertDTO);
+
+        // Assert
+        assertTrue(violations.isEmpty());
+        assertEquals("François", childAlertDTO.getChildren().get(0).getFirstName());
+        assertEquals("Dupont-Évêque", childAlertDTO.getChildren().get(0).getLastName());
+        assertEquals("José", childAlertDTO.getHouseholdMembers().get(0).getFirstName());
+        assertEquals("García-Muñoz", childAlertDTO.getHouseholdMembers().get(0).getLastName());
+    }
+
+    @Test
+    @DisplayName("Test avec des listes dépassant la limite de taille")
+    void testWithExceedingSizeLists() {
+        // Arrange
+        List<ChildDTO> children = new ArrayList<>();
+        List<HouseholdMemberDTO> members = new ArrayList<>();
+        
+        for (int i = 0; i < 51; i++) {
+            children.add(createSampleChildDTO());
+            members.add(createSampleHouseholdMemberDTO());
+        }
+
+        childAlertDTO.setChildren(children);
+        childAlertDTO.setHouseholdMembers(members);
+
+        // Act
+        Set<ConstraintViolation<ChildAlertDTO>> violations = validator.validate(childAlertDTO);
+
+        // Assert
+        assertEquals(2, violations.size());
+        assertTrue(violations.stream().anyMatch(v -> v.getMessage().contains("enfants")));
+        assertTrue(violations.stream().anyMatch(v -> v.getMessage().contains("membres du foyer")));
     }
 
     @Test

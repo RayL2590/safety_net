@@ -65,11 +65,11 @@ class FloodAlertServiceTest {
         // Création des personnes par adresse
         Map<String, List<Person>> personsByAddress = new HashMap<>();
         List<Person> residents1 = Arrays.asList(
-            new Person("John", "Doe", "123 Main St", "Paris", "12345", "123-456-7890", "john@email.com"),
-            new Person("Jane", "Doe", "123 Main St", "Paris", "12345", "987-654-3210", "jane@email.com")
+            new Person("John", "Doe", "123 Main St", "Culver", "97451", "123-456-7890", "john@email.com"),
+            new Person("Jane", "Doe", "123 Main St", "Culver", "97451", "987-654-3210", "jane@email.com")
         );
         List<Person> residents2 = Arrays.asList(
-            new Person("Bob", "Smith", "456 Oak St", "Paris", "12345", "555-123-4567", "bob@email.com")
+            new Person("Bob", "Smith", "456 Oak St", "Culver", "97451", "555-123-4567", "bob@email.com")
         );
         personsByAddress.put("123 Main St", residents1);
         personsByAddress.put("456 Oak St", residents2);

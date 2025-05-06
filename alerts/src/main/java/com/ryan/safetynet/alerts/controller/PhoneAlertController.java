@@ -2,9 +2,8 @@ package com.ryan.safetynet.alerts.controller;
 
 import com.ryan.safetynet.alerts.dto.PhoneAlertDTO;
 import com.ryan.safetynet.alerts.service.PhoneAlertService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,36 +17,32 @@ import java.util.List;
  * Expose l'endpoint /phoneAlert qui permet de récupérer la liste des numéros de téléphone
  * pour envoyer des messages d'urgence à des foyers spécifiques.
  */
+@Slf4j
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/phoneAlert")
 public class PhoneAlertController {
 
-    private final Logger logger = LoggerFactory.getLogger(PhoneAlertController.class);
     private final PhoneAlertService phoneAlertService;
-
-    @Autowired
-    public PhoneAlertController(PhoneAlertService phoneAlertService) {
-        this.phoneAlertService = phoneAlertService;
-    }
 
     /**
      * Endpoint pour récupérer la liste des numéros de téléphone couverts par une caserne donnée.
      *
-     * @param stationNumber Le numéro de la station de pompiers.
+     * @param firestation Le numéro de la station de pompiers (obligatoire).
      * @return ResponseEntity contenant la liste des numéros de téléphone (PhoneAlertDTO).
      */
     @GetMapping
-    public ResponseEntity<PhoneAlertDTO> getPhoneNumbersByStation(@RequestParam int stationNumber) {
-        logger.info("Requête reçue pour les numéros de téléphone couverts par la station : {}", stationNumber);
+    public ResponseEntity<PhoneAlertDTO> getPhoneNumbersByStation(@RequestParam int firestation) {
+        log.info("Requête reçue pour les numéros de téléphone couverts par la station : {}", firestation);
 
-        List<String> phoneNumbers = phoneAlertService.getPhoneNumbersByStation(stationNumber);
+        List<String> phoneNumbers = phoneAlertService.getPhoneNumbersByStation(firestation);
 
         if (phoneNumbers.isEmpty()) {
-            logger.info("Aucun numéro de téléphone trouvé pour la station : {}", stationNumber);
+            log.info("Aucun numéro de téléphone trouvé pour la station : {}", firestation);
             return ResponseEntity.ok().body(null);
         }
 
-        logger.info("Nombre de numéros de téléphone trouvés : {}", phoneNumbers.size());
+        log.info("Nombre de numéros de téléphone trouvés : {}", phoneNumbers.size());
 
         PhoneAlertDTO response = new PhoneAlertDTO();
         response.setPhoneNumbers(phoneNumbers);

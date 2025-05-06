@@ -3,6 +3,7 @@ package com.ryan.safetynet.alerts.controller;
 import com.ryan.safetynet.alerts.dto.FireStationDTO;
 import com.ryan.safetynet.alerts.dto.FireStationInputDTO;
 import com.ryan.safetynet.alerts.dto.PersonDTO;
+import com.ryan.safetynet.alerts.dto.ErrorResponse;
 import com.ryan.safetynet.alerts.model.FireStation;
 import com.ryan.safetynet.alerts.service.FireStationCoverageService;
 import com.ryan.safetynet.alerts.service.FireStationService;
@@ -17,7 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -40,28 +41,87 @@ class FireStationControllerTest {
     @DisplayName("Test de récupération des personnes couvertes par une caserne")
     void testGetPersonsCoveredByStation() {
         // Arrange
-        int stationNumber = 1;
-        FireStationDTO mockResponse = new FireStationDTO();
-        List<PersonDTO> persons = Arrays.asList(
+        final int stationNumber = 1;
+        final List<PersonDTO> expectedPersons = List.of(
             createSamplePerson("John", "Doe", 30),
             createSamplePerson("Jane", "Doe", 10)
         );
-        mockResponse.setPersons(persons);
+        
+        FireStationDTO mockResponse = new FireStationDTO();
+        mockResponse.setPersons(new ArrayList<>(expectedPersons));
         mockResponse.setAdultCount(1);
         mockResponse.setChildCount(1);
         
-        when(fireStationCoverageService.getPersonsCoveredByStation(stationNumber)).thenReturn(mockResponse);
+        when(fireStationCoverageService.getPersonsCoveredByStation(stationNumber))
+            .thenReturn(mockResponse);
 
         // Act
-        ResponseEntity<FireStationDTO> response = fireStationController.getPersonsCoveredByStation(stationNumber);
+        ResponseEntity<?> response = fireStationController.getPersonsCoveredByStation(stationNumber);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals(2, response.getBody().getPersons().size());
-        assertEquals(1, response.getBody().getAdultCount());
-        assertEquals(1, response.getBody().getChildCount());
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(HttpStatus.OK, response.getStatusCode(), "Statut HTTP doit être 200");
+        
+        FireStationDTO responseBody = (FireStationDTO) response.getBody();
+        assertNotNull(responseBody, "Le body de la réponse ne doit pas être null");
+        
+        List<PersonDTO> actualPersons = responseBody.getPersons();
+        assertNotNull(actualPersons, "La liste des personnes ne doit pas être null");
+        
+        assertAll("Vérification complète de la réponse",
+            () -> assertEquals(expectedPersons.size(), actualPersons.size(),
+                "Le nombre de personnes ne correspond pas"),
+            () -> assertEquals(1, responseBody.getAdultCount(),
+                "Le compte d'adultes doit être 1"),
+            () -> assertEquals(1, responseBody.getChildCount(),
+                "Le compte d'enfants doit être 1"),
+            () -> assertTrue(actualPersons.stream()
+                .anyMatch(p -> "John".equals(p.getFirstName()) && "Doe".equals(p.getLastName())),
+                "John Doe doit être présent"),
+            () -> assertTrue(actualPersons.stream()
+                .anyMatch(p -> "Jane".equals(p.getFirstName()) && "Doe".equals(p.getLastName())),
+                "Jane Doe doit être présente")
+        );
+    }
+
+    @Test
+    @DisplayName("Test de récupération des personnes avec une station inexistante")
+    void testGetPersonsCoveredByStation_NotFound() {
+        // Arrange
+        final int stationNumber = 999;
+        when(fireStationCoverageService.getPersonsCoveredByStation(stationNumber))
+            .thenThrow(new ResourceNotFoundException("La station de pompiers " + stationNumber + " n'existe pas"));
+
+        // Act
+        ResponseEntity<?> response = fireStationController.getPersonsCoveredByStation(stationNumber);
+
+        // Assert
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+        ErrorResponse errorResponse = (ErrorResponse) response.getBody();
+        assertNotNull(errorResponse);
+        assertEquals(HttpStatus.NOT_FOUND.value(), errorResponse.getStatus());
+        assertEquals("La station de pompiers " + stationNumber + " n'existe pas", errorResponse.getMessage());
+    }
+
+    @Test
+    @DisplayName("Test de récupération des personnes avec une station sans personnes")
+    void testGetPersonsCoveredByStation_NoPersons() {
+        // Arrange
+        final int stationNumber = 1;
+        FireStationDTO mockResponse = new FireStationDTO();
+        mockResponse.setPersons(new ArrayList<>());
+        mockResponse.setAdultCount(0);
+        mockResponse.setChildCount(0);
+        
+        when(fireStationCoverageService.getPersonsCoveredByStation(stationNumber))
+            .thenReturn(mockResponse);
+
+        // Act
+        ResponseEntity<?> response = fireStationController.getPersonsCoveredByStation(stationNumber);
+
+        // Assert
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNull(response.getBody());
     }
 
     @Test
@@ -83,11 +143,13 @@ class FireStationControllerTest {
         ResponseEntity<FireStation> response = fireStationController.addFireStation(inputDTO);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(HttpStatus.CREATED, response.getStatusCode());
-        assertNotNull(response.getBody());
-        assertEquals("1", response.getBody().getStation());
-        assertEquals("123 Main St", response.getBody().getAddress());
+        FireStation createdStation = response.getBody();
+        assertNotNull(createdStation, "La caserne créée ne doit pas être null");
+
+        assertAll("Properties check",
+            () -> assertEquals("1", createdStation.getStation()),
+            () -> assertEquals("123 Main St", createdStation.getAddress())
+        );
     }
 
     @Test
@@ -127,8 +189,11 @@ class FireStationControllerTest {
         assertNotNull(response);
         assertEquals(200, response.getStatusCode().value());
         assertNotNull(response.getBody());
-        assertEquals("2", response.getBody().getStation());
-        assertEquals("123 Main St", response.getBody().getAddress());
+        
+        FireStation result = response.getBody();
+        assertNotNull(result, "Le résultat ne doit pas être null");
+        assertEquals("2", result.getStation());
+        assertEquals("123 Main St", result.getAddress());
     }
 
     @Test

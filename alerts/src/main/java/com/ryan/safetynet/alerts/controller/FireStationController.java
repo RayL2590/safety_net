@@ -1,66 +1,73 @@
 package com.ryan.safetynet.alerts.controller;
 
 import com.ryan.safetynet.alerts.dto.FireStationDTO;
-import com.ryan.safetynet.alerts.dto.PersonDTO;
+import com.ryan.safetynet.alerts.dto.ErrorResponse;
 import com.ryan.safetynet.alerts.model.FireStation;
 import com.ryan.safetynet.alerts.service.FireStationCoverageService;
 import com.ryan.safetynet.alerts.service.FireStationService;
 import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
 import com.ryan.safetynet.alerts.dto.FireStationInputDTO;
 import jakarta.validation.Valid;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
+@Slf4j
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/firestation")
 public class FireStationController {
 
-    private final Logger logger = LoggerFactory.getLogger(FireStationController.class);
     private final FireStationCoverageService fireStationCoverageService;
     private final FireStationService fireStationService;
 
-    @Autowired
-    public FireStationController(FireStationCoverageService fireStationCoverageService,
-                                 FireStationService fireStationService) {
-        this.fireStationCoverageService = fireStationCoverageService;
-        this.fireStationService = fireStationService;
+    /**
+     * Récupère la liste de toutes les casernes de pompiers enregistrées dans le système.
+     *
+     * @return ResponseEntity contenant la liste des casernes de pompiers
+     */
+    @GetMapping("/all")
+    public ResponseEntity<List<FireStation>> getAllFireStations() {
+        log.info("Récupération de toutes les casernes de pompiers");
+        List<FireStation> fireStations = fireStationService.getAllFireStations();
+        return ResponseEntity.ok(fireStations);
     }
-
 
     /**
      * Endpoint pour récupérer les personnes couvertes par une caserne de pompiers.
      *
-     * @param stationNumber Le numéro de la station de pompiers.
+     * @param stationNumber Le numéro de la station de pompiers (optionnel).
+     * @param firestation   Alias du numéro de la station de pompiers (optionnel).
      * @return Une réponse JSON contenant la liste des personnes couvertes, ainsi que le décompte des adultes et des enfants.
      */
     @GetMapping
-    public ResponseEntity<FireStationDTO> getPersonsCoveredByStation(@RequestParam int stationNumber) {
-        // Appel du service pour récupérer les données
-        FireStationDTO response = fireStationCoverageService.getPersonsCoveredByStation(stationNumber);
+    public ResponseEntity<?> getPersonsCoveredByStation(@RequestParam int stationNumber) {
+        log.info("Requête GET /firestation avec station : {}", stationNumber);
+        try {
+            FireStationDTO response = fireStationCoverageService.getPersonsCoveredByStation(stationNumber);
 
-        // Log pour vérifier la présence de l'âge
-        if (response != null && response.getPersons() != null) {
-            logger.info("Nombre de personnes dans la réponse: {}", response.getPersons().size());
-            
-            // Log de toutes les personnes pour vérification
-            for (PersonDTO person : response.getPersons()) {
-                logger.info("Personne: {} {}, Âge: {}", 
-                    person.getFirstName(), 
-                    person.getLastName(),
-                    person.getAge());
+            if (response.getPersons().isEmpty()) {
+                log.debug("Aucune personne trouvée pour la station : {}", stationNumber);
+                return ResponseEntity.ok().body(null);
             }
-        }
 
-        // Retourne la réponse avec un statut HTTP 200 (OK)
-        return ResponseEntity.ok(response);
+            log.info("Nombre de personnes trouvées : {}", response.getPersons().size());
+            return ResponseEntity.ok(response);
+        } catch (ResourceNotFoundException e) {
+            log.warn("Erreur : {}", e.getMessage());
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(new ErrorResponse(HttpStatus.NOT_FOUND.value(), e.getMessage(), null));
+        } catch (Exception e) {
+            log.error("Erreur lors de la récupération des personnes pour la station : {}", stationNumber, e);
+            return ResponseEntity.internalServerError().build();
+        }
     }
-    
 
     /**
      * Endpoint pour ajouter un nouveau mapping caserne/adresse.
@@ -73,13 +80,12 @@ public class FireStationController {
      */
     @PostMapping
     public ResponseEntity<FireStation> addFireStation(@Valid @RequestBody FireStationInputDTO fireStationDTO) throws IOException {
-        logger.info("Tentative d'ajout du mapping caserne/adresse : Station={}, Adresse={}", 
+        log.info("Tentative d'ajout du mapping caserne/adresse : Station={}, Adresse={}", 
             fireStationDTO.getStation(), fireStationDTO.getAddress());
             
-        // Vérification si le mapping existe déjà
         if (fireStationService.existsByAddress(fireStationDTO.getAddress())) {
             String errorMessage = String.format("Un mapping existe déjà pour l'adresse : %s", fireStationDTO.getAddress());
-            logger.warn(errorMessage);
+            log.warn(errorMessage);
             throw new IllegalArgumentException(errorMessage);
         }
             
@@ -88,7 +94,7 @@ public class FireStationController {
         fireStation.setAddress(fireStationDTO.getAddress());
         
         FireStation createdFireStation = fireStationService.addFireStation(fireStation);
-        logger.info("Mapping caserne/adresse créé avec succès");
+        log.info("Mapping caserne/adresse créé avec succès");
         return new ResponseEntity<>(createdFireStation, HttpStatus.CREATED);
     }
 
@@ -103,7 +109,7 @@ public class FireStationController {
      */
     @PutMapping
     public ResponseEntity<FireStation> updateFireStation(@Valid @RequestBody FireStationInputDTO fireStationDTO) {
-        logger.info("Mise à jour du numéro de caserne pour l'adresse : {}", fireStationDTO.getAddress());
+        log.info("Mise à jour du numéro de caserne pour l'adresse : {}", fireStationDTO.getAddress());
         
         FireStation fireStation = new FireStation();
         fireStation.setStation(String.valueOf(fireStationDTO.getStation()));
@@ -139,7 +145,7 @@ public class FireStationController {
             @RequestParam(required = false) String station
     ) {
         if (address != null) {
-            logger.info("Suppression du mapping pour l'adresse : {}", address);
+            log.info("Suppression du mapping pour l'adresse : {}", address);
             boolean deleted = fireStationService.deleteFireStationByAddress(address);
 
             if (!deleted) {
@@ -150,7 +156,7 @@ public class FireStationController {
 
             return ResponseEntity.noContent().build();
         } else if (station != null) {
-            logger.info("Suppression de tous les mappings pour la caserne numéro : {}", station);
+            log.info("Suppression de tous les mappings pour la caserne numéro : {}", station);
             int countDeleted = fireStationService.deleteFireStationsByStation(station);
 
             if (countDeleted == 0) {
@@ -164,6 +170,4 @@ public class FireStationController {
             throw new IllegalArgumentException("Requête DELETE invalide : aucun paramètre fourni");
         }
     }
-
-
 }

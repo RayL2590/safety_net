@@ -2,13 +2,16 @@ package com.ryan.safetynet.alerts.controller;
 
 import com.ryan.safetynet.alerts.dto.FireAlertDTO;
 import com.ryan.safetynet.alerts.dto.PersonWithMedicalInfoDTO;
+import com.ryan.safetynet.alerts.dto.ErrorResponse;
 import com.ryan.safetynet.alerts.service.FireAlertService;
+import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
@@ -44,17 +47,18 @@ class FireAlertControllerTest {
         when(fireAlertService.getPersonsAndFireStationByAddress(address)).thenReturn(mockResponse);
 
         // Act
-        ResponseEntity<FireAlertDTO> response = fireAlertController.getResidentsByAddress(address);
+        ResponseEntity<?> response = fireAlertController.getResidentsByAddress(address);
 
         // Assert
         assertNotNull(response);
         assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals("1", response.getBody().getFireStationNumber());
-        assertEquals(2, response.getBody().getResidents().size());
-        assertEquals("John", response.getBody().getResidents().get(0).getFirstName());
-        assertEquals("Doe", response.getBody().getResidents().get(0).getLastName());
-        assertEquals("Jane", response.getBody().getResidents().get(1).getFirstName());
+        FireAlertDTO body = (FireAlertDTO) response.getBody();
+        assertNotNull(body, "Response body should not be null");
+        assertEquals("1", body.getFireStationNumber());
+        assertEquals(2, body.getResidents().size());
+        assertEquals("John", body.getResidents().get(0).getFirstName());
+        assertEquals("Doe", body.getResidents().get(0).getLastName());
+        assertEquals("Jane", body.getResidents().get(1).getFirstName());
     }
 
     @Test
@@ -68,7 +72,7 @@ class FireAlertControllerTest {
         when(fireAlertService.getPersonsAndFireStationByAddress(address)).thenReturn(mockResponse);
 
         // Act
-        ResponseEntity<FireAlertDTO> response = fireAlertController.getResidentsByAddress(address);
+        ResponseEntity<?> response = fireAlertController.getResidentsByAddress(address);
 
         // Assert
         assertNotNull(response);
@@ -87,7 +91,7 @@ class FireAlertControllerTest {
         when(fireAlertService.getPersonsAndFireStationByAddress(address)).thenReturn(mockResponse);
 
         // Act
-        ResponseEntity<FireAlertDTO> response = fireAlertController.getResidentsByAddress(address);
+        ResponseEntity<?> response = fireAlertController.getResidentsByAddress(address);
 
         // Assert
         assertNotNull(response);
@@ -103,36 +107,31 @@ class FireAlertControllerTest {
         when(fireAlertService.getPersonsAndFireStationByAddress(address))
             .thenThrow(new RuntimeException("Erreur du service"));
 
-        // Act & Assert
-        assertThrows(RuntimeException.class, () ->
-            fireAlertController.getResidentsByAddress(address)
-        );
+        // Act
+        ResponseEntity<?> response = fireAlertController.getResidentsByAddress(address);
+
+        // Assert
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
+        assertNull(response.getBody());
     }
 
     @Test
-    @DisplayName("Test de récupération des résidents avec une caserne inconnue")
-    void testGetResidentsByAddress_UnknownStation() {
+    @DisplayName("Test de récupération des résidents avec une station inexistante")
+    void testGetResidentsByAddress_StationNotFound() {
         // Arrange
         String address = "123 Main St";
-        FireAlertDTO mockResponse = new FireAlertDTO();
-        mockResponse.setFireStationNumber("Inconnu");
-        
-        List<PersonWithMedicalInfoDTO> residents = Arrays.asList(
-            createSamplePersonWithMedicalInfo("John", "Doe", "123-456-7890", 30, List.of("med1"), List.of("allergy1"))
-        );
-        mockResponse.setResidents(residents);
-        
-        when(fireAlertService.getPersonsAndFireStationByAddress(address)).thenReturn(mockResponse);
+        when(fireAlertService.getPersonsAndFireStationByAddress(address))
+            .thenThrow(new ResourceNotFoundException("La station de pompiers n'existe pas"));
 
         // Act
-        ResponseEntity<FireAlertDTO> response = fireAlertController.getResidentsByAddress(address);
+        ResponseEntity<?> response = fireAlertController.getResidentsByAddress(address);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals("Inconnu", response.getBody().getFireStationNumber());
-        assertEquals(1, response.getBody().getResidents().size());
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+        ErrorResponse errorResponse = (ErrorResponse) response.getBody();
+        assertNotNull(errorResponse);
+        assertEquals(HttpStatus.NOT_FOUND.value(), errorResponse.getStatus());
+        assertEquals("La station de pompiers n'existe pas", errorResponse.getMessage());
     }
 
     private PersonWithMedicalInfoDTO createSamplePersonWithMedicalInfo(String firstName, String lastName, String phone, int age, List<String> medications, List<String> allergies) {

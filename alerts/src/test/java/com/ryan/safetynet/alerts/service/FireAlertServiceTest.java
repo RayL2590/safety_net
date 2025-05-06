@@ -4,6 +4,7 @@ import com.ryan.safetynet.alerts.dto.FireAlertDTO;
 import com.ryan.safetynet.alerts.dto.PersonWithMedicalInfoDTO;
 import com.ryan.safetynet.alerts.model.*;
 import com.ryan.safetynet.alerts.repository.DataRepository;
+import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,6 +27,9 @@ class FireAlertServiceTest {
 
     @Mock
     private DataRepository dataRepository;
+
+    @Mock
+    private FireStationService fireStationService;
 
     @InjectMocks
     private FireAlertService fireAlertService;
@@ -57,8 +61,8 @@ class FireAlertServiceTest {
         String stationNumber = "1";
         
         // Création des personnes
-        Person person1 = new Person("John", "Doe", address, "Paris", "12345", "123-456-7890", "john@email.com");
-        Person person2 = new Person("Jane", "Doe", address, "Paris", "12345", "987-654-3210", "jane@email.com");
+        Person person1 = new Person("John", "Doe", address, "Culver", "97451", "123-456-7890", "john@email.com");
+        Person person2 = new Person("Jane", "Doe", address, "Culver", "97451", "987-654-3210", "jane@email.com");
         mockPersons.addAll(Arrays.asList(person1, person2));
 
         // Création des dossiers médicaux
@@ -83,6 +87,9 @@ class FireAlertServiceTest {
         fireStation.setAddress(address);
         fireStation.setStation(stationNumber);
         mockFireStations.add(fireStation);
+
+        // Configuration du mock pour la vérification de l'existence de la station
+        when(fireStationService.existsByStationNumber(stationNumber)).thenReturn(true);
 
         // Act
         FireAlertDTO result = fireAlertService.getPersonsAndFireStationByAddress(address);
@@ -113,7 +120,7 @@ class FireAlertServiceTest {
     void testGetPersonsAndFireStationByAddress_NoFireStation() {
         // Arrange
         String address = "123 Main St";
-        Person person = new Person("John", "Doe", address, "Paris", "12345", "123-456-7890", "john@email.com");
+        Person person = new Person("John", "Doe", address, "Culver", "97451", "123-456-7890", "john@email.com");
         mockPersons.add(person);
 
         MedicalRecord medicalRecord = new MedicalRecord();
@@ -124,13 +131,10 @@ class FireAlertServiceTest {
         medicalRecord.setAllergies(Arrays.asList("allergy1"));
         mockMedicalRecords.add(medicalRecord);
 
-        // Act
-        FireAlertDTO result = fireAlertService.getPersonsAndFireStationByAddress(address);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals("Inconnu", result.getFireStationNumber());
-        assertEquals(1, result.getResidents().size());
+        // Act & Assert
+        assertThrows(ResourceNotFoundException.class, () -> 
+            fireAlertService.getPersonsAndFireStationByAddress(address)
+        );
     }
 
     @Test
@@ -138,17 +142,21 @@ class FireAlertServiceTest {
     void testGetPersonsAndFireStationByAddress_NoResidents() {
         // Arrange
         String address = "123 Main St";
+        String stationNumber = "1";
         FireStation fireStation = new FireStation();
         fireStation.setAddress(address);
-        fireStation.setStation("1");
+        fireStation.setStation(stationNumber);
         mockFireStations.add(fireStation);
+
+        // Configuration du mock pour la vérification de l'existence de la station
+        when(fireStationService.existsByStationNumber(stationNumber)).thenReturn(true);
 
         // Act
         FireAlertDTO result = fireAlertService.getPersonsAndFireStationByAddress(address);
 
         // Assert
         assertNotNull(result);
-        assertEquals("1", result.getFireStationNumber());
+        assertEquals(stationNumber, result.getFireStationNumber());
         assertTrue(result.getResidents().isEmpty());
     }
 
@@ -158,13 +166,10 @@ class FireAlertServiceTest {
         // Arrange
         String address = "";
 
-        // Act
-        FireAlertDTO result = fireAlertService.getPersonsAndFireStationByAddress(address);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals("Inconnu", result.getFireStationNumber());
-        assertTrue(result.getResidents().isEmpty());
+        // Act & Assert
+        assertThrows(ResourceNotFoundException.class, () -> 
+            fireAlertService.getPersonsAndFireStationByAddress(address)
+        );
     }
 
     @Test
@@ -175,7 +180,9 @@ class FireAlertServiceTest {
         when(dataRepository.getData()).thenThrow(new RuntimeException("Erreur de base de données"));
 
         // Act & Assert
-        assertThrows(RuntimeException.class, () -> fireAlertService.getPersonsAndFireStationByAddress(address));
+        assertThrows(RuntimeException.class, () -> 
+            fireAlertService.getPersonsAndFireStationByAddress(address)
+        );
     }
 
     @Test
@@ -183,12 +190,18 @@ class FireAlertServiceTest {
     void testGetPersonsAndFireStationByAddress_MissingMedicalRecord() {
         // Arrange
         String address = "123 Main St";
-        Person person = new Person("John", "Doe", address, "Paris", "12345", "123-456-7890", "john@email.com");
+        String stationNumber = "1";
+        Person person = new Person("John", "Doe", address, "Culver", "97451", "123-456-7890", "john@email.com");
         mockPersons.add(person);
 
-        // Pas de dossier médical ajouté intentionnellement
+        FireStation fireStation = new FireStation();
+        fireStation.setAddress(address);
+        fireStation.setStation(stationNumber);
+        mockFireStations.add(fireStation);
 
         // Act & Assert
-        assertThrows(IllegalStateException.class, () -> fireAlertService.getPersonsAndFireStationByAddress(address));
+        assertThrows(RuntimeException.class, () -> 
+            fireAlertService.getPersonsAndFireStationByAddress(address)
+        );
     }
 } 

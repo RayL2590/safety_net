@@ -8,16 +8,16 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-@DisplayName("Tests du controller CommunityEmailController")
+@DisplayName("Tests du CommunityEmailController")
 class CommunityEmailControllerTest {
 
     @Mock
@@ -26,108 +26,103 @@ class CommunityEmailControllerTest {
     @InjectMocks
     private CommunityEmailController communityEmailController;
 
+    private final String TEST_CITY = "Culver";
+
     @Test
-    @DisplayName("Test de récupération des emails avec des emails présents")
-    void testGetEmailsByCity_WithEmails() {
+    @DisplayName("GET /communityEmail?city=Culver - Cas nominal avec emails")
+    void getEmailsByCity_withEmails_shouldReturnOkWithEmails() {
         // Arrange
-        String city = "Paris";
+        List<String> expectedEmails = List.of("john@email.com", "jane@email.com");
         CommunityEmailDTO mockResponse = new CommunityEmailDTO();
-        List<String> emails = Arrays.asList(
-            "john.doe@email.com",
-            "jane.doe@email.com",
-            "bob.smith@email.com"
+        mockResponse.setEmails(expectedEmails);
+        
+        when(communityEmailService.getEmailsByCity(TEST_CITY)).thenReturn(mockResponse);
+
+        // Act
+        ResponseEntity<CommunityEmailDTO> response = communityEmailController.getEmailsByCity(TEST_CITY);
+
+        // Assert
+        CommunityEmailDTO body = response.getBody();
+        assertAll("Vérification réponse complète",
+            () -> assertNotNull(response, "Réponse ne devrait pas être null"),
+            () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
+            () -> {
+                assertNotNull(body, "Le body de la réponse ne devrait pas être null");
+                assertEquals(expectedEmails, body.getEmails());
+            }
         );
-        mockResponse.setEmails(emails);
-        
-        when(communityEmailService.getEmailsByCity(city)).thenReturn(mockResponse);
-
-        // Act
-        ResponseEntity<CommunityEmailDTO> response = communityEmailController.getEmailsByCity(city);
-
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals(3, response.getBody().getEmails().size());
-        assertTrue(response.getBody().getEmails().contains("john.doe@email.com"));
-        assertTrue(response.getBody().getEmails().contains("jane.doe@email.com"));
-        assertTrue(response.getBody().getEmails().contains("bob.smith@email.com"));
     }
 
     @Test
-    @DisplayName("Test de récupération des emails sans emails présents")
-    void testGetEmailsByCity_NoEmails() {
+    @DisplayName("GET /communityEmail?city=Paris - Cas sans emails")
+    void getEmailsByCity_noEmails_shouldReturnOkWithNullBody() {
         // Arrange
-        String city = "Paris";
+        CommunityEmailDTO emptyResponse = new CommunityEmailDTO();
+        emptyResponse.setEmails(Collections.emptyList());
+        
+        when(communityEmailService.getEmailsByCity(TEST_CITY)).thenReturn(emptyResponse);
+
+        // Act
+        ResponseEntity<CommunityEmailDTO> response = communityEmailController.getEmailsByCity(TEST_CITY);
+
+        // Assert
+        assertAll("Vérification réponse vide",
+            () -> assertNotNull(response, "Réponse ne devrait pas être null"),
+            () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
+            () -> assertNull(response.getBody())
+        );
+    }
+
+    @Test
+    @DisplayName("GET /communityEmail?city='' - Cas avec ville vide")
+    void getEmailsByCity_emptyCity_shouldHandleGracefully() {
+        // Arrange
+        String emptyCity = "";
         CommunityEmailDTO mockResponse = new CommunityEmailDTO();
         mockResponse.setEmails(List.of());
         
-        when(communityEmailService.getEmailsByCity(city)).thenReturn(mockResponse);
+        when(communityEmailService.getEmailsByCity(emptyCity)).thenReturn(mockResponse);
 
         // Act
-        ResponseEntity<CommunityEmailDTO> response = communityEmailController.getEmailsByCity(city);
+        ResponseEntity<CommunityEmailDTO> response = communityEmailController.getEmailsByCity(emptyCity);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNull(response.getBody());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
     }
 
     @Test
-    @DisplayName("Test de récupération des emails avec une ville vide")
-    void testGetEmailsByCity_EmptyCity() {
+    @DisplayName("GET /communityEmail?city=Paris - Cas avec erreur interne")
+    void getEmailsByCity_serviceError_shouldPropagateException() {
         // Arrange
-        String city = "";
-        CommunityEmailDTO mockResponse = new CommunityEmailDTO();
-        mockResponse.setEmails(List.of());
-        
-        when(communityEmailService.getEmailsByCity(city)).thenReturn(mockResponse);
-
-        // Act
-        ResponseEntity<CommunityEmailDTO> response = communityEmailController.getEmailsByCity(city);
-
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNull(response.getBody());
-    }
-
-    @Test
-    @DisplayName("Test de récupération des emails avec une erreur du service")
-    void testGetEmailsByCity_WithServiceError() {
-        // Arrange
-        String city = "Paris";
-        when(communityEmailService.getEmailsByCity(city))
-            .thenThrow(new RuntimeException("Erreur du service"));
+        when(communityEmailService.getEmailsByCity(TEST_CITY))
+            .thenThrow(new RuntimeException("Simulated error"));
 
         // Act & Assert
-        assertThrows(RuntimeException.class, () ->
-            communityEmailController.getEmailsByCity(city)
+        assertThrows(RuntimeException.class,
+            () -> communityEmailController.getEmailsByCity(TEST_CITY),
+            "L'exception devrait être propagée"
         );
     }
 
     @Test
-    @DisplayName("Test de récupération des emails avec des doublons")
-    void testGetEmailsByCity_WithDuplicates() {
+    @DisplayName("GET /communityEmail?city=Paris - Vérification gestion des doublons")
+    void getEmailsByCity_withDuplicates_shouldReturnAsIs() {
         // Arrange
-        String city = "Paris";
+        List<String> emailsWithDuplicates = List.of("dup@mail.com", "dup@mail.com", "unique@mail.com");
         CommunityEmailDTO mockResponse = new CommunityEmailDTO();
-        List<String> emails = Arrays.asList(
-            "john.doe@email.com",
-            "john.doe@email.com", // Doublon
-            "jane.doe@email.com"
-        );
-        mockResponse.setEmails(emails);
+        mockResponse.setEmails(new ArrayList<>(emailsWithDuplicates));
         
-        when(communityEmailService.getEmailsByCity(city)).thenReturn(mockResponse);
+        when(communityEmailService.getEmailsByCity(TEST_CITY)).thenReturn(mockResponse);
 
         // Act
-        ResponseEntity<CommunityEmailDTO> response = communityEmailController.getEmailsByCity(city);
+        ResponseEntity<CommunityEmailDTO> response = communityEmailController.getEmailsByCity(TEST_CITY);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals(3, response.getBody().getEmails().size()); // Les doublons sont conservés
+        CommunityEmailDTO body = response.getBody();
+        assertNotNull(body, "Le body de la réponse ne devrait pas être null");
+        assertAll("Vérification doublons",
+            () -> assertEquals(emailsWithDuplicates.size(), body.getEmails().size()),
+            () -> assertEquals(2, new HashSet<>(body.getEmails()).size())
+        );
     }
-} 
+}

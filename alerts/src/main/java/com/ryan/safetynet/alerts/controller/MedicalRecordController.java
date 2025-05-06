@@ -4,9 +4,8 @@ import com.ryan.safetynet.alerts.model.MedicalRecord;
 import com.ryan.safetynet.alerts.service.MedicalRecordService;
 import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
 import com.ryan.safetynet.alerts.dto.MedicalRecordInputDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +14,7 @@ import jakarta.validation.Valid;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -24,25 +24,14 @@ import java.util.Optional;
  * Les dossiers médicaux contiennent des informations vitales comme la date de naissance,
  * les médicaments et les allergies, essentielles pour les services d'urgence.
  */
+@Slf4j
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/medicalRecord")
 public class MedicalRecordController {
 
-    private final Logger logger = LoggerFactory.getLogger(MedicalRecordController.class);
     private final MedicalRecordService medicalRecordService;
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-
-    /**
-     * Constructeur du contrôleur MedicalRecordController.
-     * Injecte le service MedicalRecordService nécessaire pour gérer les opérations
-     * sur les dossiers médicaux.
-     *
-     * @param medicalRecordService Le service responsable de la logique métier des dossiers médicaux
-     */
-    @Autowired
-    public MedicalRecordController(MedicalRecordService medicalRecordService) {
-        this.medicalRecordService = medicalRecordService;
-    }
 
     /**
      * Crée un objet MedicalRecord à partir d'un DTO.
@@ -64,14 +53,20 @@ public class MedicalRecordController {
      * Ajoute un nouveau dossier médical dans le système.
      * Cette méthode crée un nouveau dossier médical à partir des informations fournies
      * dans le DTO et le persiste dans le système.
+     * 
+     * IMPORTANT: Cette méthode est réservée à la création de nouveaux dossiers médicaux.
+     * Si un dossier médical existe déjà pour cette personne, une exception sera levée.
+     * Dans ce cas, utilisez la méthode PUT pour mettre à jour le dossier existant.
      *
      * @param medicalRecordDTO DTO contenant les informations du dossier médical à créer
      * @return ResponseEntity contenant le dossier médical créé avec le statut HTTP 201 (Created)
      * @throws IOException en cas d'erreur lors de la persistance des données
+     * @throws IllegalArgumentException si un dossier médical existe déjà pour cette personne
+     * @throws ResourceNotFoundException si la personne n'existe pas dans la base de données
      */
     @PostMapping
     public ResponseEntity<MedicalRecord> addMedicalRecord(@Valid @RequestBody MedicalRecordInputDTO medicalRecordDTO) throws IOException {
-        logger.info("Ajout d'un nouveau dossier médical : {} {}",
+        log.info("Ajout d'un nouveau dossier médical : {} {}",
                 medicalRecordDTO.getFirstName(), medicalRecordDTO.getLastName());
 
         MedicalRecord medicalRecord = createMedicalRecordFromDTO(medicalRecordDTO);
@@ -91,7 +86,7 @@ public class MedicalRecordController {
      */
     @PutMapping
     public ResponseEntity<MedicalRecord> updateMedicalRecord(@Valid @RequestBody MedicalRecordInputDTO medicalRecordDTO) throws IOException {
-        logger.info("Mise à jour du dossier médical pour : {} {}",
+        log.info("Mise à jour du dossier médical pour : {} {}",
                 medicalRecordDTO.getFirstName(), medicalRecordDTO.getLastName());
 
         MedicalRecord medicalRecord = createMedicalRecordFromDTO(medicalRecordDTO);
@@ -122,7 +117,7 @@ public class MedicalRecordController {
      */
     @DeleteMapping
     public ResponseEntity<Void> deleteMedicalRecord(@RequestParam String firstName, @RequestParam String lastName) throws IOException {
-        logger.info("Suppression du dossier médical pour : {} {}", firstName, lastName);
+        log.info("Suppression du dossier médical pour : {} {}", firstName, lastName);
 
         boolean deleted = medicalRecordService.deleteMedicalRecord(firstName, lastName);
 
@@ -147,7 +142,7 @@ public class MedicalRecordController {
      */
     @GetMapping
     public ResponseEntity<MedicalRecord> getMedicalRecord(@RequestParam String firstName, @RequestParam String lastName) {
-        logger.info("Recherche du dossier médical pour : {} {}", firstName, lastName);
+        log.info("Recherche du dossier médical pour : {} {}", firstName, lastName);
 
         Optional<MedicalRecord> medicalRecordOpt = medicalRecordService.findMedicalRecordByName(firstName, lastName);
 
@@ -158,5 +153,17 @@ public class MedicalRecordController {
         }
 
         return ResponseEntity.ok(medicalRecordOpt.get());
+    }
+
+    /**
+     * Récupère la liste de tous les dossiers médicaux enregistrés dans le système.
+     *
+     * @return ResponseEntity contenant la liste des dossiers médicaux
+     */
+    @GetMapping("/all")
+    public ResponseEntity<List<MedicalRecord>> getAllMedicalRecords() {
+        log.info("Récupération de tous les dossiers médicaux");
+        List<MedicalRecord> medicalRecords = medicalRecordService.getAllMedicalRecords();
+        return ResponseEntity.ok(medicalRecords);
     }
 }

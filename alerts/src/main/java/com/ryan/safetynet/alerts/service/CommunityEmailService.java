@@ -4,7 +4,8 @@ import com.ryan.safetynet.alerts.dto.CommunityEmailDTO;
 import com.ryan.safetynet.alerts.model.Data;
 import com.ryan.safetynet.alerts.model.Person;
 import com.ryan.safetynet.alerts.repository.DataRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,20 +17,12 @@ import java.util.stream.Collectors;
  * des habitants d'une ville spécifique. Cette fonctionnalité est utile
  * pour envoyer des communications de masse aux résidents d'une ville.
  */
+@Slf4j
+@RequiredArgsConstructor
 @Service
 public class CommunityEmailService {
 
     private final DataRepository dataRepository;
-
-    /**
-     * Constructeur du service avec injection de dépendance du repository.
-     *
-     * @param dataRepository le repository contenant les données de l'application
-     */
-    @Autowired
-    public CommunityEmailService(DataRepository dataRepository) {
-        this.dataRepository = dataRepository;
-    }
 
     /**
      * Récupère la liste des adresses email uniques des habitants d'une ville.
@@ -42,20 +35,31 @@ public class CommunityEmailService {
      * @return un DTO contenant la liste des adresses email uniques
      */
     public CommunityEmailDTO getEmailsByCity(String city) {
-        // Récupération des données depuis le repository
-        Data data = dataRepository.getData();
+        log.info("Recherche des emails pour la ville : {}", city);
 
-        // Filtrage des personnes par ville et extraction des emails uniques
-        List<String> emails = data.getPersons().stream()
-                .filter(p -> p.getCity().equalsIgnoreCase(city))
-                .map(Person::getEmail)
-                .distinct()
-                .collect(Collectors.toList());
+        try {
+            // Récupération des données depuis le repository
+            Data data = dataRepository.getData();
+            log.debug("Nombre total de personnes dans le système : {}", data.getPersons().size());
 
-        // Construction de la réponse
-        CommunityEmailDTO dto = new CommunityEmailDTO();
-        dto.setEmails(emails);
+            // Filtrage des personnes par ville et extraction des emails uniques
+            List<String> emails = data.getPersons().stream()
+                    .filter(p -> p.getCity().equalsIgnoreCase(city))
+                    .map(Person::getEmail)
+                    .distinct()
+                    .collect(Collectors.toList());
 
-        return dto;
+            log.debug("Nombre d'emails uniques trouvés pour {} : {}", city, emails.size());
+
+            // Construction de la réponse
+            CommunityEmailDTO dto = new CommunityEmailDTO();
+            dto.setEmails(emails);
+
+            log.info("Emails récupérés avec succès pour la ville : {}", city);
+            return dto;
+        } catch (Exception e) {
+            log.error("Erreur lors de la récupération des emails pour la ville {} : {}", city, e.getMessage());
+            throw new RuntimeException("Erreur lors de la récupération des emails : " + e.getMessage(), e);
+        }
     }
 }

@@ -4,9 +4,8 @@ import com.ryan.safetynet.alerts.dto.FloodStationDTO;
 import com.ryan.safetynet.alerts.dto.ErrorResponse;
 import com.ryan.safetynet.alerts.service.FloodAlertService;
 import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,23 +21,13 @@ import java.util.stream.Collectors;
  * Il permet d'obtenir une vue d'ensemble des zones à risque et des habitants
  * qui pourraient être affectés.
  */
+@Slf4j
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/flood")
 public class FloodAlertController {
 
-    private final Logger logger = LoggerFactory.getLogger(FloodAlertController.class);
     private final FloodAlertService floodAlertService;
-
-    /**
-     * Constructeur du contrôleur FloodAlertController.
-     * Injecte le service FloodAlertService nécessaire pour traiter les requêtes d'alerte d'inondation.
-     *
-     * @param floodAlertService Le service responsable de la logique métier des alertes d'inondation
-     */
-    @Autowired
-    public FloodAlertController(FloodAlertService floodAlertService) {
-        this.floodAlertService = floodAlertService;
-    }
 
     /**
      * Récupère les informations sur les foyers couverts par les casernes de pompiers spécifiées.
@@ -59,25 +48,25 @@ public class FloodAlertController {
                     .map(Integer::valueOf)
                     .collect(Collectors.toList());
 
-            logger.info("Requête reçue pour les stations : {}", stationNumbers);
+            log.info("Requête reçue pour les stations : {}", stationNumbers);
 
             FloodStationDTO response = floodAlertService.getHouseholdsByStations(stationNumbers);
 
             if (response.getAddresses().isEmpty()) {
-                logger.info("Aucune adresse trouvée pour les stations : {}", stationNumbers);
+                log.info("Aucune adresse trouvée pour les stations : {}", stationNumbers);
                 return ResponseEntity.ok().body(null);
             }
 
-            logger.info("Nombre d'adresses trouvées : {}", response.getAddresses().size());
+            log.info("Nombre d'adresses trouvées : {}", response.getAddresses().size());
             return ResponseEntity.ok(response);
         } catch (ResourceNotFoundException e) {
-            logger.warn("Erreur : {}", e.getMessage());
+            log.warn("Erreur : {}", e.getMessage());
             return ResponseEntity
                     .status(HttpStatus.NOT_FOUND)
                     .body(new ErrorResponse(HttpStatus.NOT_FOUND.value(), e.getMessage(), null));
         } catch (NumberFormatException e) {
             String errorMessage = "Format de station invalide. Les stations doivent être des nombres.";
-            logger.warn(errorMessage);
+            log.warn(errorMessage);
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(new ErrorResponse(HttpStatus.BAD_REQUEST.value(), errorMessage, null));

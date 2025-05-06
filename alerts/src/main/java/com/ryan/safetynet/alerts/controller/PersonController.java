@@ -4,15 +4,15 @@ import com.ryan.safetynet.alerts.model.Person;
 import com.ryan.safetynet.alerts.service.PersonService;
 import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
 import com.ryan.safetynet.alerts.dto.PersonInputDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Contrôleur gérant les opérations CRUD sur les personnes.
@@ -21,23 +21,24 @@ import java.io.IOException;
  * sont essentielles pour les services d'urgence car elles permettent de localiser
  * et contacter les habitants en cas de besoin.
  */
+@Slf4j
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/person")
 public class PersonController {
 
-    private final Logger logger = LoggerFactory.getLogger(PersonController.class);
     private final PersonService personService;
 
     /**
-     * Constructeur du contrôleur PersonController.
-     * Injecte le service PersonService nécessaire pour gérer les opérations
-     * sur les personnes.
+     * Récupère la liste de toutes les personnes enregistrées dans le système.
      *
-     * @param personService Le service responsable de la logique métier des personnes
+     * @return ResponseEntity contenant la liste des personnes
      */
-    @Autowired
-    public PersonController(PersonService personService) {
-        this.personService = personService;
+    @GetMapping
+    public ResponseEntity<List<Person>> getAllPersons() {
+        log.info("Récupération de toutes les personnes");
+        List<Person> persons = personService.getAllPersons();
+        return ResponseEntity.ok(persons);
     }
 
     /**
@@ -69,7 +70,7 @@ public class PersonController {
      */
     @PostMapping
     public ResponseEntity<Person> addPerson(@Valid @RequestBody PersonInputDTO personDTO) throws IOException {
-        logger.info("Ajout d'une nouvelle personne : {} {}", 
+        log.info("Ajout d'une nouvelle personne : {} {}", 
                 personDTO.getFirstName(), personDTO.getLastName());
 
         Person person = createPersonFromDTO(personDTO);
@@ -89,7 +90,7 @@ public class PersonController {
      */
     @PutMapping
     public ResponseEntity<Person> updatePerson(@Valid @RequestBody PersonInputDTO personDTO) throws IOException {
-        logger.info("Mise à jour de la personne : {} {}", 
+        log.info("Mise à jour de la personne : {} {}", 
                 personDTO.getFirstName(), personDTO.getLastName());
 
         Person person = createPersonFromDTO(personDTO);
@@ -124,7 +125,7 @@ public class PersonController {
             @RequestParam String firstName,
             @RequestParam String lastName
     ) throws IOException {
-        logger.info("Suppression de la personne : {} {}", firstName, lastName);
+        log.info("Suppression de la personne : {} {}", firstName, lastName);
         boolean deleted = personService.deletePerson(firstName, lastName);
 
         if (!deleted) {

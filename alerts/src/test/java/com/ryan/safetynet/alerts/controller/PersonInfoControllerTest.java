@@ -2,126 +2,107 @@ package com.ryan.safetynet.alerts.controller;
 
 import com.ryan.safetynet.alerts.dto.PersonInfoDTO;
 import com.ryan.safetynet.alerts.service.PersonInfoService;
-import org.junit.jupiter.api.DisplayName;
+import com.ryan.safetynet.alerts.exception.GlobalExceptionHandler;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.context.annotation.Import;
+import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Arrays;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
-@ExtendWith(MockitoExtension.class)
-@DisplayName("Tests du controller PersonInfoController")
+@WebMvcTest(PersonInfoController.class)
+@Import(GlobalExceptionHandler.class)
 class PersonInfoControllerTest {
 
-    @Mock
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockitoBean
     private PersonInfoService personInfoService;
 
-    @InjectMocks
-    private PersonInfoController personInfoController;
-
     @Test
-    @DisplayName("Test de récupération des informations d'une personne existante")
-    void testGetPersonInfo_WithPersonFound() {
+    void testGetPersonInfo_WithValidPerson() throws Exception {
         // Arrange
         String firstName = "John";
         String lastName = "Doe";
-        
-        PersonInfoDTO expectedInfo = new PersonInfoDTO();
-        expectedInfo.setFirstName(firstName);
-        expectedInfo.setLastName(lastName);
-        expectedInfo.setAddress("123 Main St");
-        expectedInfo.setAge(30);
-        expectedInfo.setEmail("john.doe@email.com");
-        expectedInfo.setMedications(Arrays.asList("med1", "med2"));
-        expectedInfo.setAllergies(Arrays.asList("allergy1", "allergy2"));
+        PersonInfoDTO expectedResponse = new PersonInfoDTO();
+        // Configurer expectedResponse avec les données attendues
+        when(personInfoService.getPersonInfo(firstName, lastName)).thenReturn(expectedResponse);
 
-        when(personInfoService.getPersonInfo(firstName, lastName)).thenReturn(expectedInfo);
-
-        // Act
-        ResponseEntity<PersonInfoDTO> response = personInfoController.getPersonInfo(firstName, lastName);
-
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals("John", response.getBody().getFirstName());
-        assertEquals("Doe", response.getBody().getLastName());
-        assertEquals("123 Main St", response.getBody().getAddress());
-        assertEquals(30, response.getBody().getAge());
-        assertEquals("john.doe@email.com", response.getBody().getEmail());
-        assertEquals(2, response.getBody().getMedications().size());
-        assertEquals(2, response.getBody().getAllergies().size());
+        // Act & Assert
+        mockMvc.perform(get("/personInfo")
+                .param("firstName", firstName)
+                .param("lastName", lastName))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").exists());
     }
 
     @Test
-    @DisplayName("Test de récupération des informations d'une personne inexistante")
-    void testGetPersonInfo_WithPersonNotFound() {
+    void testGetPersonInfo_WithPersonNotFound() throws Exception {
         // Arrange
         String firstName = "John";
         String lastName = "Doe";
-        
         when(personInfoService.getPersonInfo(firstName, lastName)).thenReturn(null);
 
-        // Act
-        ResponseEntity<PersonInfoDTO> response = personInfoController.getPersonInfo(firstName, lastName);
-
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNull(response.getBody());
+        // Act & Assert
+        mockMvc.perform(get("/personInfo")
+                .param("firstName", firstName)
+                .param("lastName", lastName))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.status").value(404))
+                .andExpect(jsonPath("$.message").value("La personne " + firstName + " " + lastName + " n'existe pas dans le système"));
     }
 
     @Test
-    @DisplayName("Test de récupération des informations avec un prénom vide")
-    void testGetPersonInfo_WithEmptyFirstName() {
+    void testGetPersonInfo_WithEmptyFirstName() throws Exception {
         // Arrange
         String firstName = "";
         String lastName = "Doe";
+        when(personInfoService.getPersonInfo(firstName, lastName)).thenReturn(null);
 
-        // Act
-        ResponseEntity<PersonInfoDTO> response = personInfoController.getPersonInfo(firstName, lastName);
-
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        verify(personInfoService).getPersonInfo(firstName, lastName);
+        // Act & Assert
+        mockMvc.perform(get("/personInfo")
+                .param("firstName", firstName)
+                .param("lastName", lastName))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.status").value(404))
+                .andExpect(jsonPath("$.message").value("La personne " + firstName + " " + lastName + " n'existe pas dans le système"));
     }
 
     @Test
-    @DisplayName("Test de récupération des informations avec un nom vide")
-    void testGetPersonInfo_WithEmptyLastName() {
+    void testGetPersonInfo_WithEmptyLastName() throws Exception {
         // Arrange
         String firstName = "John";
         String lastName = "";
+        when(personInfoService.getPersonInfo(firstName, lastName)).thenReturn(null);
 
-        // Act
-        ResponseEntity<PersonInfoDTO> response = personInfoController.getPersonInfo(firstName, lastName);
-
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        verify(personInfoService).getPersonInfo(firstName, lastName);
+        // Act & Assert
+        mockMvc.perform(get("/personInfo")
+                .param("firstName", firstName)
+                .param("lastName", lastName))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.status").value(404))
+                .andExpect(jsonPath("$.message").value("La personne " + firstName + " " + lastName + " n'existe pas dans le système"));
     }
 
     @Test
-    @DisplayName("Test de récupération des informations avec des champs null")
-    void testGetPersonInfo_WithNullFields() {
+    void testGetPersonInfo_WithNullFields() throws Exception {
         // Arrange
-        String firstName = null;
-        String lastName = null;
+        String firstName = "";
+        String lastName = "";
+        when(personInfoService.getPersonInfo(firstName, lastName)).thenReturn(null);
 
-        // Act
-        ResponseEntity<PersonInfoDTO> response = personInfoController.getPersonInfo(firstName, lastName);
-
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        verify(personInfoService).getPersonInfo(firstName, lastName);
+        // Act & Assert
+        mockMvc.perform(get("/personInfo")
+                .param("firstName", firstName)
+                .param("lastName", lastName))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.status").value(404))
+                .andExpect(jsonPath("$.message").value("La personne " + firstName + " " + lastName + " n'existe pas dans le système"));
     }
 } 

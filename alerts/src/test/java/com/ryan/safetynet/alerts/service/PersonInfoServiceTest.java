@@ -152,4 +152,136 @@ class PersonInfoServiceTest {
             );
         }
     }
+
+    @Test
+    @DisplayName("Test de récupération des personnes par nom de famille avec plusieurs personnes")
+    void testGetPersonsByLastName_MultiplePersons() {
+        try (MockedStatic<MedicalRecordUtils> utils = mockStatic(MedicalRecordUtils.class)) {
+            // Arrange
+            String lastName = "Doe";
+            
+            // Première personne
+            Person person1 = new Person();
+            person1.setFirstName("John");
+            person1.setLastName(lastName);
+            person1.setAddress("123 Main St");
+            person1.setEmail("john.doe@email.com");
+            
+            // Deuxième personne
+            Person person2 = new Person();
+            person2.setFirstName("Jane");
+            person2.setLastName(lastName);
+            person2.setAddress("456 Oak St");
+            person2.setEmail("jane.doe@email.com");
+            
+            mockPersons.add(person1);
+            mockPersons.add(person2);
+
+            // Configuration des informations médicales
+            PersonWithMedicalInfoDTO medicalInfo1 = new PersonWithMedicalInfoDTO();
+            medicalInfo1.setAge(30);
+            medicalInfo1.setMedications(List.of("med1"));
+            medicalInfo1.setAllergies(List.of("allergy1"));
+
+            PersonWithMedicalInfoDTO medicalInfo2 = new PersonWithMedicalInfoDTO();
+            medicalInfo2.setAge(25);
+            medicalInfo2.setMedications(List.of("med2"));
+            medicalInfo2.setAllergies(List.of("allergy2"));
+
+            utils.when(() -> MedicalRecordUtils.extractMedicalInfo(eq(person1), any()))
+                .thenReturn(medicalInfo1);
+            utils.when(() -> MedicalRecordUtils.extractMedicalInfo(eq(person2), any()))
+                .thenReturn(medicalInfo2);
+
+            // Act
+            List<PersonInfoDTO> results = personInfoService.getPersonsByLastName(lastName);
+
+            // Assert
+            assertNotNull(results);
+            assertEquals(2, results.size());
+            
+            // Vérification de la première personne
+            PersonInfoDTO result1 = results.get(0);
+            assertEquals("John", result1.getFirstName());
+            assertEquals(lastName, result1.getLastName());
+            assertEquals("123 Main St", result1.getAddress());
+            assertEquals("john.doe@email.com", result1.getEmail());
+            assertEquals(30, result1.getAge());
+            assertEquals(List.of("med1"), result1.getMedications());
+            assertEquals(List.of("allergy1"), result1.getAllergies());
+
+            // Vérification de la deuxième personne
+            PersonInfoDTO result2 = results.get(1);
+            assertEquals("Jane", result2.getFirstName());
+            assertEquals(lastName, result2.getLastName());
+            assertEquals("456 Oak St", result2.getAddress());
+            assertEquals("jane.doe@email.com", result2.getEmail());
+            assertEquals(25, result2.getAge());
+            assertEquals(List.of("med2"), result2.getMedications());
+            assertEquals(List.of("allergy2"), result2.getAllergies());
+        }
+    }
+
+    @Test
+    @DisplayName("Test de récupération des personnes par nom de famille avec casse différente")
+    void testGetPersonsByLastName_CaseInsensitive() {
+        try (MockedStatic<MedicalRecordUtils> utils = mockStatic(MedicalRecordUtils.class)) {
+            // Arrange
+            String lastName = "Doe";
+            Person person = new Person();
+            person.setFirstName("John");
+            person.setLastName(lastName);
+            person.setAddress("123 Main St");
+            person.setEmail("john.doe@email.com");
+            mockPersons.add(person);
+
+            PersonWithMedicalInfoDTO medicalInfo = new PersonWithMedicalInfoDTO();
+            medicalInfo.setAge(30);
+            medicalInfo.setMedications(List.of("med1"));
+            medicalInfo.setAllergies(List.of("allergy1"));
+            utils.when(() -> MedicalRecordUtils.extractMedicalInfo(eq(person), any()))
+                .thenReturn(medicalInfo);
+
+            // Act
+            List<PersonInfoDTO> results = personInfoService.getPersonsByLastName("DOE");
+
+            // Assert
+            assertNotNull(results);
+            assertEquals(1, results.size());
+            assertEquals("John", results.get(0).getFirstName());
+            assertEquals(lastName, results.get(0).getLastName());
+        }
+    }
+
+    @Test
+    @DisplayName("Test de récupération des personnes par nom de famille inexistant")
+    void testGetPersonsByLastName_NonExisting() {
+        // Act
+        List<PersonInfoDTO> results = personInfoService.getPersonsByLastName("NonExisting");
+
+        // Assert
+        assertNotNull(results);
+        assertTrue(results.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Test de récupération des personnes par nom de famille avec erreur médicale")
+    void testGetPersonsByLastName_MedicalError() {
+        try (MockedStatic<MedicalRecordUtils> utils = mockStatic(MedicalRecordUtils.class)) {
+            // Arrange
+            String lastName = "Doe";
+            Person person = new Person();
+            person.setFirstName("John");
+            person.setLastName(lastName);
+            mockPersons.add(person);
+
+            utils.when(() -> MedicalRecordUtils.extractMedicalInfo(eq(person), any()))
+                .thenThrow(new IllegalStateException("Dossier médical non trouvé"));
+
+            // Act & Assert
+            assertThrows(IllegalStateException.class, () ->
+                personInfoService.getPersonsByLastName(lastName)
+            );
+        }
+    }
 } 

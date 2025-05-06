@@ -1,7 +1,8 @@
 package com.ryan.safetynet.alerts.service;
 
 import com.ryan.safetynet.alerts.model.Person;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,25 +14,13 @@ import java.util.stream.Collectors;
  * Ce service permet de récupérer les numéros de téléphone des habitants
  * couverts par une caserne de pompiers spécifique.
  */
+@Slf4j
 @Service
+@RequiredArgsConstructor
 public class PhoneAlertService {
 
     private final FireStationService fireStationService;
     private final PersonService personService;
-
-    /**
-     * Constructeur du service avec injection de dépendance du repository.
-     *
-     * @param fireStationService le service gérant les casernes de pompiers
-     * @param personService le service gérant les personnes
-     */
-    @Autowired
-    public PhoneAlertService(
-                            FireStationService fireStationService,
-                            PersonService personService) {
-        this.fireStationService = fireStationService;
-        this.personService = personService;
-    }
 
     /**
      * Récupère la liste des numéros de téléphone des habitants couverts par une caserne.
@@ -44,18 +33,26 @@ public class PhoneAlertService {
      * @return la liste des numéros de téléphone uniques des habitants couverts par la caserne
      */
     public List<String> getPhoneNumbersByStation(int stationNumber) {
+        log.debug("Recherche des numéros de téléphone pour la caserne {}", stationNumber);
+        
         // Extraction des adresses couvertes par la caserne spécifiée
         List<String> addresses = fireStationService.getAddressesCoveredByStation(stationNumber);
+        log.debug("Nombre d'adresses couvertes par la caserne {}: {}", stationNumber, addresses.size());
 
         // Utilisation de personService pour récupérer les personnes par adresses
         Map<String, List<Person>> personsByAddress = personService.getPersonsByAddresses(addresses);
+        log.debug("Nombre d'adresses avec des résidents: {}", personsByAddress.size());
 
         // Extraction des numéros de téléphone uniques de toutes les personnes
-        return personsByAddress.values().stream()
+        List<String> phoneNumbers = personsByAddress.values().stream()
                 .flatMap(List::stream)
                 .map(Person::getPhone)
                 .distinct() // Élimination des doublons
                 .collect(Collectors.toList());
+        
+        log.info("Nombre de numéros de téléphone uniques trouvés pour la caserne {}: {}", 
+            stationNumber, phoneNumbers.size());
+        return phoneNumbers;
     }
 }
 

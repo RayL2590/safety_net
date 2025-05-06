@@ -11,12 +11,11 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.ryan.safetynet.alerts.model.Data;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,10 +23,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
+@Slf4j
 @Component
 public class DataRepository {
-    private final Logger logger = LoggerFactory.getLogger(DataRepository.class);
-    
     @Value("${data.file.path:classpath:data.json}")
     private String dataFilePath;
     
@@ -61,29 +59,29 @@ public class DataRepository {
             // Vérifier si le chemin est un classpath
             if (dataFilePath.startsWith("classpath:")) {
                 String resourcePath = dataFilePath.substring("classpath:".length());
-                logger.info("Tentative de chargement depuis le classpath: {}", resourcePath);
+                log.info("Tentative de chargement depuis le classpath: {}", resourcePath);
                 
                 // Charger depuis le classpath
                 this.data = objectMapper.readValue(
                     getClass().getClassLoader().getResourceAsStream(resourcePath),
                     Data.class
                 );
-                logger.info("Données chargées avec succès depuis le classpath: {}", resourcePath);
+                log.info("Données chargées avec succès depuis le classpath: {}", resourcePath);
             } else {
                 // Charger depuis un fichier
                 File file = new File(dataFilePath);
                 if (file.exists()) {
                     this.data = objectMapper.readValue(file, Data.class);
-                    logger.info("Données chargées avec succès depuis le fichier: {}", dataFilePath);
+                    log.info("Données chargées avec succès depuis le fichier: {}", dataFilePath);
                 } else {
                     this.data = new Data();
-                    logger.warn("Fichier de données non trouvé à {}. Initialisation avec des données vides.", dataFilePath);
+                    log.warn("Fichier de données non trouvé à {}. Initialisation avec des données vides.", dataFilePath);
                 }
             }
         } catch (IOException e) {
             // Gère les erreurs pendant la lecture du fichier ou l'analyse JSON
             this.data = new Data();
-            logger.error("Échec du chargement des données depuis {}. Initialisation avec des données vides. Message d'erreur: {}", 
+            log.error("Échec du chargement des données depuis {}. Initialisation avec des données vides. Message d'erreur: {}", 
                     dataFilePath, e.getMessage(), e);
             throw new DataLoadException("Échec du chargement des données depuis : " + dataFilePath, e);
         }
@@ -115,7 +113,7 @@ public class DataRepository {
         }
 
         objectMapper.writeValue(file, data);
-        logger.info("Données sauvegardées dans {}", filePath);
+        log.info("Données sauvegardées dans {}", filePath);
     }
 
     /**

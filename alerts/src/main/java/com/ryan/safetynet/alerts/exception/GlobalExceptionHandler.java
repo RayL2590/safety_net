@@ -1,8 +1,7 @@
 package com.ryan.safetynet.alerts.exception;
 
 import com.ryan.safetynet.alerts.dto.ErrorResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -25,9 +24,9 @@ import java.util.Map;
  * - Les erreurs d'entrée/sortie
  * - Les erreurs génériques non spécifiques
  */
+@Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     /**
      * Gère les erreurs de validation des données.
@@ -40,11 +39,27 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ErrorResponse> handleValidationExceptions(MethodArgumentNotValidException ex) {
-        logger.error("Erreur de validation des données", ex);
-        // Création d'une map pour stocker les erreurs par champ
+        log.error("Erreur de validation des données", ex);
         Map<String, String> errors = new HashMap<>();
-        ex.getBindingResult().getFieldErrors().forEach(error ->
-                errors.put(error.getField(), error.getDefaultMessage()));
+        ex.getBindingResult().getFieldErrors().forEach(error -> {
+            String field = error.getField();
+            String message = error.getDefaultMessage();
+            
+            // Personnalisation des messages d'erreur
+            if (field.equals("fireStationNumber")) {
+                if (message != null && message.contains("chiffres")) {
+                    errors.put(field, "Le numéro de la caserne doit être un nombre entre 1 et 9999");
+                } else if (message != null && message.contains("obligatoire")) {
+                    errors.put(field, "Le numéro de la caserne est requis pour identifier la caserne de pompiers");
+                }
+            } else if (field.equals("residents")) {
+                if (message != null && message.contains("null")) {
+                    errors.put(field, "La liste des résidents ne peut pas être vide");
+                }
+            } else {
+                errors.put(field, message);
+            }
+        });
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(new ErrorResponse(HttpStatus.BAD_REQUEST.value(), "Erreur de validation des données", errors));
@@ -61,10 +76,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(IOException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<ErrorResponse> handleIOException(IOException ex) {
-        logger.error("Erreur d'entrée/sortie", ex);
+        log.error("Erreur d'entrée/sortie", ex);
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Erreur de persistance des données", null));
+                .body(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), 
+                    "Erreur lors de l'accès aux données du système", null));
     }
 
     /**
@@ -78,10 +94,21 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException ex) {
-        logger.warn("Ressource non trouvée: {}", ex.getMessage());
+        log.warn("Ressource non trouvée: {}", ex.getMessage());
+        Map<String, String> details = new HashMap<>();
+        
+        // Personnalisation des messages selon le type de ressource
+        if (ex.getMessage().contains("caserne")) {
+            details.put("fireStation", "La caserne de pompiers spécifiée n'existe pas dans notre système");
+        } else if (ex.getMessage().contains("résident")) {
+            details.put("resident", "Aucun résident trouvé à cette adresse");
+        } else if (ex.getMessage().contains("médical")) {
+            details.put("medical", "Aucune information médicale disponible pour ce résident");
+        }
+        
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage(), null));
+                .body(new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage(), details));
     }
 
     /**
@@ -94,10 +121,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NoHandlerFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<ErrorResponse> handleNoHandlerFoundException(NoHandlerFoundException ex) {
-        logger.warn("Endpoint non trouvé: {}", ex.getRequestURL());
+        log.warn("Endpoint non trouvé: {}", ex.getRequestURL());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorResponse(HttpStatus.NOT_FOUND.value(), "Endpoint non trouvé: " + ex.getRequestURL(), null));
+                .body(new ErrorResponse(HttpStatus.NOT_FOUND.value(), 
+                    "L'endpoint demandé n'existe pas dans notre système", null));
     }
 
     /**
@@ -111,9 +139,26 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<ErrorResponse> handleGenericException(Exception ex) {
-        logger.error("Erreur inattendue", ex);
+        log.error("Erreur inattendue", ex);
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Une erreur inattendue s'est produite", null));
+                .body(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), 
+                    "Une erreur inattendue s'est produite lors du traitement de votre demande", null));
     }
+
+    /**
+     * Gère les exceptions de type IllegalArgumentException.
+     * Cette méthode est appelée lorsqu'une méthode reçoit un argument
+     * non valide, par exemple une adresse vide ou une valeur null.
+     *
+     * @param ex l'exception de type IllegalArgumentException
+     * @return une réponse HTTP 400 (Bad Request) avec le message d'erreur spécifique
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseEntity<ErrorResponse> handleIllegalArgument(IllegalArgumentException ex) {
+        return ResponseEntity.badRequest()
+                .body(new ErrorResponse(HttpStatus.BAD_REQUEST.value(), ex.getMessage(), null));
+    }
+
 }

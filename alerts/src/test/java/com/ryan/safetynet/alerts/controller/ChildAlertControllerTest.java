@@ -4,121 +4,103 @@ import com.ryan.safetynet.alerts.dto.ChildAlertDTO;
 import com.ryan.safetynet.alerts.dto.ChildDTO;
 import com.ryan.safetynet.alerts.dto.HouseholdMemberDTO;
 import com.ryan.safetynet.alerts.service.ChildAlertService;
+import com.ryan.safetynet.alerts.exception.GlobalExceptionHandler;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.context.annotation.Import;
+import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
-@ExtendWith(MockitoExtension.class)
-@DisplayName("Tests du controller ChildAlertController")
+@Slf4j
+@WebMvcTest(ChildAlertController.class)
+@Import(GlobalExceptionHandler.class)
 class ChildAlertControllerTest {
 
-    @Mock
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockitoBean
     private ChildAlertService childAlertService;
 
-    @InjectMocks
-    private ChildAlertController childAlertController;
-
     @Test
-    @DisplayName("Test de récupération des enfants avec des enfants présents")
-    void testGetChildrenAtAddress_WithChildren() {
-        // Arrange
-        String address = "123 Main St";
-        ChildAlertDTO mockResponse = new ChildAlertDTO();
+    @DisplayName("GET /childAlert - Cas avec enfants trouvés")
+    void getChildrenAtAddress_withChildren_shouldReturn200() throws Exception {
+        // Given
+        String address = "1509 Culver St";
+        ChildAlertDTO response = new ChildAlertDTO();
         
         ChildDTO child1 = new ChildDTO();
         child1.setFirstName("John");
-        child1.setLastName("Doe");
+        child1.setLastName("Boyd");
         child1.setAge(10);
         
         ChildDTO child2 = new ChildDTO();
         child2.setFirstName("Jane");
-        child2.setLastName("Doe");
+        child2.setLastName("Boyd");
         child2.setAge(8);
         
-        HouseholdMemberDTO adult1 = new HouseholdMemberDTO();
-        adult1.setFirstName("Bob");
-        adult1.setLastName("Doe");
-        
-        mockResponse.setChildren(Arrays.asList(child1, child2));
-        mockResponse.setHouseholdMembers(List.of(adult1));
-        
-        when(childAlertService.getChildrenAtAddress(address)).thenReturn(mockResponse);
+        HouseholdMemberDTO adult = new HouseholdMemberDTO();
+        adult.setFirstName("Bob");
+        adult.setLastName("Boyd");
 
-        // Act
-        ResponseEntity<ChildAlertDTO> response = childAlertController.getChildrenAtAddress(address);
+        response.setChildren(List.of(child1, child2));
+        response.setHouseholdMembers(List.of(adult));
 
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals(2, response.getBody().getChildren().size());
-        assertEquals(1, response.getBody().getHouseholdMembers().size());
-        assertTrue(response.getBody().getChildren().contains(child1));
-        assertTrue(response.getBody().getChildren().contains(child2));
-        assertTrue(response.getBody().getHouseholdMembers().contains(adult1));
+        when(childAlertService.getChildrenAtAddress(address)).thenReturn(response);
+
+        // When/Then
+        mockMvc.perform(get("/childAlert").param("address", address))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.children.length()").value(2))
+                .andExpect(jsonPath("$.children[0].firstName").value("John"))
+                .andExpect(jsonPath("$.householdMembers.length()").value(1));
     }
 
     @Test
-    @DisplayName("Test de récupération des enfants sans enfants présents")
-    void testGetChildrenAtAddress_NoChildren() {
-        // Arrange
+    @DisplayName("GET /childAlert - Cas sans enfants")
+    void getChildrenAtAddress_noChildren_shouldReturn404() throws Exception {
+        // Given
         String address = "123 Main St";
-        ChildAlertDTO mockResponse = new ChildAlertDTO();
-        mockResponse.setChildren(List.of());
-        mockResponse.setHouseholdMembers(List.of());
+        ChildAlertDTO emptyResponse = new ChildAlertDTO();
+        emptyResponse.setChildren(Collections.emptyList()); // Liste explicitement vide
         
-        when(childAlertService.getChildrenAtAddress(address)).thenReturn(mockResponse);
+        when(childAlertService.getChildrenAtAddress(address)).thenReturn(emptyResponse);
 
-        // Act
-        ResponseEntity<ChildAlertDTO> response = childAlertController.getChildrenAtAddress(address);
-
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNull(response.getBody());
+        // When/Then
+        mockMvc.perform(get("/childAlert").param("address", address))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.message").value("Aucun enfant trouvé à l'adresse " + address));
     }
 
     @Test
-    @DisplayName("Test de récupération des enfants avec une adresse vide")
-    void testGetChildrenAtAddress_EmptyAddress() {
-        // Arrange
-        String address = "";
-        ChildAlertDTO mockResponse = new ChildAlertDTO();
-        mockResponse.setChildren(List.of());
-        mockResponse.setHouseholdMembers(List.of());
-        
-        when(childAlertService.getChildrenAtAddress(address)).thenReturn(mockResponse);
-
-        // Act
-        ResponseEntity<ChildAlertDTO> response = childAlertController.getChildrenAtAddress(address);
-
-        // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNull(response.getBody());
+    @DisplayName("GET /childAlert - Adresse vide")
+    void getChildrenAtAddress_emptyAddress_shouldReturn400() throws Exception {
+        mockMvc.perform(get("/childAlert").param("address", ""))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.message").value("L'adresse ne peut pas être vide"));
     }
 
+
     @Test
-    @DisplayName("Test de récupération des enfants avec une erreur du service")
-    void testGetChildrenAtAddress_WithServiceError() {
-        // Arrange
-        String address = "123 Main St";
+    @DisplayName("GET /childAlert - Erreur du service (doit retourner 500)")
+    void getChildrenAtAddress_serviceError_shouldReturn500() throws Exception {
+        // Given
+        String address = "123 Error St";
         when(childAlertService.getChildrenAtAddress(address))
-            .thenThrow(new RuntimeException("Erreur du service"));
+                .thenThrow(new RuntimeException("Database error"));
 
-        // Act & Assert
-        assertThrows(RuntimeException.class, () ->
-            childAlertController.getChildrenAtAddress(address)
-        );
+        // When/Then
+        mockMvc.perform(get("/childAlert").param("address", address))
+                .andExpect(status().isInternalServerError())
+                .andExpect(jsonPath("$.message").exists());
     }
-} 
+}

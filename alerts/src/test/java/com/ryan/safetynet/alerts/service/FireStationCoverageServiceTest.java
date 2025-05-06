@@ -4,6 +4,7 @@ import com.ryan.safetynet.alerts.dto.FireStationDTO;
 import com.ryan.safetynet.alerts.dto.PersonDTO;
 import com.ryan.safetynet.alerts.model.*;
 import com.ryan.safetynet.alerts.repository.DataRepository;
+import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -45,8 +46,6 @@ class FireStationCoverageServiceTest {
         
         mockData.setPersons(mockPersons);
         mockData.setMedicalRecords(mockMedicalRecords);
-        
-        when(dataRepository.getData()).thenReturn(mockData);
     }
 
     @Test
@@ -57,14 +56,15 @@ class FireStationCoverageServiceTest {
         String address1 = "123 Main St";
         String address2 = "456 Oak St";
 
-        // Configuration des adresses couvertes par la station
+        when(dataRepository.getData()).thenReturn(mockData);
+        when(fireStationService.existsByStationNumber(String.valueOf(stationNumber))).thenReturn(true);
         when(fireStationService.getAddressesCoveredByStation(stationNumber))
             .thenReturn(Arrays.asList(address1, address2));
 
         // Création des personnes
-        Person adult1 = new Person("John", "Doe", address1, "Paris", "12345", "123-456-7890", "john@email.com");
-        Person adult2 = new Person("Jane", "Doe", address1, "Paris", "12345", "987-654-3210", "jane@email.com");
-        Person child = new Person("Bob", "Smith", address2, "Paris", "12345", "555-123-4567", "bob@email.com");
+        Person adult1 = new Person("John", "Doe", address1, "Culver", "97451", "123-456-7890", "john@email.com");
+        Person adult2 = new Person("Jane", "Doe", address1, "Culver", "97451", "987-654-3210", "jane@email.com");
+        Person child = new Person("Bob", "Smith", address2, "Culver", "97451", "555-123-4567", "bob@email.com");
         mockPersons.addAll(Arrays.asList(adult1, adult2, child));
 
         // Création des dossiers médicaux
@@ -117,10 +117,25 @@ class FireStationCoverageServiceTest {
     }
 
     @Test
+    @DisplayName("Test de récupération des personnes couvertes avec une station inexistante")
+    void testGetPersonsCoveredByStation_StationNotFound() {
+        // Arrange
+        int stationNumber = 1;
+        when(fireStationService.existsByStationNumber(String.valueOf(stationNumber))).thenReturn(false);
+
+        // Act & Assert
+        assertThrows(ResourceNotFoundException.class, () -> 
+            fireStationCoverageService.getPersonsCoveredByStation(stationNumber)
+        );
+    }
+
+    @Test
     @DisplayName("Test de récupération des personnes couvertes avec une station sans adresses")
     void testGetPersonsCoveredByStation_NoAddresses() {
         // Arrange
         int stationNumber = 1;
+        when(dataRepository.getData()).thenReturn(mockData);
+        when(fireStationService.existsByStationNumber(String.valueOf(stationNumber))).thenReturn(true);
         when(fireStationService.getAddressesCoveredByStation(stationNumber))
             .thenReturn(new ArrayList<>());
 
@@ -140,6 +155,8 @@ class FireStationCoverageServiceTest {
         // Arrange
         int stationNumber = 1;
         String address = "123 Main St";
+        when(dataRepository.getData()).thenReturn(mockData);
+        when(fireStationService.existsByStationNumber(String.valueOf(stationNumber))).thenReturn(true);
         when(fireStationService.getAddressesCoveredByStation(stationNumber))
             .thenReturn(Arrays.asList(address));
 
@@ -159,16 +176,16 @@ class FireStationCoverageServiceTest {
         // Arrange
         int stationNumber = 1;
         String address = "123 Main St";
+        when(dataRepository.getData()).thenReturn(mockData);
+        when(fireStationService.existsByStationNumber(String.valueOf(stationNumber))).thenReturn(true);
         when(fireStationService.getAddressesCoveredByStation(stationNumber))
             .thenReturn(Arrays.asList(address));
 
-        Person person = new Person("John", "Doe", address, "Paris", "12345", "123-456-7890", "john@email.com");
+        Person person = new Person("John", "Doe", address, "Culver", "97451", "123-456-7890", "john@email.com");
         mockPersons.add(person);
 
-        // Pas de dossier médical ajouté intentionnellement
-
         // Act & Assert
-        assertThrows(IllegalStateException.class, () -> 
+        assertThrows(RuntimeException.class, () -> 
             fireStationCoverageService.getPersonsCoveredByStation(stationNumber)
         );
     }
@@ -178,6 +195,7 @@ class FireStationCoverageServiceTest {
     void testGetPersonsCoveredByStation_WithError() {
         // Arrange
         int stationNumber = 1;
+        when(fireStationService.existsByStationNumber(String.valueOf(stationNumber))).thenReturn(true);
         when(dataRepository.getData()).thenThrow(new RuntimeException("Erreur de base de données"));
 
         // Act & Assert

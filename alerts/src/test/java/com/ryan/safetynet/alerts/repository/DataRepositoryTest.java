@@ -32,6 +32,7 @@ class DataRepositoryTest {
 
     private static final String TEST_DATA_PATH = "test-data.json";
     private static final String TEST_BACKUP_PATH = "test-data.json.backup";
+    private static final String CLASS_PATH_DATA = "classpath:data.json";
 
     @BeforeEach
     void setUp() {
@@ -44,6 +45,8 @@ class DataRepositoryTest {
     void testLoadData_WithExistingFile() throws IOException {
         // Arrange
         Data expectedData = new Data();
+        // Vérifier que le fichier existe
+        assertTrue(new File(TEST_DATA_PATH).exists(), "Le fichier de test devrait exister");
         when(objectMapper.readValue(any(File.class), eq(Data.class))).thenReturn(expectedData);
 
         // Act
@@ -75,7 +78,7 @@ class DataRepositoryTest {
     void testLoadData_FromClasspath() throws IOException {
         // Arrange
         Data expectedData = new Data();
-        ReflectionTestUtils.setField(dataRepository, "dataFilePath", "classpath:data.json");
+        ReflectionTestUtils.setField(dataRepository, "dataFilePath", CLASS_PATH_DATA);
         when(objectMapper.readValue(any(InputStream.class), eq(Data.class))).thenReturn(expectedData);
 
         // Act
@@ -98,7 +101,9 @@ class DataRepositoryTest {
 
         // Assert
         verify(objectMapper).writeValue(any(File.class), eq(testData));
-        assertTrue(Files.exists(Path.of(TEST_BACKUP_PATH)));
+        // Vérifier que le fichier de backup existe
+        assertTrue(Files.exists(Path.of(TEST_BACKUP_PATH)), 
+            "Le fichier de backup devrait être créé");
     }
 
     @Test
@@ -123,5 +128,4 @@ class DataRepositoryTest {
         // Act & Assert
         assertThrows(DataRepository.DataLoadException.class, () -> dataRepository.loadData());
     }
-
 }

@@ -55,15 +55,19 @@ class MedicalRecordControllerTest {
         ResponseEntity<MedicalRecord> response = medicalRecordController.addMedicalRecord(inputDTO);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(HttpStatus.CREATED, response.getStatusCode());
-        assertNotNull(response.getBody());
-        assertEquals("John", response.getBody().getFirstName());
-        assertEquals("Doe", response.getBody().getLastName());
-        assertEquals(LocalDate.of(1990, 1, 1), response.getBody().getBirthdate());
-        assertEquals(2, response.getBody().getMedications().size());
-        assertEquals(2, response.getBody().getAllergies().size());
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(HttpStatus.CREATED, response.getStatusCode(), "Le statut doit être CREATED (201)");
+        
+        MedicalRecord body = response.getBody();
+        assertNotNull(body, "Le corps de la réponse ne doit pas être null");
+        
+        assertEquals("John", body.getFirstName(), "Le prénom doit être 'John'");
+        assertEquals("Doe", body.getLastName(), "Le nom doit être 'Doe'");
+        assertEquals(LocalDate.of(1990, 1, 1), body.getBirthdate(), "La date de naissance doit être 01/01/1990");
+        assertEquals(2, body.getMedications().size(), "Doit avoir 2 médicaments");
+        assertEquals(2, body.getAllergies().size(), "Doit avoir 2 allergies");
     }
+
 
     @Test
     @DisplayName("Test de mise à jour d'un dossier médical existant")
@@ -90,14 +94,21 @@ class MedicalRecordControllerTest {
         ResponseEntity<MedicalRecord> response = medicalRecordController.updateMedicalRecord(inputDTO);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals("John", response.getBody().getFirstName());
-        assertEquals("Doe", response.getBody().getLastName());
-        assertEquals(2, response.getBody().getMedications().size());
-        assertEquals(2, response.getBody().getAllergies().size());
+        assertNotNull(response, "La réponse ne doit pas être nulle");
+        assertEquals(200, response.getStatusCode().value(), "Le code statut doit être 200 (OK)");
+        
+        MedicalRecord body = response.getBody();
+        assertNotNull(body, "Le corps de la réponse ne doit pas être nul");
+        
+        assertEquals("John", body.getFirstName(), "Le prénom doit correspondre");
+        assertEquals("Doe", body.getLastName(), "Le nom doit correspondre");
+        assertEquals(LocalDate.of(1990, 1, 1), body.getBirthdate(), "La date de naissance doit correspondre");
+        assertEquals(2, body.getMedications().size(), "Doit avoir 2 médicaments");
+        assertIterableEquals(Arrays.asList("med3", "med4"), body.getMedications(), "Les médicaments doivent correspondre");
+        assertEquals(2, body.getAllergies().size(), "Doit avoir 2 allergies");
+        assertIterableEquals(Arrays.asList("allergy3", "allergy4"), body.getAllergies(), "Les allergies doivent correspondre");
     }
+
 
     @Test
     @DisplayName("Test de mise à jour d'un dossier médical inexistant")
@@ -151,31 +162,49 @@ class MedicalRecordControllerTest {
     @DisplayName("Test de récupération d'un dossier médical")
     void testGetMedicalRecord() {
         // Arrange
-        String firstName = "John";
-        String lastName = "Doe";
-        MedicalRecord medicalRecord = new MedicalRecord();
-        medicalRecord.setFirstName(firstName);
-        medicalRecord.setLastName(lastName);
-        medicalRecord.setBirthdate(LocalDate.of(1990, 1, 1));
-        medicalRecord.setMedications(Arrays.asList("med1", "med2"));
-        medicalRecord.setAllergies(Arrays.asList("allergy1", "allergy2"));
+        final String firstName = "John";
+        final String lastName = "Doe";
+        
+        MedicalRecord expectedRecord = new MedicalRecord();
+        expectedRecord.setFirstName(firstName);
+        expectedRecord.setLastName(lastName);
+        expectedRecord.setBirthdate(LocalDate.of(1990, 1, 1));
+        expectedRecord.setMedications(Arrays.asList("med1", "med2"));
+        expectedRecord.setAllergies(Arrays.asList("allergy1", "allergy2"));
 
         when(medicalRecordService.findMedicalRecordByName(firstName, lastName))
-            .thenReturn(Optional.of(medicalRecord));
+            .thenReturn(Optional.of(expectedRecord));
 
         // Act
-        ResponseEntity<MedicalRecord> response = medicalRecordController.getMedicalRecord(firstName, lastName);
+        ResponseEntity<MedicalRecord> response = 
+            medicalRecordController.getMedicalRecord(firstName, lastName);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals("John", response.getBody().getFirstName());
-        assertEquals("Doe", response.getBody().getLastName());
-        assertEquals(LocalDate.of(1990, 1, 1), response.getBody().getBirthdate());
-        assertEquals(2, response.getBody().getMedications().size());
-        assertEquals(2, response.getBody().getAllergies().size());
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(HttpStatus.OK.value(), response.getStatusCode().value(), 
+            "Le code statut doit être 200 (OK)");
+        
+        MedicalRecord actualRecord = response.getBody();
+        assertNotNull(actualRecord, "Le corps de la réponse ne doit pas être null");
+        
+        assertEquals(firstName, actualRecord.getFirstName(), 
+            "Le prénom doit correspondre");
+        assertEquals(lastName, actualRecord.getLastName(), 
+            "Le nom doit correspondre");
+        assertEquals(LocalDate.of(1990, 1, 1), actualRecord.getBirthdate(),
+            "La date de naissance doit correspondre");
+        
+        assertNotNull(actualRecord.getMedications(), 
+            "La liste des médicaments ne doit pas être null");
+        assertEquals(2, actualRecord.getMedications().size(),
+            "Doit contenir 2 médicaments");
+        
+        assertNotNull(actualRecord.getAllergies(),
+            "La liste des allergies ne doit pas être null");
+        assertEquals(2, actualRecord.getAllergies().size(),
+            "Doit contenir 2 allergies");
     }
+
 
     @Test
     @DisplayName("Test de récupération d'un dossier médical inexistant")

@@ -2,60 +2,54 @@ package com.ryan.safetynet.alerts.controller;
 
 import com.ryan.safetynet.alerts.dto.ChildAlertDTO;
 import com.ryan.safetynet.alerts.service.ChildAlertService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Controller gérant les alertes liées aux enfants.
  * Expose l'endpoint /childAlert qui permet de récupérer la liste des enfants
  * et des autres membres du foyer à une adresse donnée.
  */
+@Slf4j
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/childAlert")
 public class ChildAlertController {
 
-    private final Logger logger = LoggerFactory.getLogger(ChildAlertController.class);
     private final ChildAlertService childAlertService;
-
-    @Autowired
-    public ChildAlertController(ChildAlertService childAlertService) {
-        this.childAlertService = childAlertService;
-    }
 
     /**
      * Endpoint pour récupérer la liste des enfants à une adresse donnée.
-     * Retourne un ChildAlertDTO contenant :
-     * - La liste des enfants (≤ 18 ans) avec leur âge
-     * - La liste des autres membres du foyer (> 18 ans)
      *
      * @param address L'adresse à vérifier
-     * @return ResponseEntity contenant le ChildAlertDTO avec les informations demandées
+     * @return ResponseEntity contenant le ChildAlertDTO
+     * @throws ResourceNotFoundException si aucun enfant n'est trouvé
      */
     @GetMapping
     public ResponseEntity<ChildAlertDTO> getChildrenAtAddress(@RequestParam String address) {
-        logger.info("Requête reçue pour les enfants à l'adresse: {}", address);
-        ChildAlertDTO response = childAlertService.getChildrenAtAddress(address);
-        if (response.getChildren().isEmpty()) {
-            logger.info("Aucun enfant trouvé à l'adresse: {}", address);
-            return ResponseEntity.ok().body(null); // retourne une réponse vide
-        } else {
-            logger.info("Nombre d'enfants trouvés à l'adresse {}: {}", address, response.getChildren().size());
-            response.getChildren().forEach(child -> 
-                logger.info("Enfant trouvé: {} {}, âge: {}", 
-                    child.getFirstName(), 
-                    child.getLastName(), 
-                    child.getAge())
-            );
+        log.info("Requête reçue pour les enfants à l'adresse: {}", address);
+        
+        // Validation explicite de l'adresse
+        if (address == null || address.trim().isEmpty()) {
+            throw new IllegalArgumentException("L'adresse ne peut pas être vide");
         }
         
-        logger.info("Nombre d'autres membres du foyer: {}", response.getHouseholdMembers().size());
+        ChildAlertDTO response = childAlertService.getChildrenAtAddress(address);
+        
+        // Vérification complète de la réponse
+        if (response == null || response.getChildren() == null || response.getChildren().isEmpty()) {
+            throw ResourceNotFoundException.noChildrenAtAddress(address); // Utilisation de la factory
+        }
+        
+        log.info("Trouvé {} enfants et {} adultes à l'adresse {}", 
+            response.getChildren().size(), 
+            response.getHouseholdMembers().size(),
+            address
+        );
         
         return ResponseEntity.ok(response);
     }
-} 
+}

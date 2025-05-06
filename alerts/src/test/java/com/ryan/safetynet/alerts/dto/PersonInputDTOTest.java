@@ -32,8 +32,8 @@ class PersonInputDTOTest {
         String firstName = "John";
         String lastName = "Doe";
         String address = "123 Main St";
-        String city = "Paris";
-        String zip = "75000";
+        String city = "Culver";
+        String zip = "97451";
         String phone = "123-456-7890";
         String email = "john.doe@email.com";
 
@@ -63,8 +63,8 @@ class PersonInputDTOTest {
         personInputDTO.setFirstName("John");
         personInputDTO.setLastName("Doe");
         personInputDTO.setAddress("123 Main St");
-        personInputDTO.setCity("Paris");
-        personInputDTO.setZip("75000");
+        personInputDTO.setCity("Culver");
+        personInputDTO.setZip("97451");
         personInputDTO.setPhone("123-456-7890");
         personInputDTO.setEmail("john.doe@email.com");
 
@@ -82,8 +82,8 @@ class PersonInputDTOTest {
         personInputDTO.setFirstName("");
         personInputDTO.setLastName("Doe");
         personInputDTO.setAddress("123 Main St");
-        personInputDTO.setCity("Paris");
-        personInputDTO.setZip("75000");
+        personInputDTO.setCity("Culver");
+        personInputDTO.setZip("97451");
         personInputDTO.setPhone("123-456-7890");
         personInputDTO.setEmail("john.doe@email.com");
 
@@ -103,7 +103,7 @@ class PersonInputDTOTest {
         personInputDTO.setFirstName("John");
         personInputDTO.setLastName("Doe");
         personInputDTO.setAddress("123 Main St");
-        personInputDTO.setCity("Paris");
+        personInputDTO.setCity("Culver");
         personInputDTO.setZip("75A00"); // Code postal invalide
         personInputDTO.setPhone("123-456-7890");
         personInputDTO.setEmail("john.doe@email.com");
@@ -124,7 +124,7 @@ class PersonInputDTOTest {
         personInputDTO.setFirstName("John");
         personInputDTO.setLastName("Doe");
         personInputDTO.setAddress("123 Main St");
-        personInputDTO.setCity("Paris");
+        personInputDTO.setCity("Culver");
         personInputDTO.setZip("75000");
         personInputDTO.setPhone("1234567890"); // Format invalide
         personInputDTO.setEmail("john.doe@email.com");
@@ -145,7 +145,7 @@ class PersonInputDTOTest {
         personInputDTO.setFirstName("John");
         personInputDTO.setLastName("Doe");
         personInputDTO.setAddress("123 Main St");
-        personInputDTO.setCity("Paris");
+        personInputDTO.setCity("Culver");
         personInputDTO.setZip("75000");
         personInputDTO.setPhone("123-456-7890");
         personInputDTO.setEmail("invalid-email"); // Email invalide
@@ -166,8 +166,8 @@ class PersonInputDTOTest {
         personInputDTO.setFirstName("John");
         personInputDTO.setLastName("Doe");
         personInputDTO.setAddress("123 Main St");
-        personInputDTO.setCity("Paris");
-        personInputDTO.setZip("75000");
+        personInputDTO.setCity("Culver");
+        personInputDTO.setZip("97451");
         personInputDTO.setPhone("123-456-7890");
         personInputDTO.setEmail("john.doe@email.com");
 
@@ -177,6 +177,6 @@ class PersonInputDTOTest {
         // Assert
         assertNotNull(toStringResult);
         assertFalse(toStringResult.isEmpty());
-        assertTrue(toStringResult.contains("PersonInputDTO(firstName=John, lastName=Doe, address=123 Main St, city=Paris, zip=75000, phone=123-456-7890, email=john.doe@email.com)"));
+        assertTrue(toStringResult.contains("PersonInputDTO(firstName=John, lastName=Doe, address=123 Main St, city=Culver, zip=97451, phone=123-456-7890, email=john.doe@email.com)"));
     }
 } 

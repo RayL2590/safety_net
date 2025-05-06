@@ -44,10 +44,10 @@ class CommunityEmailServiceTest {
     @DisplayName("Test de récupération des emails avec plusieurs personnes dans la même ville")
     void testGetEmailsByCity_WithMultiplePersons() {
         // Arrange
-        String city = "Paris";
-        Person person1 = new Person("John", "Doe", "123 Main St", city, "12345", "123-456-7890", "john@email.com");
-        Person person2 = new Person("Jane", "Doe", "123 Main St", city, "12345", "987-654-3210", "jane@email.com");
-        Person person3 = new Person("Bob", "Smith", "456 Oak St", city, "12345", "555-123-4567", "bob@email.com");
+        String city = "Culver";
+        Person person1 = new Person("John", "Doe", "123 Main St", city, "97451", "123-456-7890", "john@email.com");
+        Person person2 = new Person("Jane", "Doe", "123 Main St", city, "97451", "987-654-3210", "jane@email.com");
+        Person person3 = new Person("Bob", "Smith", "456 Oak St", city, "97451", "555-123-4567", "bob@email.com");
         
         mockPersons.addAll(Arrays.asList(person1, person2, person3));
 
@@ -66,9 +66,9 @@ class CommunityEmailServiceTest {
     @DisplayName("Test de récupération des emails avec des doublons")
     void testGetEmailsByCity_WithDuplicates() {
         // Arrange
-        String city = "Paris";
-        Person person1 = new Person("John", "Doe", "123 Main St", city, "12345", "123-456-7890", "john@email.com");
-        Person person2 = new Person("Jane", "Doe", "123 Main St", city, "12345", "987-654-3210", "john@email.com"); // Même email que person1
+        String city = "Culver";
+        Person person1 = new Person("John", "Doe", "123 Main St", city, "97451", "123-456-7890", "john@email.com");
+        Person person2 = new Person("Jane", "Doe", "123 Main St", city, "97451", "987-654-3210", "john@email.com"); // Même email que person1
         
         mockPersons.addAll(Arrays.asList(person1, person2));
 
@@ -115,8 +115,8 @@ class CommunityEmailServiceTest {
     @DisplayName("Test de récupération des emails avec une ville en majuscules/minuscules")
     void testGetEmailsByCity_CaseInsensitive() {
         // Arrange
-        String city = "PARIS";
-        Person person = new Person("John", "Doe", "123 Main St", "Paris", "12345", "123-456-7890", "john@email.com");
+        String city = "Culver";
+        Person person = new Person("John", "Doe", "123 Main St", "Culver", "97451", "123-456-7890", "john@email.com");
         mockPersons.add(person);
 
         // Act
@@ -132,7 +132,7 @@ class CommunityEmailServiceTest {
     @DisplayName("Test de récupération des emails avec une erreur lors du traitement")
     void testGetEmailsByCity_WithError() {
         // Arrange
-        String city = "Paris";
+        String city = "Culver";
         when(dataRepository.getData()).thenThrow(new RuntimeException("Erreur de base de données"));
 
         // Act & Assert

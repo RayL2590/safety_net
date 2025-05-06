@@ -61,6 +61,7 @@ class FloodAlertControllerTest {
         assertTrue(response.getBody() instanceof FloodStationDTO);
         
         FloodStationDTO responseBody = (FloodStationDTO) response.getBody();
+        assertNotNull(responseBody, "Le corps de la réponse ne doit pas être null");
         assertEquals(2, responseBody.getAddresses().size());
         assertEquals("123 Main St", responseBody.getAddresses().get(0).getAddress());
         assertEquals(2, responseBody.getAddresses().get(0).getResidents().size());
@@ -99,14 +100,20 @@ class FloodAlertControllerTest {
         ResponseEntity<?> response = floodAlertController.getHouseholdsByStations(stations);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-        assertNotNull(response.getBody());
-        assertTrue(response.getBody() instanceof ErrorResponse);
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode(), 
+            "Le statut doit être NOT_FOUND (404)");
         
-        ErrorResponse errorResponse = (ErrorResponse) response.getBody();
-        assertEquals(HttpStatus.NOT_FOUND.value(), errorResponse.getStatus());
-        assertEquals("Une ou plusieurs stations n'existent pas", errorResponse.getMessage());
+        Object responseBody = response.getBody();
+        assertNotNull(responseBody, "Le corps de la réponse ne doit pas être null");
+        assertTrue(responseBody instanceof ErrorResponse, 
+            "Le corps devrait être de type ErrorResponse");
+        
+        ErrorResponse errorResponse = (ErrorResponse) responseBody;
+        assertEquals(HttpStatus.NOT_FOUND.value(), errorResponse.getStatus(),
+            "Le code d'erreur doit correspondre à NOT_FOUND");
+        assertEquals("Une ou plusieurs stations n'existent pas", errorResponse.getMessage(),
+            "Le message d'erreur doit correspondre");
     }
 
     @Test
@@ -119,12 +126,17 @@ class FloodAlertControllerTest {
         ResponseEntity<?> response = floodAlertController.getHouseholdsByStations(stations);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-        assertNotNull(response.getBody());
-        assertTrue(response.getBody() instanceof ErrorResponse);
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode(), 
+            "Le statut doit être BAD_REQUEST (400)");
         
-        ErrorResponse errorResponse = (ErrorResponse) response.getBody();
+        Object responseBody = response.getBody();
+        assertNotNull(responseBody, "Le corps de la réponse ne doit pas être null");
+        assertTrue(responseBody instanceof ErrorResponse, 
+            "Le corps devrait être de type ErrorResponse");
+        
+        
+        ErrorResponse errorResponse = (ErrorResponse) responseBody;
         assertEquals(HttpStatus.BAD_REQUEST.value(), errorResponse.getStatus());
         assertEquals("Format de station invalide. Les stations doivent être des nombres.", errorResponse.getMessage());
     }
@@ -149,15 +161,21 @@ class FloodAlertControllerTest {
         ResponseEntity<?> response = floodAlertController.getHouseholdsByStations(stations);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertTrue(response.getBody() instanceof FloodStationDTO);
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(200, response.getStatusCode().value(), "Le status code doit être 200");
         
-        FloodStationDTO responseBody = (FloodStationDTO) response.getBody();
-        assertEquals(1, responseBody.getAddresses().size());
-        assertEquals("123 Main St", responseBody.getAddresses().get(0).getAddress());
-        assertEquals(1, responseBody.getAddresses().get(0).getResidents().size());
+        Object responseBody = response.getBody();
+        assertNotNull(responseBody, "Le corps de la réponse ne doit pas être null");
+        assertTrue(responseBody instanceof FloodStationDTO, 
+            "Le corps devrait être de type FloodStationDTO");
+            
+        FloodStationDTO floodStationDTO = (FloodStationDTO) responseBody;
+        assertEquals(1, floodStationDTO.getAddresses().size(), 
+            "Doit contenir 1 adresse");
+        assertEquals("123 Main St", floodStationDTO.getAddresses().get(0).getAddress(), 
+            "L'adresse doit correspondre");
+        assertEquals(1, floodStationDTO.getAddresses().get(0).getResidents().size(),
+            "Doit contenir 1 résident");
     }
 
     private AddressInfoDTO createSampleAddressInfo(String address, List<PersonWithMedicalInfoDTO> residents) {

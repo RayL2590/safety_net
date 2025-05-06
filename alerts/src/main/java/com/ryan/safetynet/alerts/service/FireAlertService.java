@@ -5,7 +5,9 @@ import com.ryan.safetynet.alerts.dto.PersonWithMedicalInfoDTO;
 import com.ryan.safetynet.alerts.model.*;
 import com.ryan.safetynet.alerts.repository.DataRepository;
 import com.ryan.safetynet.alerts.utils.MedicalRecordUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,20 +20,13 @@ import java.util.stream.Collectors;
  * en cas d'incendie, incluant leurs informations médicales et le numéro de la
  * caserne de pompiers responsable.
  */
+@Slf4j
+@RequiredArgsConstructor
 @Service
 public class FireAlertService {
 
     private final DataRepository dataRepository;
-
-    /**
-     * Constructeur du service avec injection de dépendance du repository.
-     *
-     * @param dataRepository le repository contenant les données de l'application
-     */
-    @Autowired
-    public FireAlertService(DataRepository dataRepository) {
-        this.dataRepository = dataRepository;
-    }
+    private final FireStationService fireStationService;
 
     /**
      * Récupère les informations des habitants d'une adresse en cas d'incendie.
@@ -44,36 +39,63 @@ public class FireAlertService {
      * @param address l'adresse à vérifier
      * @return un DTO contenant la liste des résidents avec leurs informations médicales
      *         et le numéro de la caserne de pompiers
-     * @throws IllegalStateException si un dossier médical est manquant pour un résident
+     * @throws ResourceNotFoundException si aucune station n'est associée à l'adresse
+     *         ou si la station n'existe pas dans le système
      */
     public FireAlertDTO getPersonsAndFireStationByAddress(String address) {
-        // Récupération des données depuis le repository
-        Data data = dataRepository.getData();
-        List<Person> persons = data.getPersons();
-        List<FireStation> fireStations = data.getFireStations();
-        List<MedicalRecord> medicalRecords = data.getMedicalRecords();
+        log.info("Recherche des informations pour l'adresse : {}", address);
 
-        // Filtrage et transformation des résidents avec leurs informations médicales
-        List<PersonWithMedicalInfoDTO> residents = persons.stream()
-                .filter(p -> p.getAddress().equals(address))
-                .map(p -> MedicalRecordUtils.extractMedicalInfo(p, medicalRecords))
-                .collect(Collectors.toList());
+        try {
+            // Récupération des données depuis le repository
+            Data data = dataRepository.getData();
+            List<Person> persons = data.getPersons();
+            List<FireStation> fireStations = data.getFireStations();
+            List<MedicalRecord> medicalRecords = data.getMedicalRecords();
 
-        // Recherche de la caserne de pompiers responsable de l'adresse
-        Optional<FireStation> fireStation = fireStations.stream()
-                .filter(fs -> fs.getAddress().equals(address))
-                .findFirst();
+            log.debug("Nombre total de personnes : {}, stations : {}, dossiers médicaux : {}", 
+                    persons.size(), fireStations.size(), medicalRecords.size());
 
-        // Extraction du numéro de caserne ou "Inconnu" si non trouvé
-        String stationNumber = fireStation
-                .map(FireStation::getStation)
-                .orElse("Inconnu");
+            // Filtrage et transformation des résidents avec leurs informations médicales
+            List<PersonWithMedicalInfoDTO> residents = persons.stream()
+                    .filter(p -> p.getAddress().equals(address))
+                    .map(p -> MedicalRecordUtils.extractMedicalInfo(p, medicalRecords))
+                    .collect(Collectors.toList());
 
-        // Construction de la réponse
-        FireAlertDTO response = new FireAlertDTO();
-        response.setResidents(residents);
-        response.setFireStationNumber(stationNumber);
+            log.debug("Nombre de résidents trouvés à l'adresse {} : {}", address, residents.size());
 
-        return response;
+            // Recherche de la caserne de pompiers responsable de l'adresse
+            Optional<FireStation> fireStation = fireStations.stream()
+                    .filter(fs -> fs.getAddress().equals(address))
+                    .findFirst();
+
+            // Vérification de l'existence de la station
+            if (fireStation.isEmpty()) {
+                log.error("Aucune station de pompiers n'est associée à l'adresse : {}", address);
+                throw new ResourceNotFoundException("Aucune station de pompiers n'est associée à l'adresse : " + address);
+            }
+
+            // Extraction du numéro de caserne
+            String stationNumber = fireStation.get().getStation();
+            log.debug("Station trouvée pour l'adresse {} : {}", address, stationNumber);
+
+            // Vérification que la station existe dans le système
+            if (!fireStationService.existsByStationNumber(stationNumber)) {
+                log.error("La station de pompiers {} n'existe pas dans le système", stationNumber);
+                throw new ResourceNotFoundException("La station de pompiers " + stationNumber + " n'existe pas dans le système");
+            }
+
+            // Construction de la réponse
+            FireAlertDTO response = new FireAlertDTO();
+            response.setResidents(residents);
+            response.setFireStationNumber(stationNumber);
+
+            log.info("Informations récupérées avec succès pour l'adresse : {}", address);
+            return response;
+        } catch (ResourceNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("Erreur lors de la récupération des informations pour l'adresse {} : {}", address, e.getMessage());
+            throw new RuntimeException("Erreur lors de la récupération des informations : " + e.getMessage(), e);
+        }
     }
 }

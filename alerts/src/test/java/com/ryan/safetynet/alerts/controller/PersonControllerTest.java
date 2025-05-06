@@ -42,13 +42,13 @@ class PersonControllerTest {
         inputDTO.setEmail("john.doe@email.com");
 
         Person expectedPerson = new Person();
-        expectedPerson.setFirstName("John");
-        expectedPerson.setLastName("Doe");
-        expectedPerson.setAddress("123 Main St");
-        expectedPerson.setCity("Culver");
-        expectedPerson.setZip("97451");
-        expectedPerson.setPhone("555-1234");
-        expectedPerson.setEmail("john.doe@email.com");
+        expectedPerson.setFirstName(inputDTO.getFirstName());
+        expectedPerson.setLastName(inputDTO.getLastName());
+        expectedPerson.setAddress(inputDTO.getAddress());
+        expectedPerson.setCity(inputDTO.getCity());
+        expectedPerson.setZip(inputDTO.getZip());
+        expectedPerson.setPhone(inputDTO.getPhone());
+        expectedPerson.setEmail(inputDTO.getEmail());
 
         when(personService.addPerson(any(Person.class))).thenReturn(expectedPerson);
 
@@ -56,17 +56,32 @@ class PersonControllerTest {
         ResponseEntity<Person> response = personController.addPerson(inputDTO);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(HttpStatus.CREATED, response.getStatusCode());
-        assertNotNull(response.getBody());
-        assertEquals("John", response.getBody().getFirstName());
-        assertEquals("Doe", response.getBody().getLastName());
-        assertEquals("123 Main St", response.getBody().getAddress());
-        assertEquals("Culver", response.getBody().getCity());
-        assertEquals("97451", response.getBody().getZip());
-        assertEquals("555-1234", response.getBody().getPhone());
-        assertEquals("john.doe@email.com", response.getBody().getEmail());
+        // Vérification de la réponse globale
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(HttpStatus.CREATED, response.getStatusCode(), 
+            "Le statut doit être CREATED (201)");
+        
+        // Vérification du corps de réponse
+        Person createdPerson = response.getBody();
+        assertNotNull(createdPerson, "Le corps de la réponse ne doit pas être null");
+        
+        // Vérification des propriétés
+        assertEquals(inputDTO.getFirstName(), createdPerson.getFirstName(), 
+            "Le prénom doit correspondre");
+        assertEquals(inputDTO.getLastName(), createdPerson.getLastName(),
+            "Le nom doit correspondre");
+        assertEquals(inputDTO.getAddress(), createdPerson.getAddress(),
+            "L'adresse doit correspondre");
+        assertEquals(inputDTO.getCity(), createdPerson.getCity(),
+            "La ville doit correspondre");
+        assertEquals(inputDTO.getZip(), createdPerson.getZip(),
+            "Le code postal doit correspondre");
+        assertEquals(inputDTO.getPhone(), createdPerson.getPhone(),
+            "Le téléphone doit correspondre");
+        assertEquals(inputDTO.getEmail(), createdPerson.getEmail(),
+            "L'email doit correspondre");
     }
+
 
     @Test
     @DisplayName("Test de mise à jour d'une personne existante")
@@ -81,32 +96,41 @@ class PersonControllerTest {
         inputDTO.setPhone("555-5678");
         inputDTO.setEmail("john.doe.new@email.com");
 
-        Person updatedPerson = new Person();
-        updatedPerson.setFirstName("John");
-        updatedPerson.setLastName("Doe");
-        updatedPerson.setAddress("456 New St");
-        updatedPerson.setCity("Culver");
-        updatedPerson.setZip("97451");
-        updatedPerson.setPhone("555-5678");
-        updatedPerson.setEmail("john.doe.new@email.com");
+        Person expectedPerson = new Person();
+        expectedPerson.setFirstName(inputDTO.getFirstName());
+        expectedPerson.setLastName(inputDTO.getLastName());
+        expectedPerson.setAddress(inputDTO.getAddress());
+        expectedPerson.setCity(inputDTO.getCity());
+        expectedPerson.setZip(inputDTO.getZip());
+        expectedPerson.setPhone(inputDTO.getPhone());
+        expectedPerson.setEmail(inputDTO.getEmail());
 
-        when(personService.updatePerson(eq("John"), eq("Doe"), any(Person.class)))
-            .thenReturn(updatedPerson);
+        when(personService.updatePerson(
+            eq(inputDTO.getFirstName()), 
+            eq(inputDTO.getLastName()), 
+            any(Person.class)))
+            .thenReturn(expectedPerson);
 
         // Act
         ResponseEntity<Person> response = personController.updatePerson(inputDTO);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        assertNotNull(response.getBody());
-        assertEquals("John", response.getBody().getFirstName());
-        assertEquals("Doe", response.getBody().getLastName());
-        assertEquals("456 New St", response.getBody().getAddress());
-        assertEquals("Culver", response.getBody().getCity());
-        assertEquals("97451", response.getBody().getZip());
-        assertEquals("555-5678", response.getBody().getPhone());
-        assertEquals("john.doe.new@email.com", response.getBody().getEmail());
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(HttpStatus.OK.value(), response.getStatusCode().value(), 
+            "Le code statut doit être 200 (OK)");
+        
+        Person updatedPerson = response.getBody();
+        assertNotNull(updatedPerson, "Le corps de la réponse ne doit pas être null");
+        
+        assertAll("Vérification des propriétés mises à jour",
+            () -> assertEquals(inputDTO.getFirstName(), updatedPerson.getFirstName(), "Prénom incorrect"),
+            () -> assertEquals(inputDTO.getLastName(), updatedPerson.getLastName(), "Nom incorrect"),
+            () -> assertEquals(inputDTO.getAddress(), updatedPerson.getAddress(), "Adresse incorrecte"),
+            () -> assertEquals(inputDTO.getCity(), updatedPerson.getCity(), "Ville incorrecte"),
+            () -> assertEquals(inputDTO.getZip(), updatedPerson.getZip(), "Code postal incorrect"),
+            () -> assertEquals(inputDTO.getPhone(), updatedPerson.getPhone(), "Téléphone incorrect"),
+            () -> assertEquals(inputDTO.getEmail(), updatedPerson.getEmail(), "Email incorrect")
+        );
     }
 
     @Test
@@ -164,28 +188,52 @@ class PersonControllerTest {
         PersonInputDTO inputDTO = new PersonInputDTO();
         inputDTO.setFirstName("John");
         inputDTO.setLastName("Doe");
-        // Les autres champs sont null
+        // Tous les autres champs non-requis sont intentionnellement null
 
         Person expectedPerson = new Person();
-        expectedPerson.setFirstName("John");
-        expectedPerson.setLastName("Doe");
-        // Les autres champs sont null
+        expectedPerson.setFirstName(inputDTO.getFirstName());
+        expectedPerson.setLastName(inputDTO.getLastName());  
+        // Les autres champs devraient rester null comme dans l'input
 
-        when(personService.addPerson(any(Person.class))).thenReturn(expectedPerson);
+        when(personService.addPerson(argThat(person -> 
+            person.getFirstName().equals("John") && 
+            person.getLastName().equals("Doe") &&
+            person.getAddress() == null &&
+            person.getCity() == null)))
+            .thenReturn(expectedPerson);
 
         // Act
         ResponseEntity<Person> response = personController.addPerson(inputDTO);
 
         // Assert
-        assertNotNull(response);
-        assertEquals(HttpStatus.CREATED, response.getStatusCode());
-        assertNotNull(response.getBody());
-        assertEquals("John", response.getBody().getFirstName());
-        assertEquals("Doe", response.getBody().getLastName());
-        assertNull(response.getBody().getAddress());
-        assertNull(response.getBody().getCity());
-        assertNull(response.getBody().getZip());
-        assertNull(response.getBody().getPhone());
-        assertNull(response.getBody().getEmail());
+        // Vérification de la réponse HTTP
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(HttpStatus.CREATED, response.getStatusCode(),
+            "Le statut doit être CREATED (201) pour une création valide avec champs optionnels manquants");
+
+        // Vérification du corps de la réponse
+        Person createdPerson = response.getBody();
+        assertNotNull(createdPerson, "Le corps de la réponse ne doit pas être null");
+        
+        // Vérification des champs requis
+        assertEquals("John", createdPerson.getFirstName(), 
+            "Le prénom doit être conservé");
+        assertEquals("Doe", createdPerson.getLastName(),
+            "Le nom doit être conservé");
+        
+        // Vérification des champs optionnels null
+        assertAll("Vérification des champs optionnels vides",
+            () -> assertNull(createdPerson.getAddress(), 
+                "L'adresse devrait être null quand non fournie"),
+            () -> assertNull(createdPerson.getCity(), 
+                "La ville devrait être null quand non fournie"),
+            () -> assertNull(createdPerson.getZip(), 
+                "Le code postal devrait être null quand non fournie"),
+            () -> assertNull(createdPerson.getPhone(), 
+                "Le téléphone devrait être null quand non fournie"),
+            () -> assertNull(createdPerson.getEmail(), 
+                "L'email devrait être null quand non fournie")
+        );
     }
+
 }

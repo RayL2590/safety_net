@@ -3,6 +3,7 @@ package com.ryan.safetynet.alerts.utils;
 import com.ryan.safetynet.alerts.dto.PersonWithMedicalInfoDTO;
 import com.ryan.safetynet.alerts.model.MedicalRecord;
 import com.ryan.safetynet.alerts.model.Person;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.Optional;
  * Elle permet d'éviter la duplication de code dans les différents services
  * qui ont besoin d'accéder aux informations médicales.
  */
+@Slf4j
 public class MedicalRecordUtils {
 
     /**
@@ -35,11 +37,17 @@ public class MedicalRecordUtils {
      * @throws IllegalStateException si aucun dossier médical n'est trouvé pour la personne
      */
     public static LocalDate getBirthdate(String firstName, String lastName, List<com.ryan.safetynet.alerts.model.MedicalRecord> medicalRecords) {
-        return medicalRecords.stream()
+        log.debug("Recherche de la date de naissance pour {} {}", firstName, lastName);
+        LocalDate birthdate = medicalRecords.stream()
                 .filter(mr -> mr.getFirstName().equals(firstName) && mr.getLastName().equals(lastName))
                 .map(com.ryan.safetynet.alerts.model.MedicalRecord::getBirthdate)
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException("Dossier médical non trouvé pour " + firstName + " " + lastName));
+                .orElseThrow(() -> {
+                    log.error("Dossier médical non trouvé pour {} {}", firstName, lastName);
+                    return new IllegalStateException("Dossier médical non trouvé pour " + firstName + " " + lastName);
+                });
+        log.debug("Date de naissance trouvée pour {} {}: {}", firstName, lastName, birthdate);
+        return birthdate;
     }
 
     /**
@@ -51,18 +59,22 @@ public class MedicalRecordUtils {
      * @throws IllegalStateException si le dossier médical n'est pas trouvé
      */
     public static PersonWithMedicalInfoDTO extractMedicalInfo(Person person, List<MedicalRecord> medicalRecords) {
+        log.debug("Extraction des informations médicales pour {} {}", person.getFirstName(), person.getLastName());
+        
         Optional<MedicalRecord> medicalRecordOpt = medicalRecords.stream()
                 .filter(mr -> mr.getFirstName().equals(person.getFirstName()) &&
                         mr.getLastName().equals(person.getLastName()))
                 .findFirst();
 
         if (medicalRecordOpt.isEmpty()) {
+            log.error("Dossier médical non trouvé pour {} {}", person.getFirstName(), person.getLastName());
             throw new IllegalStateException("Dossier médical non trouvé pour " +
                     person.getFirstName() + " " + person.getLastName());
         }
 
         MedicalRecord medicalRecord = medicalRecordOpt.get();
         int age = AgeCalculator.calculateAge(medicalRecord.getBirthdate());
+        log.debug("Âge calculé pour {} {}: {} ans", person.getFirstName(), person.getLastName(), age);
 
         PersonWithMedicalInfoDTO dto = new PersonWithMedicalInfoDTO();
         dto.setFirstName(person.getFirstName());
@@ -71,6 +83,11 @@ public class MedicalRecordUtils {
         dto.setAge(age);
         dto.setMedications(medicalRecord.getMedications());
         dto.setAllergies(medicalRecord.getAllergies());
+
+        log.debug("Informations médicales extraites avec succès pour {} {}: {} médicaments, {} allergies",
+            person.getFirstName(), person.getLastName(),
+            medicalRecord.getMedications().size(),
+            medicalRecord.getAllergies().size());
 
         return dto;
     }
