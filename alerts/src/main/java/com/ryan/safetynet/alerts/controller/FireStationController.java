@@ -8,6 +8,7 @@ import com.ryan.safetynet.alerts.service.FireStationService;
 import com.ryan.safetynet.alerts.exception.ResourceNotFoundException;
 import com.ryan.safetynet.alerts.dto.FireStationInputDTO;
 import jakarta.validation.Valid;
+import jakarta.validation.ConstraintViolationException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -79,23 +81,39 @@ public class FireStationController {
      * @throws IllegalArgumentException Si le mapping existe déjà
      */
     @PostMapping
-    public ResponseEntity<FireStation> addFireStation(@Valid @RequestBody FireStationInputDTO fireStationDTO) throws IOException {
+    public ResponseEntity<?> addFireStation(@Valid @RequestBody FireStationInputDTO fireStationDTO) {
         log.info("Tentative d'ajout du mapping caserne/adresse : Station={}, Adresse={}", 
             fireStationDTO.getStation(), fireStationDTO.getAddress());
             
-        if (fireStationService.existsByAddress(fireStationDTO.getAddress())) {
-            String errorMessage = String.format("Un mapping existe déjà pour l'adresse : %s", fireStationDTO.getAddress());
-            log.warn(errorMessage);
-            throw new IllegalArgumentException(errorMessage);
-        }
+        try {
+            if (fireStationService.existsByAddress(fireStationDTO.getAddress())) {
+                String errorMessage = String.format("Un mapping existe déjà pour l'adresse : %s", fireStationDTO.getAddress());
+                log.warn(errorMessage);
+                return ResponseEntity
+                    .status(HttpStatus.CONFLICT)
+                    .body(new ErrorResponse(HttpStatus.CONFLICT.value(), errorMessage, null));
+            }
+                
+            FireStation fireStation = new FireStation();
+            fireStation.setStation(String.valueOf(fireStationDTO.getStation()));
+            fireStation.setAddress(fireStationDTO.getAddress());
             
-        FireStation fireStation = new FireStation();
-        fireStation.setStation(String.valueOf(fireStationDTO.getStation()));
-        fireStation.setAddress(fireStationDTO.getAddress());
-        
-        FireStation createdFireStation = fireStationService.addFireStation(fireStation);
-        log.info("Mapping caserne/adresse créé avec succès");
-        return new ResponseEntity<>(createdFireStation, HttpStatus.CREATED);
+            FireStation createdFireStation = fireStationService.addFireStation(fireStation);
+            log.info("Mapping caserne/adresse créé avec succès");
+            return new ResponseEntity<>(createdFireStation, HttpStatus.CREATED);
+        } catch (IOException e) {
+            log.error("Erreur lors de la création du mapping caserne/adresse", e);
+            return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), 
+                    "Erreur lors de la création du mapping", null));
+        } catch (ConstraintViolationException e) {
+            log.warn("Erreur de validation : {}", e.getMessage());
+            return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorResponse(HttpStatus.BAD_REQUEST.value(), 
+                    "Données invalides", Map.of("error", e.getMessage())));
+        }
     }
 
     /**

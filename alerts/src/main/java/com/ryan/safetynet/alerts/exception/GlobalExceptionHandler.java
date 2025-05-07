@@ -161,4 +161,13 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponse(HttpStatus.BAD_REQUEST.value(), ex.getMessage(), null));
     }
 
+    @ExceptionHandler(DuplicatePersonException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseEntity<ErrorResponse> handleDuplicatePersonException(DuplicatePersonException ex) {
+        log.warn("Doublon de personne détecté: {}", ex.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.CONFLICT)
+                .body(new ErrorResponse(HttpStatus.CONFLICT.value(), ex.getMessage(), null));
+    }
+
 }

@@ -140,10 +140,10 @@ class FireStationControllerTest {
         when(fireStationService.addFireStation(any(FireStation.class))).thenReturn(expectedFireStation);
 
         // Act
-        ResponseEntity<FireStation> response = fireStationController.addFireStation(inputDTO);
+        ResponseEntity<?> response = fireStationController.addFireStation(inputDTO);
 
         // Assert
-        FireStation createdStation = response.getBody();
+        FireStation createdStation = (FireStation) response.getBody();
         assertNotNull(createdStation, "La caserne créée ne doit pas être null");
 
         assertAll("Properties check",
@@ -162,10 +162,17 @@ class FireStationControllerTest {
 
         when(fireStationService.existsByAddress("123 Main St")).thenReturn(true);
 
-        // Act & Assert
-        assertThrows(IllegalArgumentException.class, () ->
-            fireStationController.addFireStation(inputDTO)
-        );
+        // Act
+        ResponseEntity<?> response = fireStationController.addFireStation(inputDTO);
+
+        // Assert
+        assertNotNull(response, "La réponse ne doit pas être null");
+        assertEquals(HttpStatus.CONFLICT, response.getStatusCode(), "Le statut doit être CONFLICT");
+        
+        ErrorResponse errorResponse = (ErrorResponse) response.getBody();
+        assertNotNull(errorResponse, "Le corps de la réponse ne doit pas être null");
+        assertEquals(HttpStatus.CONFLICT.value(), errorResponse.getStatus());
+        assertEquals("Un mapping existe déjà pour l'adresse : 123 Main St", errorResponse.getMessage());
     }
 
     @Test

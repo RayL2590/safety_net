@@ -1,5 +1,6 @@
 package com.ryan.safetynet.alerts.service;
 
+import com.ryan.safetynet.alerts.exception.DuplicatePersonException;
 import com.ryan.safetynet.alerts.model.Person;
 import com.ryan.safetynet.alerts.repository.DataRepository;
 import jakarta.validation.ConstraintViolationException;
@@ -81,6 +82,15 @@ public class PersonService {
             log.error("Erreur de validation pour la personne {} {}: {}", 
                 person.getFirstName(), person.getLastName(), violations);
             throw new ConstraintViolationException("Erreur de validation dans PersonService", violations);
+        }
+        // Vérification du doublon (prénom, nom, adresse)
+        boolean exists = dataRepository.getData().getPersons().stream()
+            .anyMatch(p -> p.getFirstName().equals(person.getFirstName())
+                && p.getLastName().equals(person.getLastName())
+                && p.getAddress().equals(person.getAddress()));
+        if (exists) {
+            log.warn("Doublon détecté pour {} {} à l'adresse {}", person.getFirstName(), person.getLastName(), person.getAddress());
+            throw new DuplicatePersonException(person.getFirstName(), person.getLastName(), person.getAddress());
         }
         dataRepository.getData().getPersons().add(person);
         dataRepository.saveData();

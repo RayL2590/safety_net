@@ -1,5 +1,6 @@
 package com.ryan.safetynet.alerts.service;
 
+import com.ryan.safetynet.alerts.exception.DuplicatePersonException;
 import com.ryan.safetynet.alerts.model.Data;
 import com.ryan.safetynet.alerts.model.Person;
 import com.ryan.safetynet.alerts.repository.DataRepository;
@@ -127,6 +128,21 @@ class PersonServiceTest {
         assertEquals(newPerson, result);
         verify(dataRepository).saveData();
         assertEquals(2, testData.getPersons().size());
+    }
+
+    @Test
+    void addPerson_ShouldThrowDuplicatePersonException_WhenDuplicateExists() throws IOException {
+        // Given
+        Person duplicatePerson = new Person();
+        duplicatePerson.setFirstName("John");
+        duplicatePerson.setLastName("Doe");
+        duplicatePerson.setAddress("123 Main St"); // même combinaison que testPerson
+        when(dataRepository.getData()).thenReturn(testData);
+        when(validator.validate(any())).thenReturn(Collections.emptySet());
+
+        // When & Then
+        assertThrows(DuplicatePersonException.class, () -> personService.addPerson(duplicatePerson));
+        verify(dataRepository, never()).saveData();
     }
 
     @Test

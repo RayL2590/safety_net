@@ -1,19 +1,19 @@
-2025-05-06T11:42:37.528+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Starting AlertsApplicationTests using Java 17.0.14 with PID 689455 (started by ryan in /home/ryan/IdeaProjects/safety_net/alerts)
-2025-05-06T11:42:37.531+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-05-06T11:42:37.531+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
-2025-05-06T11:42:38.039+02:00  INFO 689455 --- [alerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2025-05-06T11:42:38.048+02:00  INFO 689455 --- [alerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-06T11:42:38.048+02:00  INFO 689455 --- [alerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-05-06T11:42:38.078+02:00  INFO 689455 --- [alerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-06T11:42:38.078+02:00  INFO 689455 --- [alerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 536 ms
-2025-05-06T11:42:38.123+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Tentative de chargement depuis le classpath: data.json
-2025-05-06T11:42:38.165+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis le classpath: data.json
-2025-05-06T11:42:38.381+02:00  INFO 689455 --- [alerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 41723 (http) with context path '/'
-2025-05-06T11:42:38.384+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Started AlertsApplicationTests in 1.059 seconds (process running for 2.056)
-2025-05-06T11:42:38.897+02:00  INFO 689455 --- [alerts] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-06T11:42:38.897+02:00  INFO 689455 --- [alerts] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-06T11:42:38.898+02:00  INFO 689455 --- [alerts] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-05-06T11:42:38.923+02:00 ERROR 689455 --- [alerts] [http-nio-auto-1-exec-1] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:36.267+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Starting AlertsApplicationTests using Java 17.0.14 with PID 1241326 (started by ryan in /home/ryan/IdeaProjects/safety_net/alerts)
+2025-05-07T13:55:36.269+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-05-07T13:55:36.270+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-05-07T13:55:36.764+02:00  INFO 1241326 --- [alerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-05-07T13:55:36.773+02:00  INFO 1241326 --- [alerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-07T13:55:36.773+02:00  INFO 1241326 --- [alerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-07T13:55:36.800+02:00  INFO 1241326 --- [alerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-07T13:55:36.801+02:00  INFO 1241326 --- [alerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 522 ms
+2025-05-07T13:55:36.844+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Tentative de chargement depuis le classpath: data.json
+2025-05-07T13:55:36.888+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis le classpath: data.json
+2025-05-07T13:55:37.112+02:00  INFO 1241326 --- [alerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 34725 (http) with context path '/'
+2025-05-07T13:55:37.116+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.AlertsApplicationTests      : Started AlertsApplicationTests in 1.053 seconds (process running for 2.072)
+2025-05-07T13:55:37.628+02:00  INFO 1241326 --- [alerts] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-07T13:55:37.629+02:00  INFO 1241326 --- [alerts] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-07T13:55:37.629+02:00  INFO 1241326 --- [alerts] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-05-07T13:55:37.653+02:00 ERROR 1241326 --- [alerts] [http-nio-auto-1-exec-1] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'stationNumber' for method parameter type int is not present
 	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:220) ~[spring-web-6.2.3.jar:6.2.3]
@@ -67,7 +67,7 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-05-06T11:42:38.960+02:00 ERROR 689455 --- [alerts] [http-nio-auto-1-exec-2] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:37.687+02:00 ERROR 1241326 --- [alerts] [http-nio-auto-1-exec-2] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'firstName' for method parameter type String is not present
 	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:220) ~[spring-web-6.2.3.jar:6.2.3]
@@ -121,10 +121,10 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-05-06T11:42:38.964+02:00  INFO 689455 --- [alerts] [http-nio-auto-1-exec-3] c.r.s.a.controller.PersonController      : Récupération de toutes les personnes
-2025-05-06T11:42:38.964+02:00 DEBUG 689455 --- [alerts] [http-nio-auto-1-exec-3] c.r.s.alerts.service.PersonService       : Récupération de toutes les personnes
-2025-05-06T11:42:38.964+02:00 DEBUG 689455 --- [alerts] [http-nio-auto-1-exec-3] c.r.s.alerts.service.PersonService       : Nombre total de personnes: 23
-2025-05-06T11:42:38.971+02:00 ERROR 689455 --- [alerts] [http-nio-auto-1-exec-4] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:37.692+02:00  INFO 1241326 --- [alerts] [http-nio-auto-1-exec-3] c.r.s.a.controller.PersonController      : Récupération de toutes les personnes
+2025-05-07T13:55:37.692+02:00 DEBUG 1241326 --- [alerts] [http-nio-auto-1-exec-3] c.r.s.alerts.service.PersonService       : Récupération de toutes les personnes
+2025-05-07T13:55:37.692+02:00 DEBUG 1241326 --- [alerts] [http-nio-auto-1-exec-3] c.r.s.alerts.service.PersonService       : Nombre total de personnes: 23
+2025-05-07T13:55:37.701+02:00 ERROR 1241326 --- [alerts] [http-nio-auto-1-exec-4] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'city' for method parameter type String is not present
 	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:220) ~[spring-web-6.2.3.jar:6.2.3]
@@ -178,7 +178,7 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-05-06T11:42:38.975+02:00 ERROR 689455 --- [alerts] [http-nio-auto-1-exec-5] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:37.705+02:00 ERROR 1241326 --- [alerts] [http-nio-auto-1-exec-5] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'address' for method parameter type String is not present
 	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:220) ~[spring-web-6.2.3.jar:6.2.3]
@@ -232,7 +232,7 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-05-06T11:42:38.980+02:00 ERROR 689455 --- [alerts] [http-nio-auto-1-exec-6] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:37.710+02:00 ERROR 1241326 --- [alerts] [http-nio-auto-1-exec-6] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'firestation' for method parameter type int is not present
 	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:220) ~[spring-web-6.2.3.jar:6.2.3]
@@ -286,7 +286,7 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-05-06T11:42:38.983+02:00 ERROR 689455 --- [alerts] [http-nio-auto-1-exec-7] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:37.714+02:00 ERROR 1241326 --- [alerts] [http-nio-auto-1-exec-7] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'address' for method parameter type String is not present
 	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:220) ~[spring-web-6.2.3.jar:6.2.3]
@@ -340,7 +340,7 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-05-06T11:42:38.987+02:00 ERROR 689455 --- [alerts] [http-nio-auto-1-exec-8] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:37.718+02:00 ERROR 1241326 --- [alerts] [http-nio-auto-1-exec-8] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'stations' for method parameter type String is not present
 	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:220) ~[spring-web-6.2.3.jar:6.2.3]
@@ -394,7 +394,7 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-05-06T11:42:38.991+02:00 ERROR 689455 --- [alerts] [http-nio-auto-1-exec-9] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:37.722+02:00 ERROR 1241326 --- [alerts] [http-nio-auto-1-exec-9] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'firstName' for method parameter type String is not present
 	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:220) ~[spring-web-6.2.3.jar:6.2.3]
@@ -448,362 +448,364 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-05-06T11:42:39.001+02:00  WARN 689455 --- [alerts] [http-nio-auto-1-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /nonexistent
-2025-05-06T11:42:39.003+02:00  WARN 689455 --- [alerts] [http-nio-auto-1-exec-10] c.r.s.a.e.GlobalExceptionHandler         : Endpoint non trouvé: /nonexistent
-2025-05-06T11:42:39.255+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Mise à jour de la caserne: FireStation{address='123 Main St', station='1'}
-2025-05-06T11:42:39.260+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche de la caserne à l'adresse: 123 Main St
-2025-05-06T11:42:39.261+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: false
-2025-05-06T11:42:39.261+02:00  WARN 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Tentative de mise à jour d'une caserne inexistante à l'adresse: 123 Main St
-2025-05-06T11:42:39.312+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Ajout d'une nouvelle caserne: FireStation{address='null', station='null'}
-2025-05-06T11:42:39.313+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Erreur de validation lors de l'ajout de la caserne: [Mock for ConstraintViolation, hashCode: 1373985124]
-2025-05-06T11:42:39.318+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Suppression des casernes avec le numéro: 1
-2025-05-06T11:42:39.318+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Nombre de casernes supprimées: 2
-2025-05-06T11:42:39.321+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche des adresses couvertes par les stations: [1, 2]
-2025-05-06T11:42:39.322+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Adresses trouvées: [123 Main St, 456 Oak St]
-2025-05-06T11:42:39.324+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Vérification de l'existence de la station: 1
-2025-05-06T11:42:39.325+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Station trouvée: true
-2025-05-06T11:42:39.325+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Vérification de l'existence de la station: 2
-2025-05-06T11:42:39.325+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Station trouvée: false
-2025-05-06T11:42:39.327+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Suppression de la caserne à l'adresse: 123 Main St
-2025-05-06T11:42:39.328+02:00  WARN 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Aucune caserne trouvée à l'adresse: 123 Main St
-2025-05-06T11:42:39.330+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Suppression de la caserne à l'adresse: 123 Main St
-2025-05-06T11:42:39.330+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne supprimée avec succès
-2025-05-06T11:42:39.332+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Vérification de l'existence d'une caserne à l'adresse: 123 Main St
-2025-05-06T11:42:39.332+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: true
-2025-05-06T11:42:39.333+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Vérification de l'existence d'une caserne à l'adresse: 456 Oak St
-2025-05-06T11:42:39.333+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: false
-2025-05-06T11:42:39.335+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche de la caserne à l'adresse: 123 Main St
-2025-05-06T11:42:39.336+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: false
-2025-05-06T11:42:39.337+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche des adresses couvertes par la station: 1
-2025-05-06T11:42:39.338+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Adresses trouvées: [123 Main St, 456 Oak St]
-2025-05-06T11:42:39.340+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Ajout d'une nouvelle caserne: FireStation{address='123 Main St', station='1'}
-2025-05-06T11:42:39.341+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne ajoutée avec succès
-2025-05-06T11:42:39.354+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche de la caserne à l'adresse: 123 Main St
-2025-05-06T11:42:39.354+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: true
-2025-05-06T11:42:39.357+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Mise à jour de la caserne: FireStation{address='123 Main St', station='2'}
-2025-05-06T11:42:39.357+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche de la caserne à l'adresse: 123 Main St
-2025-05-06T11:42:39.357+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: true
-2025-05-06T11:42:39.357+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne mise à jour avec succès
-2025-05-06T11:42:39.423+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
-2025-05-06T11:42:39.424+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 1
-2025-05-06T11:42:39.424+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 1
-2025-05-06T11:42:39.425+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 2
-2025-05-06T11:42:39.427+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
-2025-05-06T11:42:39.427+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 2
-2025-05-06T11:42:39.427+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 2
-2025-05-06T11:42:39.427+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 3
-2025-05-06T11:42:39.429+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
-2025-05-06T11:42:39.429+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 2
-2025-05-06T11:42:39.429+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 2
-2025-05-06T11:42:39.429+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 1
-2025-05-06T11:42:39.430+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
-2025-05-06T11:42:39.431+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 2
-2025-05-06T11:42:39.431+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 0
-2025-05-06T11:42:39.431+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 0
-2025-05-06T11:42:39.432+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
-2025-05-06T11:42:39.432+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 0
-2025-05-06T11:42:39.432+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 0
-2025-05-06T11:42:39.432+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 0
-2025-05-06T11:42:39.440+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
-2025-05-06T11:42:39.441+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Erreur lors de la récupération des informations pour l'adresse 123 Main St : Erreur de base de données
-2025-05-06T11:42:39.443+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
-2025-05-06T11:42:39.443+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 2, stations : 1, dossiers médicaux : 2
-2025-05-06T11:42:39.445+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
-2025-05-06T11:42:39.446+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
-2025-05-06T11:42:39.446+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 2 médicaments, 1 allergies
-2025-05-06T11:42:39.446+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour Jane Doe
-2025-05-06T11:42:39.446+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour Jane Doe: 30 ans
-2025-05-06T11:42:39.446+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour Jane Doe: 1 médicaments, 1 allergies
-2025-05-06T11:42:39.446+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre de résidents trouvés à l'adresse 123 Main St : 2
-2025-05-06T11:42:39.446+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Station trouvée pour l'adresse 123 Main St : 1
-2025-05-06T11:42:39.447+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Informations récupérées avec succès pour l'adresse : 123 Main St
-2025-05-06T11:42:39.449+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
-2025-05-06T11:42:39.449+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 0, stations : 1, dossiers médicaux : 0
-2025-05-06T11:42:39.449+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre de résidents trouvés à l'adresse 123 Main St : 0
-2025-05-06T11:42:39.449+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Station trouvée pour l'adresse 123 Main St : 1
-2025-05-06T11:42:39.449+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Informations récupérées avec succès pour l'adresse : 123 Main St
-2025-05-06T11:42:39.451+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
-2025-05-06T11:42:39.451+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 1, stations : 0, dossiers médicaux : 1
-2025-05-06T11:42:39.451+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
-2025-05-06T11:42:39.451+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
-2025-05-06T11:42:39.451+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 1 médicaments, 1 allergies
-2025-05-06T11:42:39.451+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre de résidents trouvés à l'adresse 123 Main St : 1
-2025-05-06T11:42:39.451+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Aucune station de pompiers n'est associée à l'adresse : 123 Main St
-2025-05-06T11:42:39.453+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 
-2025-05-06T11:42:39.453+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 0, stations : 0, dossiers médicaux : 0
-2025-05-06T11:42:39.453+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre de résidents trouvés à l'adresse  : 0
-2025-05-06T11:42:39.453+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Aucune station de pompiers n'est associée à l'adresse : 
-2025-05-06T11:42:39.454+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
-2025-05-06T11:42:39.455+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 1, stations : 1, dossiers médicaux : 0
-2025-05-06T11:42:39.455+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
-2025-05-06T11:42:39.455+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Dossier médical non trouvé pour John Doe
-2025-05-06T11:42:39.455+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Erreur lors de la récupération des informations pour l'adresse 123 Main St : Dossier médical non trouvé pour John Doe
-2025-05-06T11:42:39.461+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Suppression du dossier médical pour John Doe
-2025-05-06T11:42:39.461+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical supprimé avec succès
-2025-05-06T11:42:39.465+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Suppression du dossier médical pour John Doe
-2025-05-06T11:42:39.467+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
-2025-05-06T11:42:39.467+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: false
-2025-05-06T11:42:39.469+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Ajout d'un nouveau dossier médical pour John Doe
-2025-05-06T11:42:39.469+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
-2025-05-06T11:42:39.469+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: true
-2025-05-06T11:42:39.470+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Un dossier médical existe déjà pour John Doe
-2025-05-06T11:42:39.494+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Ajout d'un nouveau dossier médical pour John Doe
-2025-05-06T11:42:39.495+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Erreur de validation lors de l'ajout du dossier médical: [Mock for ConstraintViolation, hashCode: 1192815361]
-2025-05-06T11:42:39.497+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Suppression du dossier médical pour John Doe
-2025-05-06T11:42:39.498+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Tentative de suppression d'un dossier médical inexistant pour John Doe
-2025-05-06T11:42:39.500+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Ajout d'un nouveau dossier médical pour NonExistent Person
-2025-05-06T11:42:39.500+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Impossible d'ajouter un dossier médical pour une personne inexistante: NonExistent Person
-2025-05-06T11:42:39.501+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Récupération de tous les dossiers médicaux
-2025-05-06T11:42:39.501+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Nombre de dossiers médicaux trouvés: 2
-2025-05-06T11:42:39.504+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Mise à jour du dossier médical pour John Doe
-2025-05-06T11:42:39.504+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Erreur de validation lors de la mise à jour du dossier médical: [Mock for ConstraintViolation, hashCode: 1368955026]
-2025-05-06T11:42:39.506+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Mise à jour du dossier médical pour John Doe
-2025-05-06T11:42:39.506+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
-2025-05-06T11:42:39.507+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: true
-2025-05-06T11:42:39.507+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical mis à jour avec succès
-2025-05-06T11:42:39.508+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Mise à jour du dossier médical pour John Doe
-2025-05-06T11:42:39.509+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
-2025-05-06T11:42:39.509+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: false
-2025-05-06T11:42:39.509+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Tentative de mise à jour d'un dossier médical inexistant pour John Doe
-2025-05-06T11:42:39.510+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Ajout d'un nouveau dossier médical pour John Doe
-2025-05-06T11:42:39.511+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
-2025-05-06T11:42:39.511+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: false
-2025-05-06T11:42:39.511+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical ajouté avec succès
-2025-05-06T11:42:39.513+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
-2025-05-06T11:42:39.513+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: true
-2025-05-06T11:42:39.514+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Mise à jour du dossier médical pour NonExistent Person
-2025-05-06T11:42:39.514+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Impossible de mettre à jour un dossier médical pour une personne inexistante: NonExistent Person
-2025-05-06T11:42:39.517+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche des personnes pour les adresses: [123 Main St, 456 Oak St]
-2025-05-06T11:42:39.518+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Nombre d'adresses trouvées: 1
-2025-05-06T11:42:39.519+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de mise à jour de la personne: NonExistent Person
-2025-05-06T11:42:39.519+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche de la personne: NonExistent Person
-2025-05-06T11:42:39.520+02:00  WARN 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne non trouvée: NonExistent Person
-2025-05-06T11:42:39.520+02:00  WARN 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de mise à jour d'une personne inexistante: NonExistent Person
-2025-05-06T11:42:39.521+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche de la personne: Jane Doe
-2025-05-06T11:42:39.521+02:00  WARN 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne non trouvée: Jane Doe
-2025-05-06T11:42:39.522+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Récupération de toutes les personnes
-2025-05-06T11:42:39.522+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Nombre total de personnes: 1
-2025-05-06T11:42:39.523+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de suppression de la personne: NonExistent Person
-2025-05-06T11:42:39.523+02:00  WARN 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de suppression d'une personne inexistante: NonExistent Person
-2025-05-06T11:42:39.525+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de mise à jour de la personne: John Doe
-2025-05-06T11:42:39.525+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche de la personne: John Doe
-2025-05-06T11:42:39.525+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne mise à jour avec succès: John Doe
-2025-05-06T11:42:39.526+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de suppression de la personne: John Doe
-2025-05-06T11:42:39.526+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne supprimée avec succès: John Doe
-2025-05-06T11:42:39.527+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative d'ajout d'une nouvelle personne: null null
-2025-05-06T11:42:39.528+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Erreur de validation pour la personne null null: [Mock for ConstraintViolation, hashCode: 1658992385]
-2025-05-06T11:42:39.529+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative d'ajout d'une nouvelle personne: Jane Smith
-2025-05-06T11:42:39.530+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne ajoutée avec succès: Jane Smith
-2025-05-06T11:42:39.531+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche de la personne: John Doe
-2025-05-06T11:42:39.532+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche des personnes pour l'adresse: 123 Main St
-2025-05-06T11:42:39.532+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Nombre de personnes trouvées: 1
-2025-05-06T11:42:39.535+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Recherche des personnes couvertes par la station n° 1
-2025-05-06T11:42:39.535+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de personnes: 3
-2025-05-06T11:42:39.535+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de dossiers médicaux: 3
-2025-05-06T11:42:39.536+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Adresses couvertes par la station 1: [123 Main St, 456 Oak St]
-2025-05-06T11:42:39.536+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: John Doe à 123 Main St
-2025-05-06T11:42:39.536+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour John Doe
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Date de naissance trouvée pour John Doe: 1990-01-01
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour John Doe: 35
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Jane Doe à 123 Main St
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour Jane Doe
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Date de naissance trouvée pour Jane Doe: 1995-01-01
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Jane Doe: 30
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Bob Smith à 456 Oak St
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour Bob Smith
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Date de naissance trouvée pour Bob Smith: 2010-01-01
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Bob Smith: 15
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre de personnes couvertes trouvées: 3
-2025-05-06T11:42:39.537+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre d'adultes: 2, Nombre d'enfants: 1
-2025-05-06T11:42:39.540+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Recherche des personnes couvertes par la station n° 1
-2025-05-06T11:42:39.540+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de personnes: 1
-2025-05-06T11:42:39.540+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de dossiers médicaux: 0
-2025-05-06T11:42:39.540+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Adresses couvertes par la station 1: [123 Main St]
-2025-05-06T11:42:39.540+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: John Doe à 123 Main St
-2025-05-06T11:42:39.540+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour John Doe
-2025-05-06T11:42:39.540+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Dossier médical non trouvé pour John Doe
-2025-05-06T11:42:39.542+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Recherche des personnes couvertes par la station n° 1
-2025-05-06T11:42:39.542+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de personnes: 0
-2025-05-06T11:42:39.542+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de dossiers médicaux: 0
-2025-05-06T11:42:39.542+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Adresses couvertes par la station 1: []
-2025-05-06T11:42:39.542+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre de personnes couvertes trouvées: 0
-2025-05-06T11:42:39.542+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre d'adultes: 0, Nombre d'enfants: 0
-2025-05-06T11:42:39.545+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Recherche des personnes couvertes par la station n° 1
-2025-05-06T11:42:39.545+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de personnes: 0
-2025-05-06T11:42:39.545+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de dossiers médicaux: 0
-2025-05-06T11:42:39.545+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Adresses couvertes par la station 1: [123 Main St]
-2025-05-06T11:42:39.545+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre de personnes couvertes trouvées: 0
-2025-05-06T11:42:39.545+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre d'adultes: 0, Nombre d'enfants: 0
-2025-05-06T11:42:39.570+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des informations pour John Doe
-2025-05-06T11:42:39.570+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Personne trouvée, extraction des informations médicales
-2025-05-06T11:42:39.570+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Informations complètes extraites pour John Doe
-2025-05-06T11:42:39.572+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des personnes avec le nom de famille: Doe
-2025-05-06T11:42:39.572+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Traitement des informations pour John Doe
-2025-05-06T11:42:39.572+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Traitement des informations pour Jane Doe
-2025-05-06T11:42:39.572+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Nombre de personnes trouvées pour le nom Doe: 2
-2025-05-06T11:42:39.573+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des informations pour John Doe
-2025-05-06T11:42:39.574+02:00  WARN 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Aucune personne trouvée pour John Doe
-2025-05-06T11:42:39.574+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des personnes avec le nom de famille: NonExisting
-2025-05-06T11:42:39.575+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Nombre de personnes trouvées pour le nom NonExisting: 0
-2025-05-06T11:42:39.576+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des personnes avec le nom de famille: Doe
-2025-05-06T11:42:39.576+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Traitement des informations pour John Doe
-2025-05-06T11:42:39.577+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des informations pour JOHN DOE
-2025-05-06T11:42:39.577+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Personne trouvée, extraction des informations médicales
-2025-05-06T11:42:39.577+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Informations complètes extraites pour JOHN DOE
-2025-05-06T11:42:39.578+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des personnes avec le nom de famille: DOE
-2025-05-06T11:42:39.578+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Traitement des informations pour John Doe
-2025-05-06T11:42:39.578+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Nombre de personnes trouvées pour le nom DOE: 1
-2025-05-06T11:42:39.579+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des informations pour John Doe
-2025-05-06T11:42:39.580+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Personne trouvée, extraction des informations médicales
-2025-05-06T11:42:39.582+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Recherche des enfants à l'adresse: 123 Main St
-2025-05-06T11:42:39.582+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Erreur lors de la recherche des enfants à l'adresse 123 Main St: Erreur de base de données
-2025-05-06T11:42:39.584+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Recherche des enfants à l'adresse: 123 Main St
-2025-05-06T11:42:39.584+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre total de dossiers médicaux: 2
-2025-05-06T11:42:39.584+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre de personnes trouvées à l'adresse 123 Main St: 2
-2025-05-06T11:42:39.584+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Âge calculé pour John Doe: 14
-2025-05-06T11:42:39.584+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Enfant ajouté: John Doe, âge: 14
-2025-05-06T11:42:39.584+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Âge calculé pour Jane Doe: 34
-2025-05-06T11:42:39.584+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Membre du foyer ajouté: Jane Doe
-2025-05-06T11:42:39.585+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Résumé pour l'adresse 123 Main St: 1 enfants, 1 autres membres du foyer
-2025-05-06T11:42:39.586+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Recherche des enfants à l'adresse: 123 Main St
-2025-05-06T11:42:39.586+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre total de dossiers médicaux: 0
-2025-05-06T11:42:39.586+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Aucune personne trouvée à l'adresse: 123 Main St
-2025-05-06T11:42:39.587+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Recherche des enfants à l'adresse: 123 Main St
-2025-05-06T11:42:39.587+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre total de dossiers médicaux: 2
-2025-05-06T11:42:39.587+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre de personnes trouvées à l'adresse 123 Main St: 2
-2025-05-06T11:42:39.587+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Âge calculé pour John Doe: 34
-2025-05-06T11:42:39.587+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Membre du foyer ajouté: John Doe
-2025-05-06T11:42:39.587+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Âge calculé pour Jane Doe: 29
-2025-05-06T11:42:39.587+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Membre du foyer ajouté: Jane Doe
-2025-05-06T11:42:39.587+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Résumé pour l'adresse 123 Main St: 0 enfants, 2 autres membres du foyer
-2025-05-06T11:42:39.591+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1]
-2025-05-06T11:42:39.592+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1]
-2025-05-06T11:42:39.593+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Adresses couvertes par les stations: [123 Main St]
-2025-05-06T11:42:39.593+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Nombre d'adresses avec des résidents: 0
-2025-05-06T11:42:39.593+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche terminée. 0 adresses trouvées avec des résidents
-2025-05-06T11:42:39.594+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1, 2]
-2025-05-06T11:42:39.595+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Adresses couvertes par les stations: []
-2025-05-06T11:42:39.595+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Nombre d'adresses avec des résidents: 0
-2025-05-06T11:42:39.595+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche terminée. 0 adresses trouvées avec des résidents
-2025-05-06T11:42:39.596+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1, 2]
-2025-05-06T11:42:39.596+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Adresses couvertes par les stations: [123 Main St, 456 Oak St]
-2025-05-06T11:42:39.596+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Nombre d'adresses avec des résidents: 2
-2025-05-06T11:42:39.596+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Traitement de l'adresse 456 Oak St avec 1 résidents
-2025-05-06T11:42:39.596+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour Bob Smith
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour Bob Smith: 40 ans
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour Bob Smith: 1 médicaments, 1 allergies
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Informations médicales extraites pour 1 résidents à l'adresse 456 Oak St
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Traitement de l'adresse 123 Main St avec 2 résidents
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 2 médicaments, 1 allergies
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour Jane Doe
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour Jane Doe: 30 ans
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour Jane Doe: 1 médicaments, 1 allergies
-2025-05-06T11:42:39.597+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Informations médicales extraites pour 2 résidents à l'adresse 123 Main St
-2025-05-06T11:42:39.597+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche terminée. 2 adresses trouvées avec des résidents
-2025-05-06T11:42:39.599+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1, 2]
-2025-05-06T11:42:39.599+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Stations non trouvées: [1]
-2025-05-06T11:42:39.601+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : Culver
-2025-05-06T11:42:39.601+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Erreur lors de la récupération des emails pour la ville Culver : Erreur de base de données
-2025-05-06T11:42:39.602+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : Culver
-2025-05-06T11:42:39.602+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 3
-2025-05-06T11:42:39.603+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour Culver : 3
-2025-05-06T11:42:39.603+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : Culver
-2025-05-06T11:42:39.604+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : Culver
-2025-05-06T11:42:39.604+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 1
-2025-05-06T11:42:39.604+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour Culver : 1
-2025-05-06T11:42:39.604+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : Culver
-2025-05-06T11:42:39.604+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : 
-2025-05-06T11:42:39.605+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 0
-2025-05-06T11:42:39.605+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour  : 0
-2025-05-06T11:42:39.605+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : 
-2025-05-06T11:42:39.605+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : NonExistentCity
-2025-05-06T11:42:39.605+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 1
-2025-05-06T11:42:39.606+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour NonExistentCity : 0
-2025-05-06T11:42:39.606+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : NonExistentCity
-2025-05-06T11:42:39.606+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : Culver
-2025-05-06T11:42:39.606+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 2
-2025-05-06T11:42:39.606+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour Culver : 1
-2025-05-06T11:42:39.607+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : Culver
-2025-05-06T11:42:39.627+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : 
-2025-05-06T11:42:39.627+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Aucun email trouvé pour la ville : 
-2025-05-06T11:42:39.628+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : Culver
-2025-05-06T11:42:39.628+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Nombre d'emails trouvés : 2
-2025-05-06T11:42:39.631+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : Culver
-2025-05-06T11:42:39.632+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : Culver
-2025-05-06T11:42:39.632+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Aucun email trouvé pour la ville : Culver
-2025-05-06T11:42:39.633+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : Culver
-2025-05-06T11:42:39.633+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Nombre d'emails trouvés : 3
-2025-05-06T11:42:39.655+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : -1
-2025-05-06T11:42:39.656+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Aucun numéro de téléphone trouvé pour la station : -1
-2025-05-06T11:42:39.657+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 1
-2025-05-06T11:42:39.658+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Nombre de numéros de téléphone trouvés : 3
-2025-05-06T11:42:39.660+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 1
-2025-05-06T11:42:39.660+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Nombre de numéros de téléphone trouvés : 3
-2025-05-06T11:42:39.661+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 0
-2025-05-06T11:42:39.661+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Aucun numéro de téléphone trouvé pour la station : 0
-2025-05-06T11:42:39.662+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 1
-2025-05-06T11:42:39.662+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Aucun numéro de téléphone trouvé pour la station : 1
-2025-05-06T11:42:39.673+02:00  INFO 689455 --- [alerts] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.ryan.safetynet.alerts.controller.PersonInfoControllerTest]: PersonInfoControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-05-06T11:42:39.704+02:00  INFO 689455 --- [alerts] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.ryan.safetynet.alerts.AlertsApplication for test class com.ryan.safetynet.alerts.controller.PersonInfoControllerTest
-2025-05-06T11:42:39.744+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.PersonInfoControllerTest       : Starting PersonInfoControllerTest using Java 17.0.14 with PID 689455 (started by ryan in /home/ryan/IdeaProjects/safety_net/alerts)
-2025-05-06T11:42:39.744+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.c.PersonInfoControllerTest       : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-05-06T11:42:39.744+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.PersonInfoControllerTest       : No active profile set, falling back to 1 default profile: "default"
-2025-05-06T11:42:39.939+02:00  INFO 689455 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-05-06T11:42:39.939+02:00  INFO 689455 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-05-06T11:42:39.939+02:00  INFO 689455 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-05-06T11:42:39.961+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.PersonInfoControllerTest       : Started PersonInfoControllerTest in 0.248 seconds (process running for 3.633)
-2025-05-06T11:42:39.983+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : John Doe
-2025-05-06T11:42:39.984+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Personne trouvée : John Doe
-2025-05-06T11:42:40.067+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : John 
-2025-05-06T11:42:40.068+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Aucune personne trouvée : John 
-2025-05-06T11:42:40.068+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La personne John  n'existe pas dans le système
-2025-05-06T11:42:40.078+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne :  
-2025-05-06T11:42:40.078+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Aucune personne trouvée :  
-2025-05-06T11:42:40.078+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La personne   n'existe pas dans le système
-2025-05-06T11:42:40.082+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : John Doe
-2025-05-06T11:42:40.082+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Aucune personne trouvée : John Doe
-2025-05-06T11:42:40.082+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La personne John Doe n'existe pas dans le système
-2025-05-06T11:42:40.085+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne :  Doe
-2025-05-06T11:42:40.086+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Aucune personne trouvée :  Doe
-2025-05-06T11:42:40.086+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La personne  Doe n'existe pas dans le système
-2025-05-06T11:42:40.110+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Suppression de tous les mappings pour la caserne numéro : 1
-2025-05-06T11:42:40.111+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Mise à jour du numéro de caserne pour l'adresse : 123 Main St
-2025-05-06T11:42:40.112+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Suppression de tous les mappings pour la caserne numéro : 1
-2025-05-06T11:42:40.114+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Suppression du mapping pour l'adresse : 123 Main St
-2025-05-06T11:42:40.115+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Suppression du mapping pour l'adresse : 123 Main St
-2025-05-06T11:42:40.116+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Requête GET /firestation avec station : 999
-2025-05-06T11:42:40.116+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Erreur : La station de pompiers 999 n'existe pas
-2025-05-06T11:42:40.117+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Requête GET /firestation avec station : 1
-2025-05-06T11:42:40.117+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Aucune personne trouvée pour la station : 1
-2025-05-06T11:42:40.118+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Mise à jour du numéro de caserne pour l'adresse : 123 Main St
-2025-05-06T11:42:40.119+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Tentative d'ajout du mapping caserne/adresse : Station=1, Adresse=123 Main St
-2025-05-06T11:42:40.119+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Mapping caserne/adresse créé avec succès
-2025-05-06T11:42:40.120+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Tentative d'ajout du mapping caserne/adresse : Station=1, Adresse=123 Main St
-2025-05-06T11:42:40.120+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Un mapping existe déjà pour l'adresse : 123 Main St
-2025-05-06T11:42:40.121+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Requête GET /firestation avec station : 1
-2025-05-06T11:42:40.121+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.FireStationController          : Nombre de personnes trouvées : 2
-2025-05-06T11:42:40.124+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Suppression du dossier médical pour : John Doe
-2025-05-06T11:42:40.125+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Recherche du dossier médical pour : John Doe
-2025-05-06T11:42:40.126+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Mise à jour du dossier médical pour : John Doe
-2025-05-06T11:42:40.127+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Ajout d'un nouveau dossier médical : John Doe
-2025-05-06T11:42:40.128+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Recherche du dossier médical pour : John Doe
-2025-05-06T11:42:40.129+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Suppression du dossier médical pour : John Doe
-2025-05-06T11:42:40.130+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Mise à jour du dossier médical pour : John Doe
-2025-05-06T11:42:40.132+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Ajout d'un nouveau dossier médical : John Doe
-2025-05-06T11:42:40.134+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonController      : Suppression de la personne : John Doe
-2025-05-06T11:42:40.135+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonController      : Mise à jour de la personne : John Doe
-2025-05-06T11:42:40.137+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonController      : Suppression de la personne : John Doe
-2025-05-06T11:42:40.137+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonController      : Ajout d'une nouvelle personne : John Doe
-2025-05-06T11:42:40.138+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonController      : Mise à jour de la personne : John Doe
-2025-05-06T11:42:40.139+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.PersonController      : Ajout d'une nouvelle personne : John Doe
-2025-05-06T11:42:40.162+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 123 Main St
-2025-05-06T11:42:40.163+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Erreur : La station de pompiers n'existe pas
-2025-05-06T11:42:40.164+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 123 Main St
-2025-05-06T11:42:40.164+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Réponse envoyée (masquée) : com.ryan.safetynet.alerts.dto.FireAlertDTO@7c7e4f05
-2025-05-06T11:42:40.164+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 123 Main St
-2025-05-06T11:42:40.165+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Erreur lors de la récupération des résidents pour l'adresse : 123 Main St
+2025-05-07T13:55:37.731+02:00  WARN 1241326 --- [alerts] [http-nio-auto-1-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /nonexistent
+2025-05-07T13:55:37.732+02:00  WARN 1241326 --- [alerts] [http-nio-auto-1-exec-10] c.r.s.a.e.GlobalExceptionHandler         : Endpoint non trouvé: /nonexistent
+2025-05-07T13:55:37.995+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Mise à jour de la caserne: FireStation{address='123 Main St', station='1'}
+2025-05-07T13:55:37.999+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche de la caserne à l'adresse: 123 Main St
+2025-05-07T13:55:38.000+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: false
+2025-05-07T13:55:38.000+02:00  WARN 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Tentative de mise à jour d'une caserne inexistante à l'adresse: 123 Main St
+2025-05-07T13:55:38.045+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Ajout d'une nouvelle caserne: FireStation{address='null', station='null'}
+2025-05-07T13:55:38.045+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Erreur de validation lors de l'ajout de la caserne: [Mock for ConstraintViolation, hashCode: 866772111]
+2025-05-07T13:55:38.050+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Suppression des casernes avec le numéro: 1
+2025-05-07T13:55:38.050+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Nombre de casernes supprimées: 2
+2025-05-07T13:55:38.053+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche des adresses couvertes par les stations: [1, 2]
+2025-05-07T13:55:38.053+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Adresses trouvées: [123 Main St, 456 Oak St]
+2025-05-07T13:55:38.056+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Vérification de l'existence de la station: 1
+2025-05-07T13:55:38.057+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Station trouvée: true
+2025-05-07T13:55:38.057+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Vérification de l'existence de la station: 2
+2025-05-07T13:55:38.057+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Station trouvée: false
+2025-05-07T13:55:38.059+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Suppression de la caserne à l'adresse: 123 Main St
+2025-05-07T13:55:38.060+02:00  WARN 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Aucune caserne trouvée à l'adresse: 123 Main St
+2025-05-07T13:55:38.062+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Suppression de la caserne à l'adresse: 123 Main St
+2025-05-07T13:55:38.062+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne supprimée avec succès
+2025-05-07T13:55:38.064+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Vérification de l'existence d'une caserne à l'adresse: 123 Main St
+2025-05-07T13:55:38.064+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: true
+2025-05-07T13:55:38.064+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Vérification de l'existence d'une caserne à l'adresse: 456 Oak St
+2025-05-07T13:55:38.064+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: false
+2025-05-07T13:55:38.066+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche de la caserne à l'adresse: 123 Main St
+2025-05-07T13:55:38.067+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: false
+2025-05-07T13:55:38.068+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche des adresses couvertes par la station: 1
+2025-05-07T13:55:38.069+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Adresses trouvées: [123 Main St, 456 Oak St]
+2025-05-07T13:55:38.070+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Ajout d'une nouvelle caserne: FireStation{address='123 Main St', station='1'}
+2025-05-07T13:55:38.071+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne ajoutée avec succès
+2025-05-07T13:55:38.079+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche de la caserne à l'adresse: 123 Main St
+2025-05-07T13:55:38.079+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: true
+2025-05-07T13:55:38.081+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Mise à jour de la caserne: FireStation{address='123 Main St', station='2'}
+2025-05-07T13:55:38.081+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Recherche de la caserne à l'adresse: 123 Main St
+2025-05-07T13:55:38.081+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne trouvée: true
+2025-05-07T13:55:38.081+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireStationService  : Caserne mise à jour avec succès
+2025-05-07T13:55:38.143+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
+2025-05-07T13:55:38.144+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 1
+2025-05-07T13:55:38.145+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 1
+2025-05-07T13:55:38.145+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 2
+2025-05-07T13:55:38.147+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
+2025-05-07T13:55:38.147+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 2
+2025-05-07T13:55:38.147+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 2
+2025-05-07T13:55:38.147+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 3
+2025-05-07T13:55:38.148+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
+2025-05-07T13:55:38.149+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 2
+2025-05-07T13:55:38.149+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 2
+2025-05-07T13:55:38.149+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 1
+2025-05-07T13:55:38.150+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
+2025-05-07T13:55:38.150+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 2
+2025-05-07T13:55:38.150+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 0
+2025-05-07T13:55:38.150+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 0
+2025-05-07T13:55:38.152+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Recherche des numéros de téléphone pour la caserne 1
+2025-05-07T13:55:38.152+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses couvertes par la caserne 1: 0
+2025-05-07T13:55:38.152+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre d'adresses avec des résidents: 0
+2025-05-07T13:55:38.152+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.PhoneAlertService   : Nombre de numéros de téléphone uniques trouvés pour la caserne 1: 0
+2025-05-07T13:55:38.157+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
+2025-05-07T13:55:38.157+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Erreur lors de la récupération des informations pour l'adresse 123 Main St : Erreur de base de données
+2025-05-07T13:55:38.160+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
+2025-05-07T13:55:38.160+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 2, stations : 1, dossiers médicaux : 2
+2025-05-07T13:55:38.161+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
+2025-05-07T13:55:38.162+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
+2025-05-07T13:55:38.162+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 2 médicaments, 1 allergies
+2025-05-07T13:55:38.162+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour Jane Doe
+2025-05-07T13:55:38.162+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour Jane Doe: 30 ans
+2025-05-07T13:55:38.162+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour Jane Doe: 1 médicaments, 1 allergies
+2025-05-07T13:55:38.162+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre de résidents trouvés à l'adresse 123 Main St : 2
+2025-05-07T13:55:38.163+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Station trouvée pour l'adresse 123 Main St : 1
+2025-05-07T13:55:38.163+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Informations récupérées avec succès pour l'adresse : 123 Main St
+2025-05-07T13:55:38.165+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
+2025-05-07T13:55:38.165+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 0, stations : 1, dossiers médicaux : 0
+2025-05-07T13:55:38.165+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre de résidents trouvés à l'adresse 123 Main St : 0
+2025-05-07T13:55:38.165+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Station trouvée pour l'adresse 123 Main St : 1
+2025-05-07T13:55:38.165+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Informations récupérées avec succès pour l'adresse : 123 Main St
+2025-05-07T13:55:38.166+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
+2025-05-07T13:55:38.167+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 1, stations : 0, dossiers médicaux : 1
+2025-05-07T13:55:38.167+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
+2025-05-07T13:55:38.167+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
+2025-05-07T13:55:38.167+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 1 médicaments, 1 allergies
+2025-05-07T13:55:38.167+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre de résidents trouvés à l'adresse 123 Main St : 1
+2025-05-07T13:55:38.167+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Aucune station de pompiers n'est associée à l'adresse : 123 Main St
+2025-05-07T13:55:38.168+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 
+2025-05-07T13:55:38.168+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 0, stations : 0, dossiers médicaux : 0
+2025-05-07T13:55:38.168+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre de résidents trouvés à l'adresse  : 0
+2025-05-07T13:55:38.168+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Aucune station de pompiers n'est associée à l'adresse : 
+2025-05-07T13:55:38.170+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Recherche des informations pour l'adresse : 123 Main St
+2025-05-07T13:55:38.170+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Nombre total de personnes : 1, stations : 1, dossiers médicaux : 0
+2025-05-07T13:55:38.170+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
+2025-05-07T13:55:38.170+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Dossier médical non trouvé pour John Doe
+2025-05-07T13:55:38.170+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.service.FireAlertService    : Erreur lors de la récupération des informations pour l'adresse 123 Main St : Dossier médical non trouvé pour John Doe
+2025-05-07T13:55:38.174+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Suppression du dossier médical pour John Doe
+2025-05-07T13:55:38.175+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical supprimé avec succès
+2025-05-07T13:55:38.177+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Suppression du dossier médical pour John Doe
+2025-05-07T13:55:38.179+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
+2025-05-07T13:55:38.179+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: false
+2025-05-07T13:55:38.181+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Ajout d'un nouveau dossier médical pour John Doe
+2025-05-07T13:55:38.181+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
+2025-05-07T13:55:38.181+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: true
+2025-05-07T13:55:38.181+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Un dossier médical existe déjà pour John Doe
+2025-05-07T13:55:38.211+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Ajout d'un nouveau dossier médical pour John Doe
+2025-05-07T13:55:38.212+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Erreur de validation lors de l'ajout du dossier médical: [Mock for ConstraintViolation, hashCode: 1368955026]
+2025-05-07T13:55:38.215+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Suppression du dossier médical pour John Doe
+2025-05-07T13:55:38.215+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Tentative de suppression d'un dossier médical inexistant pour John Doe
+2025-05-07T13:55:38.217+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Ajout d'un nouveau dossier médical pour NonExistent Person
+2025-05-07T13:55:38.217+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Impossible d'ajouter un dossier médical pour une personne inexistante: NonExistent Person
+2025-05-07T13:55:38.219+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Récupération de tous les dossiers médicaux
+2025-05-07T13:55:38.219+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Nombre de dossiers médicaux trouvés: 2
+2025-05-07T13:55:38.221+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Mise à jour du dossier médical pour John Doe
+2025-05-07T13:55:38.221+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Erreur de validation lors de la mise à jour du dossier médical: [Mock for ConstraintViolation, hashCode: 1226617808]
+2025-05-07T13:55:38.223+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Mise à jour du dossier médical pour John Doe
+2025-05-07T13:55:38.223+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
+2025-05-07T13:55:38.223+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: true
+2025-05-07T13:55:38.223+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical mis à jour avec succès
+2025-05-07T13:55:38.225+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Mise à jour du dossier médical pour John Doe
+2025-05-07T13:55:38.225+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
+2025-05-07T13:55:38.225+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: false
+2025-05-07T13:55:38.225+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Tentative de mise à jour d'un dossier médical inexistant pour John Doe
+2025-05-07T13:55:38.227+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Ajout d'un nouveau dossier médical pour John Doe
+2025-05-07T13:55:38.227+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
+2025-05-07T13:55:38.227+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: false
+2025-05-07T13:55:38.227+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical ajouté avec succès
+2025-05-07T13:55:38.229+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Recherche du dossier médical pour John Doe
+2025-05-07T13:55:38.229+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Dossier médical trouvé: true
+2025-05-07T13:55:38.230+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Mise à jour du dossier médical pour NonExistent Person
+2025-05-07T13:55:38.230+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.service.MedicalRecordService     : Impossible de mettre à jour un dossier médical pour une personne inexistante: NonExistent Person
+2025-05-07T13:55:38.233+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche des personnes pour les adresses: [123 Main St, 456 Oak St]
+2025-05-07T13:55:38.234+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Nombre d'adresses trouvées: 1
+2025-05-07T13:55:38.235+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de mise à jour de la personne: NonExistent Person
+2025-05-07T13:55:38.235+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche de la personne: NonExistent Person
+2025-05-07T13:55:38.236+02:00  WARN 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne non trouvée: NonExistent Person
+2025-05-07T13:55:38.236+02:00  WARN 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de mise à jour d'une personne inexistante: NonExistent Person
+2025-05-07T13:55:38.237+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche de la personne: Jane Doe
+2025-05-07T13:55:38.237+02:00  WARN 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne non trouvée: Jane Doe
+2025-05-07T13:55:38.238+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Récupération de toutes les personnes
+2025-05-07T13:55:38.238+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Nombre total de personnes: 1
+2025-05-07T13:55:38.239+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de suppression de la personne: NonExistent Person
+2025-05-07T13:55:38.240+02:00  WARN 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de suppression d'une personne inexistante: NonExistent Person
+2025-05-07T13:55:38.241+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de mise à jour de la personne: John Doe
+2025-05-07T13:55:38.241+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche de la personne: John Doe
+2025-05-07T13:55:38.241+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne mise à jour avec succès: John Doe
+2025-05-07T13:55:38.242+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative de suppression de la personne: John Doe
+2025-05-07T13:55:38.242+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne supprimée avec succès: John Doe
+2025-05-07T13:55:38.243+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative d'ajout d'une nouvelle personne: null null
+2025-05-07T13:55:38.244+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Erreur de validation pour la personne null null: [Mock for ConstraintViolation, hashCode: 767598759]
+2025-05-07T13:55:38.245+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative d'ajout d'une nouvelle personne: John Doe
+2025-05-07T13:55:38.246+02:00  WARN 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Doublon détecté pour John Doe à l'adresse 123 Main St
+2025-05-07T13:55:38.247+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Tentative d'ajout d'une nouvelle personne: Jane Smith
+2025-05-07T13:55:38.247+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Personne ajoutée avec succès: Jane Smith
+2025-05-07T13:55:38.248+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche de la personne: John Doe
+2025-05-07T13:55:38.249+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Recherche des personnes pour l'adresse: 123 Main St
+2025-05-07T13:55:38.249+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonService       : Nombre de personnes trouvées: 1
+2025-05-07T13:55:38.252+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Recherche des personnes couvertes par la station n° 1
+2025-05-07T13:55:38.252+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de personnes: 3
+2025-05-07T13:55:38.252+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de dossiers médicaux: 3
+2025-05-07T13:55:38.252+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Adresses couvertes par la station 1: [123 Main St, 456 Oak St]
+2025-05-07T13:55:38.252+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: John Doe à 123 Main St
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour John Doe
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Date de naissance trouvée pour John Doe: 1990-01-01
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour John Doe: 35
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Jane Doe à 123 Main St
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour Jane Doe
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Date de naissance trouvée pour Jane Doe: 1995-01-01
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Jane Doe: 30
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: Bob Smith à 456 Oak St
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour Bob Smith
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Date de naissance trouvée pour Bob Smith: 2010-01-01
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Âge calculé pour Bob Smith: 15
+2025-05-07T13:55:38.253+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre de personnes couvertes trouvées: 3
+2025-05-07T13:55:38.254+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre d'adultes: 2, Nombre d'enfants: 1
+2025-05-07T13:55:38.256+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Recherche des personnes couvertes par la station n° 1
+2025-05-07T13:55:38.256+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de personnes: 1
+2025-05-07T13:55:38.256+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de dossiers médicaux: 0
+2025-05-07T13:55:38.256+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Adresses couvertes par la station 1: [123 Main St]
+2025-05-07T13:55:38.256+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Personne trouvée à l'adresse couverte: John Doe à 123 Main St
+2025-05-07T13:55:38.256+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour John Doe
+2025-05-07T13:55:38.256+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Dossier médical non trouvé pour John Doe
+2025-05-07T13:55:38.258+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Recherche des personnes couvertes par la station n° 1
+2025-05-07T13:55:38.258+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de personnes: 0
+2025-05-07T13:55:38.258+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de dossiers médicaux: 0
+2025-05-07T13:55:38.258+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Adresses couvertes par la station 1: []
+2025-05-07T13:55:38.258+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre de personnes couvertes trouvées: 0
+2025-05-07T13:55:38.258+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre d'adultes: 0, Nombre d'enfants: 0
+2025-05-07T13:55:38.261+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Recherche des personnes couvertes par la station n° 1
+2025-05-07T13:55:38.261+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de personnes: 0
+2025-05-07T13:55:38.261+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre total de dossiers médicaux: 0
+2025-05-07T13:55:38.261+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Adresses couvertes par la station 1: [123 Main St]
+2025-05-07T13:55:38.261+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre de personnes couvertes trouvées: 0
+2025-05-07T13:55:38.261+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.s.FireStationCoverageService     : Nombre d'adultes: 0, Nombre d'enfants: 0
+2025-05-07T13:55:38.287+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des informations pour John Doe
+2025-05-07T13:55:38.287+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Personne trouvée, extraction des informations médicales
+2025-05-07T13:55:38.287+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Informations complètes extraites pour John Doe
+2025-05-07T13:55:38.289+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des personnes avec le nom de famille: Doe
+2025-05-07T13:55:38.289+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Traitement des informations pour John Doe
+2025-05-07T13:55:38.289+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Traitement des informations pour Jane Doe
+2025-05-07T13:55:38.289+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Nombre de personnes trouvées pour le nom Doe: 2
+2025-05-07T13:55:38.290+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des informations pour John Doe
+2025-05-07T13:55:38.290+02:00  WARN 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Aucune personne trouvée pour John Doe
+2025-05-07T13:55:38.291+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des personnes avec le nom de famille: NonExisting
+2025-05-07T13:55:38.291+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Nombre de personnes trouvées pour le nom NonExisting: 0
+2025-05-07T13:55:38.292+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des personnes avec le nom de famille: Doe
+2025-05-07T13:55:38.293+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Traitement des informations pour John Doe
+2025-05-07T13:55:38.294+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des informations pour JOHN DOE
+2025-05-07T13:55:38.294+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Personne trouvée, extraction des informations médicales
+2025-05-07T13:55:38.294+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Informations complètes extraites pour JOHN DOE
+2025-05-07T13:55:38.295+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des personnes avec le nom de famille: DOE
+2025-05-07T13:55:38.296+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Traitement des informations pour John Doe
+2025-05-07T13:55:38.296+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Nombre de personnes trouvées pour le nom DOE: 1
+2025-05-07T13:55:38.297+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Recherche des informations pour John Doe
+2025-05-07T13:55:38.297+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.PersonInfoService   : Personne trouvée, extraction des informations médicales
+2025-05-07T13:55:38.299+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Recherche des enfants à l'adresse: 123 Main St
+2025-05-07T13:55:38.299+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Erreur lors de la recherche des enfants à l'adresse 123 Main St: Erreur de base de données
+2025-05-07T13:55:38.302+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Recherche des enfants à l'adresse: 123 Main St
+2025-05-07T13:55:38.303+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre total de dossiers médicaux: 2
+2025-05-07T13:55:38.303+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre de personnes trouvées à l'adresse 123 Main St: 2
+2025-05-07T13:55:38.303+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Âge calculé pour John Doe: 14
+2025-05-07T13:55:38.303+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Enfant ajouté: John Doe, âge: 14
+2025-05-07T13:55:38.303+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Âge calculé pour Jane Doe: 34
+2025-05-07T13:55:38.304+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Membre du foyer ajouté: Jane Doe
+2025-05-07T13:55:38.304+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Résumé pour l'adresse 123 Main St: 1 enfants, 1 autres membres du foyer
+2025-05-07T13:55:38.306+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Recherche des enfants à l'adresse: 123 Main St
+2025-05-07T13:55:38.306+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre total de dossiers médicaux: 0
+2025-05-07T13:55:38.306+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Aucune personne trouvée à l'adresse: 123 Main St
+2025-05-07T13:55:38.309+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Recherche des enfants à l'adresse: 123 Main St
+2025-05-07T13:55:38.310+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre total de dossiers médicaux: 2
+2025-05-07T13:55:38.310+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Nombre de personnes trouvées à l'adresse 123 Main St: 2
+2025-05-07T13:55:38.310+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Âge calculé pour John Doe: 34
+2025-05-07T13:55:38.310+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Membre du foyer ajouté: John Doe
+2025-05-07T13:55:38.310+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Âge calculé pour Jane Doe: 29
+2025-05-07T13:55:38.310+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Membre du foyer ajouté: Jane Doe
+2025-05-07T13:55:38.310+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.ChildAlertService   : Résumé pour l'adresse 123 Main St: 0 enfants, 2 autres membres du foyer
+2025-05-07T13:55:38.316+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1]
+2025-05-07T13:55:38.319+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1]
+2025-05-07T13:55:38.320+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Adresses couvertes par les stations: [123 Main St]
+2025-05-07T13:55:38.320+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Nombre d'adresses avec des résidents: 0
+2025-05-07T13:55:38.320+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche terminée. 0 adresses trouvées avec des résidents
+2025-05-07T13:55:38.323+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1, 2]
+2025-05-07T13:55:38.323+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Adresses couvertes par les stations: []
+2025-05-07T13:55:38.323+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Nombre d'adresses avec des résidents: 0
+2025-05-07T13:55:38.324+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche terminée. 0 adresses trouvées avec des résidents
+2025-05-07T13:55:38.326+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1, 2]
+2025-05-07T13:55:38.326+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Adresses couvertes par les stations: [123 Main St, 456 Oak St]
+2025-05-07T13:55:38.326+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Nombre d'adresses avec des résidents: 2
+2025-05-07T13:55:38.327+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Traitement de l'adresse 456 Oak St avec 1 résidents
+2025-05-07T13:55:38.327+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour Bob Smith
+2025-05-07T13:55:38.327+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour Bob Smith: 40 ans
+2025-05-07T13:55:38.327+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour Bob Smith: 1 médicaments, 1 allergies
+2025-05-07T13:55:38.328+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Informations médicales extraites pour 1 résidents à l'adresse 456 Oak St
+2025-05-07T13:55:38.328+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Traitement de l'adresse 123 Main St avec 2 résidents
+2025-05-07T13:55:38.328+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
+2025-05-07T13:55:38.328+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
+2025-05-07T13:55:38.328+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 2 médicaments, 1 allergies
+2025-05-07T13:55:38.328+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour Jane Doe
+2025-05-07T13:55:38.328+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour Jane Doe: 30 ans
+2025-05-07T13:55:38.328+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour Jane Doe: 1 médicaments, 1 allergies
+2025-05-07T13:55:38.328+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Informations médicales extraites pour 2 résidents à l'adresse 123 Main St
+2025-05-07T13:55:38.328+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche terminée. 2 adresses trouvées avec des résidents
+2025-05-07T13:55:38.332+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Recherche des foyers pour les stations: [1, 2]
+2025-05-07T13:55:38.332+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.service.FloodAlertService   : Stations non trouvées: [1]
+2025-05-07T13:55:38.337+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : Culver
+2025-05-07T13:55:38.337+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Erreur lors de la récupération des emails pour la ville Culver : Erreur de base de données
+2025-05-07T13:55:38.339+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : Culver
+2025-05-07T13:55:38.339+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 3
+2025-05-07T13:55:38.339+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour Culver : 3
+2025-05-07T13:55:38.340+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : Culver
+2025-05-07T13:55:38.341+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : Culver
+2025-05-07T13:55:38.342+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 1
+2025-05-07T13:55:38.342+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour Culver : 1
+2025-05-07T13:55:38.342+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : Culver
+2025-05-07T13:55:38.343+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : 
+2025-05-07T13:55:38.343+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 0
+2025-05-07T13:55:38.343+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour  : 0
+2025-05-07T13:55:38.343+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : 
+2025-05-07T13:55:38.344+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : NonExistentCity
+2025-05-07T13:55:38.344+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 1
+2025-05-07T13:55:38.344+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour NonExistentCity : 0
+2025-05-07T13:55:38.344+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : NonExistentCity
+2025-05-07T13:55:38.344+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Recherche des emails pour la ville : Culver
+2025-05-07T13:55:38.344+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre total de personnes dans le système : 2
+2025-05-07T13:55:38.345+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Nombre d'emails uniques trouvés pour Culver : 1
+2025-05-07T13:55:38.345+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.service.CommunityEmailService    : Emails récupérés avec succès pour la ville : Culver
+2025-05-07T13:55:38.368+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : 
+2025-05-07T13:55:38.369+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Aucun email trouvé pour la ville : 
+2025-05-07T13:55:38.370+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : Culver
+2025-05-07T13:55:38.371+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Nombre d'emails trouvés : 2
+2025-05-07T13:55:38.375+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : Culver
+2025-05-07T13:55:38.378+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : Culver
+2025-05-07T13:55:38.378+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Aucun email trouvé pour la ville : Culver
+2025-05-07T13:55:38.381+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Requête reçue pour la ville : Culver
+2025-05-07T13:55:38.381+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.CommunityEmailController       : Nombre d'emails trouvés : 3
+2025-05-07T13:55:38.409+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : -1
+2025-05-07T13:55:38.409+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Aucun numéro de téléphone trouvé pour la station : -1
+2025-05-07T13:55:38.411+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 1
+2025-05-07T13:55:38.412+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Nombre de numéros de téléphone trouvés : 3
+2025-05-07T13:55:38.414+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 1
+2025-05-07T13:55:38.414+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Nombre de numéros de téléphone trouvés : 3
+2025-05-07T13:55:38.415+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 0
+2025-05-07T13:55:38.415+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Aucun numéro de téléphone trouvé pour la station : 0
+2025-05-07T13:55:38.416+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Requête reçue pour les numéros de téléphone couverts par la station : 1
+2025-05-07T13:55:38.416+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PhoneAlertController  : Aucun numéro de téléphone trouvé pour la station : 1
+2025-05-07T13:55:38.430+02:00  INFO 1241326 --- [alerts] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.ryan.safetynet.alerts.controller.PersonInfoControllerTest]: PersonInfoControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-07T13:55:38.470+02:00  INFO 1241326 --- [alerts] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.ryan.safetynet.alerts.AlertsApplication for test class com.ryan.safetynet.alerts.controller.PersonInfoControllerTest
+2025-05-07T13:55:38.500+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.PersonInfoControllerTest       : Starting PersonInfoControllerTest using Java 17.0.14 with PID 1241326 (started by ryan in /home/ryan/IdeaProjects/safety_net/alerts)
+2025-05-07T13:55:38.500+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.c.PersonInfoControllerTest       : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-05-07T13:55:38.500+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.PersonInfoControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-05-07T13:55:38.652+02:00  INFO 1241326 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-05-07T13:55:38.652+02:00  INFO 1241326 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-05-07T13:55:38.652+02:00  INFO 1241326 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-05-07T13:55:38.664+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.PersonInfoControllerTest       : Started PersonInfoControllerTest in 0.189 seconds (process running for 3.62)
+2025-05-07T13:55:38.681+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : John Doe
+2025-05-07T13:55:38.682+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Personne trouvée : John Doe
+2025-05-07T13:55:38.724+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : John 
+2025-05-07T13:55:38.724+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Aucune personne trouvée : John 
+2025-05-07T13:55:38.725+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La personne John  n'existe pas dans le système
+2025-05-07T13:55:38.733+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne :  
+2025-05-07T13:55:38.733+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Aucune personne trouvée :  
+2025-05-07T13:55:38.733+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La personne   n'existe pas dans le système
+2025-05-07T13:55:38.737+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne : John Doe
+2025-05-07T13:55:38.737+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Aucune personne trouvée : John Doe
+2025-05-07T13:55:38.738+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La personne John Doe n'existe pas dans le système
+2025-05-07T13:55:38.741+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Requête reçue pour la personne :  Doe
+2025-05-07T13:55:38.741+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonInfoController  : Aucune personne trouvée :  Doe
+2025-05-07T13:55:38.741+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La personne  Doe n'existe pas dans le système
+2025-05-07T13:55:38.767+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Suppression de tous les mappings pour la caserne numéro : 1
+2025-05-07T13:55:38.768+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Mise à jour du numéro de caserne pour l'adresse : 123 Main St
+2025-05-07T13:55:38.769+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Suppression de tous les mappings pour la caserne numéro : 1
+2025-05-07T13:55:38.770+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Suppression du mapping pour l'adresse : 123 Main St
+2025-05-07T13:55:38.771+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Suppression du mapping pour l'adresse : 123 Main St
+2025-05-07T13:55:38.772+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Requête GET /firestation avec station : 999
+2025-05-07T13:55:38.772+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Erreur : La station de pompiers 999 n'existe pas
+2025-05-07T13:55:38.773+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Requête GET /firestation avec station : 1
+2025-05-07T13:55:38.773+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Aucune personne trouvée pour la station : 1
+2025-05-07T13:55:38.774+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Mise à jour du numéro de caserne pour l'adresse : 123 Main St
+2025-05-07T13:55:38.775+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Tentative d'ajout du mapping caserne/adresse : Station=1, Adresse=123 Main St
+2025-05-07T13:55:38.775+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Mapping caserne/adresse créé avec succès
+2025-05-07T13:55:38.776+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Tentative d'ajout du mapping caserne/adresse : Station=1, Adresse=123 Main St
+2025-05-07T13:55:38.776+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Un mapping existe déjà pour l'adresse : 123 Main St
+2025-05-07T13:55:38.777+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Requête GET /firestation avec station : 1
+2025-05-07T13:55:38.777+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.FireStationController          : Nombre de personnes trouvées : 2
+2025-05-07T13:55:38.779+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Suppression du dossier médical pour : John Doe
+2025-05-07T13:55:38.780+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Recherche du dossier médical pour : John Doe
+2025-05-07T13:55:38.782+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Mise à jour du dossier médical pour : John Doe
+2025-05-07T13:55:38.783+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Ajout d'un nouveau dossier médical : John Doe
+2025-05-07T13:55:38.784+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Recherche du dossier médical pour : John Doe
+2025-05-07T13:55:38.784+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Suppression du dossier médical pour : John Doe
+2025-05-07T13:55:38.785+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Mise à jour du dossier médical pour : John Doe
+2025-05-07T13:55:38.787+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.MedicalRecordController        : Ajout d'un nouveau dossier médical : John Doe
+2025-05-07T13:55:38.790+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonController      : Suppression de la personne : John Doe
+2025-05-07T13:55:38.792+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonController      : Mise à jour de la personne : John Doe
+2025-05-07T13:55:38.795+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonController      : Suppression de la personne : John Doe
+2025-05-07T13:55:38.797+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonController      : Ajout d'une nouvelle personne : John Doe
+2025-05-07T13:55:38.798+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonController      : Mise à jour de la personne : John Doe
+2025-05-07T13:55:38.800+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.PersonController      : Ajout d'une nouvelle personne : John Doe
+2025-05-07T13:55:38.830+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 123 Main St
+2025-05-07T13:55:38.830+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Erreur : La station de pompiers n'existe pas
+2025-05-07T13:55:38.832+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 123 Main St
+2025-05-07T13:55:38.832+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Réponse envoyée (masquée) : com.ryan.safetynet.alerts.dto.FireAlertDTO@6f2530db
+2025-05-07T13:55:38.834+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 123 Main St
+2025-05-07T13:55:38.834+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Erreur lors de la récupération des résidents pour l'adresse : 123 Main St
 
 java.lang.RuntimeException: Erreur du service
 	at com.ryan.safetynet.alerts.service.FireAlertService.getPersonsAndFireStationByAddress(FireAlertService.java:46) ~[classes/:na]
@@ -881,26 +883,26 @@ java.lang.RuntimeException: Erreur du service
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 
-2025-05-06T11:42:40.166+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 123 Main St
-2025-05-06T11:42:40.167+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Aucun résident trouvé pour l'adresse : 123 Main St
-2025-05-06T11:42:40.167+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 
-2025-05-06T11:42:40.167+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Aucun résident trouvé pour l'adresse : 
-2025-05-06T11:42:40.170+02:00  INFO 689455 --- [alerts] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.ryan.safetynet.alerts.controller.ChildAlertControllerTest]: ChildAlertControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-05-06T11:42:40.175+02:00  INFO 689455 --- [alerts] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.ryan.safetynet.alerts.AlertsApplication for test class com.ryan.safetynet.alerts.controller.ChildAlertControllerTest
-2025-05-06T11:42:40.194+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.ChildAlertControllerTest       : Starting ChildAlertControllerTest using Java 17.0.14 with PID 689455 (started by ryan in /home/ryan/IdeaProjects/safety_net/alerts)
-2025-05-06T11:42:40.194+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.a.c.ChildAlertControllerTest       : Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-05-06T11:42:40.194+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.ChildAlertControllerTest       : No active profile set, falling back to 1 default profile: "default"
-2025-05-06T11:42:40.312+02:00  INFO 689455 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-05-06T11:42:40.312+02:00  INFO 689455 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-05-06T11:42:40.313+02:00  INFO 689455 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-05-06T11:42:40.316+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.c.ChildAlertControllerTest       : Started ChildAlertControllerTest in 0.139 seconds (process running for 3.988)
-2025-05-06T11:42:40.319+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Requête reçue pour les enfants à l'adresse: 
-2025-05-06T11:42:40.326+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Requête reçue pour les enfants à l'adresse: 123 Main St
-2025-05-06T11:42:40.326+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: Aucun enfant trouvé à l'adresse 123 Main St
-2025-05-06T11:42:40.330+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Requête reçue pour les enfants à l'adresse: 1509 Culver St
-2025-05-06T11:42:40.331+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Trouvé 2 enfants et 1 adultes à l'adresse 1509 Culver St
-2025-05-06T11:42:40.347+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Requête reçue pour les enfants à l'adresse: 123 Error St
-2025-05-06T11:42:40.347+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:38.836+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 123 Main St
+2025-05-07T13:55:38.837+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Aucun résident trouvé pour l'adresse : 123 Main St
+2025-05-07T13:55:38.838+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Requête GET /fire avec adresse : 
+2025-05-07T13:55:38.838+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.controller.FireAlertController   : Aucun résident trouvé pour l'adresse : 
+2025-05-07T13:55:38.841+02:00  INFO 1241326 --- [alerts] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.ryan.safetynet.alerts.controller.ChildAlertControllerTest]: ChildAlertControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-07T13:55:38.845+02:00  INFO 1241326 --- [alerts] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.ryan.safetynet.alerts.AlertsApplication for test class com.ryan.safetynet.alerts.controller.ChildAlertControllerTest
+2025-05-07T13:55:38.856+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.ChildAlertControllerTest       : Starting ChildAlertControllerTest using Java 17.0.14 with PID 1241326 (started by ryan in /home/ryan/IdeaProjects/safety_net/alerts)
+2025-05-07T13:55:38.856+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.a.c.ChildAlertControllerTest       : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-05-07T13:55:38.856+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.ChildAlertControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-05-07T13:55:38.952+02:00  INFO 1241326 --- [alerts] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-05-07T13:55:38.952+02:00  INFO 1241326 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-05-07T13:55:38.953+02:00  INFO 1241326 --- [alerts] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-05-07T13:55:38.956+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.c.ChildAlertControllerTest       : Started ChildAlertControllerTest in 0.11 seconds (process running for 3.912)
+2025-05-07T13:55:38.958+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Requête reçue pour les enfants à l'adresse: 
+2025-05-07T13:55:38.964+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Requête reçue pour les enfants à l'adresse: 123 Main St
+2025-05-07T13:55:38.964+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: Aucun enfant trouvé à l'adresse 123 Main St
+2025-05-07T13:55:38.968+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Requête reçue pour les enfants à l'adresse: 1509 Culver St
+2025-05-07T13:55:38.968+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Trouvé 2 enfants et 1 adultes à l'adresse 1509 Culver St
+2025-05-07T13:55:38.982+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.ChildAlertController  : Requête reçue pour les enfants à l'adresse: 123 Error St
+2025-05-07T13:55:38.983+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 java.lang.RuntimeException: Database error
 	at com.ryan.safetynet.alerts.service.ChildAlertService.getChildrenAtAddress(ChildAlertService.java:45) ~[classes/:na]
@@ -1011,32 +1013,32 @@ java.lang.RuntimeException: Database error
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 
-2025-05-06T11:42:40.374+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Requête reçue pour les stations : [1]
-2025-05-06T11:42:40.375+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Nombre d'adresses trouvées : 1
-2025-05-06T11:42:40.376+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Requête reçue pour les stations : [1, 2]
-2025-05-06T11:42:40.376+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Nombre d'adresses trouvées : 2
-2025-05-06T11:42:40.377+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Requête reçue pour les stations : [1, 2]
-2025-05-06T11:42:40.377+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Erreur : Une ou plusieurs stations n'existent pas
-2025-05-06T11:42:40.378+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Requête reçue pour les stations : [1, 2]
-2025-05-06T11:42:40.378+02:00  INFO 689455 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Aucune adresse trouvée pour les stations : [1, 2]
-2025-05-06T11:42:40.378+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Format de station invalide. Les stations doivent être des nombres.
-2025-05-06T11:42:40.380+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour John Doe
-2025-05-06T11:42:40.380+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Date de naissance trouvée pour John Doe: 1990-01-01
-2025-05-06T11:42:40.381+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
-2025-05-06T11:42:40.381+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
-2025-05-06T11:42:40.381+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 0 médicaments, 0 allergies
-2025-05-06T11:42:40.381+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
-2025-05-06T11:42:40.381+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
-2025-05-06T11:42:40.381+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 2 médicaments, 2 allergies
-2025-05-06T11:42:40.381+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour Jane Smith
-2025-05-06T11:42:40.382+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Dossier médical non trouvé pour Jane Smith
-2025-05-06T11:42:40.382+02:00 DEBUG 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour Jane Smith
-2025-05-06T11:42:40.382+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Dossier médical non trouvé pour Jane Smith
-2025-05-06T11:42:40.384+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: Aucune information médicale disponible pour John Doe
-2025-05-06T11:42:40.384+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Endpoint non trouvé: /api/invalid
-2025-05-06T11:42:40.385+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La caserne de pompiers numéro 12345 n'existe pas
-2025-05-06T11:42:40.386+02:00  WARN 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: Aucun résident trouvé à l'adresse 123 Main St
-2025-05-06T11:42:40.386+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
+2025-05-07T13:55:39.034+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Requête reçue pour les stations : [1]
+2025-05-07T13:55:39.035+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Nombre d'adresses trouvées : 1
+2025-05-07T13:55:39.036+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Requête reçue pour les stations : [1, 2]
+2025-05-07T13:55:39.036+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Nombre d'adresses trouvées : 2
+2025-05-07T13:55:39.037+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Requête reçue pour les stations : [1, 2]
+2025-05-07T13:55:39.038+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Erreur : Une ou plusieurs stations n'existent pas
+2025-05-07T13:55:39.039+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Requête reçue pour les stations : [1, 2]
+2025-05-07T13:55:39.039+02:00  INFO 1241326 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Aucune adresse trouvée pour les stations : [1, 2]
+2025-05-07T13:55:39.040+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.controller.FloodAlertController  : Format de station invalide. Les stations doivent être des nombres.
+2025-05-07T13:55:39.042+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour John Doe
+2025-05-07T13:55:39.043+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Date de naissance trouvée pour John Doe: 1990-01-01
+2025-05-07T13:55:39.044+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
+2025-05-07T13:55:39.044+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
+2025-05-07T13:55:39.044+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 0 médicaments, 0 allergies
+2025-05-07T13:55:39.045+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour John Doe
+2025-05-07T13:55:39.045+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Âge calculé pour John Doe: 35 ans
+2025-05-07T13:55:39.045+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Informations médicales extraites avec succès pour John Doe: 2 médicaments, 2 allergies
+2025-05-07T13:55:39.046+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Recherche de la date de naissance pour Jane Smith
+2025-05-07T13:55:39.046+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Dossier médical non trouvé pour Jane Smith
+2025-05-07T13:55:39.047+02:00 DEBUG 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Extraction des informations médicales pour Jane Smith
+2025-05-07T13:55:39.047+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.utils.MedicalRecordUtils    : Dossier médical non trouvé pour Jane Smith
+2025-05-07T13:55:39.049+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: Aucune information médicale disponible pour John Doe
+2025-05-07T13:55:39.050+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Endpoint non trouvé: /api/invalid
+2025-05-07T13:55:39.051+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: La caserne de pompiers numéro 12345 n'existe pas
+2025-05-07T13:55:39.052+02:00  WARN 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Ressource non trouvée: Aucun résident trouvé à l'adresse 123 Main St
+2025-05-07T13:55:39.052+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur inattendue
 
 java.lang.RuntimeException: Test exception
 	at com.ryan.safetynet.alerts.exception.GlobalExceptionHandlerTest.handleGenericException(GlobalExceptionHandlerTest.java:204) ~[test-classes/:na]
@@ -1112,7 +1114,7 @@ java.lang.RuntimeException: Test exception
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 
-2025-05-06T11:42:40.387+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur de validation des données
+2025-05-07T13:55:39.054+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur de validation des données
 
 org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.ryan.safetynet.alerts.exception.GlobalExceptionHandlerTest$TestController.testMethod(java.lang.String): [Field error in object 'object' on field 'fireStationNumber': rejected value [null]; codes []; arguments []; default message [Le numéro de la caserne doit contenir entre 1 et 4 chiffres]] 
 	at com.ryan.safetynet.alerts.exception.GlobalExceptionHandlerTest.handleValidationExceptions_FireStationNumber(GlobalExceptionHandlerTest.java:40) ~[test-classes/:na]
@@ -1188,7 +1190,7 @@ org.springframework.web.bind.MethodArgumentNotValidException: Validation failed 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 
-2025-05-06T11:42:40.388+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur d'entrée/sortie
+2025-05-07T13:55:39.055+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur d'entrée/sortie
 
 java.io.IOException: Test IO Exception
 	at com.ryan.safetynet.alerts.exception.GlobalExceptionHandlerTest.handleIOException(GlobalExceptionHandlerTest.java:88) ~[test-classes/:na]
@@ -1264,7 +1266,7 @@ java.io.IOException: Test IO Exception
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 
-2025-05-06T11:42:40.389+02:00 ERROR 689455 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur de validation des données
+2025-05-07T13:55:39.055+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.a.e.GlobalExceptionHandler         : Erreur de validation des données
 
 org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.ryan.safetynet.alerts.exception.GlobalExceptionHandlerTest$TestController.testMethod(java.lang.String): [Field error in object 'object' on field 'residents': rejected value [null]; codes []; arguments []; default message [La liste des résidents ne peut pas être null]] 
 	at com.ryan.safetynet.alerts.exception.GlobalExceptionHandlerTest.handleValidationExceptions_Residents(GlobalExceptionHandlerTest.java:67) ~[test-classes/:na]
@@ -1340,12 +1342,12 @@ org.springframework.web.bind.MethodArgumentNotValidException: Validation failed 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 
-2025-05-06T11:42:40.655+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données sauvegardées dans test-data.json
-2025-05-06T11:42:40.656+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Tentative de chargement depuis le classpath: data.json
-2025-05-06T11:42:40.656+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis le classpath: data.json
-2025-05-06T11:42:40.658+02:00  WARN 689455 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Fichier de données non trouvé à non-existent-file.json. Initialisation avec des données vides.
-2025-05-06T11:42:40.659+02:00  INFO 689455 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis le fichier: test-data.json
-2025-05-06T11:42:40.660+02:00 ERROR 689455 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Échec du chargement des données depuis test-data.json. Initialisation avec des données vides. Message d'erreur: Test exception
+2025-05-07T13:55:39.217+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données sauvegardées dans test-data.json
+2025-05-07T13:55:39.218+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Tentative de chargement depuis le classpath: data.json
+2025-05-07T13:55:39.218+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis le classpath: data.json
+2025-05-07T13:55:39.220+02:00  WARN 1241326 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Fichier de données non trouvé à non-existent-file.json. Initialisation avec des données vides.
+2025-05-07T13:55:39.221+02:00  INFO 1241326 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Données chargées avec succès depuis le fichier: test-data.json
+2025-05-07T13:55:39.222+02:00 ERROR 1241326 --- [alerts] [main] c.r.s.alerts.repository.DataRepository   : Échec du chargement des données depuis test-data.json. Initialisation avec des données vides. Message d'erreur: Test exception
 
 java.io.IOException: Test exception
 	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3724) ~[jackson-databind-2.18.2.jar:2.18.2]
@@ -1427,5 +1429,5 @@ java.io.IOException: Test exception
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) ~[surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 
-2025-05-06T11:42:40.933+02:00  INFO 689455 --- [alerts] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-06T11:42:40.936+02:00  INFO 689455 --- [alerts] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-07T13:55:39.502+02:00  INFO 1241326 --- [alerts] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-07T13:55:39.504+02:00  INFO 1241326 --- [alerts] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
